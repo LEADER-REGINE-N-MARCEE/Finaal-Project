@@ -31,7 +31,7 @@ if ($conn->query($sql) === TRUE) {
         email VARCHAR(50), 
         pass VARCHAR(255),
         reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-)";
+    )";
 
     if ($conn->query($sql) === TRUE) {
         $conn = new mysqli($servername, $username, $password, $dbname);
@@ -52,12 +52,10 @@ if ($conn->query($sql) === TRUE) {
             } else {
                 echo "Error creating table: " . $conn->error;
             }    
-    } else {
-        echo "Error creating table: " . $conn->error;
-    }    
-} else {
+    } else 
+        echo "Error creating table: " . $conn->error; 
+    } else 
     echo "Error creating database: " . $conn->error;
-}
 
 $conn->close();
 ?>
