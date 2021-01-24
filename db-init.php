@@ -46,11 +46,12 @@ if ($conn->query($sql) === TRUE) {
             mobilenum VARCHAR (15),
             FOREIGN KEY (infoID) REFERENCES users(id)
             )";
-<<<<<<< Updated upstream
-=======
-        if ($conn->query($sql) === TRUE) {
-            $conn = new mysqli($servername, $username, $password, $dbname);
-            $sql  = "CREATE TABLE items (
+            if ($conn->query($sql) === TRUE) {
+                
+                echo "Table user_info created successfully";
+
+                $conn = new mysqli($servername, $username, $password, $dbname);
+                $sql  = "CREATE TABLE items (
                 itemID INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
                 itemCode VARCHAR (255),
                 itemType VARCHAR (50),
@@ -59,12 +60,12 @@ if ($conn->query($sql) === TRUE) {
                 quantity VARCHAR (255),
                 descriptions TEXT
                 )";
-            echo "Table user_info created successfully";
-            
->>>>>>> Stashed changes
-            if ($conn->query($sql) === TRUE) {
-                
-                echo "Table user_info created successfully";
+                if ($conn->query($sql) === TRUE) {
+                    echo "Table items created successfully";
+                }else {
+                    echo "Error creating table: " . $conn->error;
+                }   
+
             } else {
                 echo "Error creating table: " . $conn->error;
             }    
