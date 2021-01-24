@@ -11,7 +11,7 @@ if ($conn->connect_error) {
 }
 
 // Create database
-$sql = "CREATE DATABASE store";
+$sql = "CREATE DATABASE store character set UTF8mb4 collate utf8mb4_bin";
 if ($conn->query($sql) === TRUE) {
     echo "Database created successfully";
     $dbname = "store";
