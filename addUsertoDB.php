@@ -17,6 +17,19 @@
             
         }
 
+
+        public function emailCheck($email){  
+            $qr = "SELECT * FROM users WHERE email = '".$email."'";  
+            $query2 = $this->connection->query($qr);
+
+            if($query2->num_rows > 0){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }  
+
         public function escape_string($value){
         
             return $this->connection->real_escape_string($value);
