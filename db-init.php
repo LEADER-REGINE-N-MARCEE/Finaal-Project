@@ -11,7 +11,7 @@ if ($conn->connect_error) {
 }
 
 // Create database
-$sql = "CREATE DATABASE store";
+$sql = "CREATE DATABASE store character set UTF8mb4 collate utf8mb4_bin";
 if ($conn->query($sql) === TRUE) {
     echo "Database created successfully";
     $dbname = "store";
@@ -46,6 +46,22 @@ if ($conn->query($sql) === TRUE) {
             mobilenum VARCHAR (15),
             FOREIGN KEY (infoID) REFERENCES users(id)
             )";
+<<<<<<< Updated upstream
+=======
+        if ($conn->query($sql) === TRUE) {
+            $conn = new mysqli($servername, $username, $password, $dbname);
+            $sql  = "CREATE TABLE items (
+                itemID INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+                itemCode VARCHAR (255),
+                itemType VARCHAR (50),
+                itemName VARCHAR (255),
+                subtitle TEXT,
+                quantity VARCHAR (255),
+                descriptions TEXT
+                )";
+            echo "Table user_info created successfully";
+            
+>>>>>>> Stashed changes
             if ($conn->query($sql) === TRUE) {
                 
                 echo "Table user_info created successfully";
