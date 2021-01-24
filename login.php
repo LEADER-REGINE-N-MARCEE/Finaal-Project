@@ -11,7 +11,7 @@ if (isset($_SESSION['user'])) {
 <html>
 
 <body>
-    <form method="POST" action="login-backend.php">
+    <form method="POST" action="login.php">
         <fieldset>
             <div class="form-group">
                 <input class="form-control" placeholder="Email" type="text" name="email" autofocus required>
