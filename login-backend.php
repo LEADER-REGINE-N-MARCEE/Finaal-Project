@@ -9,7 +9,6 @@ $user = new User();
 if(isset($_POST['login'])){
 	$email = $user->escape_string($_POST['email']);
     $password = $user->escape_string($_POST['password']);
-
     
 
 	$auth = $user->check_login($email, $password);
