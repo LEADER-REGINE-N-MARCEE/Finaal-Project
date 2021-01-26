@@ -15,11 +15,11 @@ if(isset($_POST['login'])){
 
 	if(!$auth){
 		$_SESSION['message'] = 'Invalid username or password';
-    	header('location:index.php');
+    	header('location:login.php');
 	}
 	else{
 		$_SESSION['user'] = $auth;
-		header('location:home.php');
+		header('location:index.php');
 	}
 }
 else{
