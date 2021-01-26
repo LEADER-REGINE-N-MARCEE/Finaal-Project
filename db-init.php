@@ -62,6 +62,20 @@ if ($conn->query($sql) === TRUE) {
                 )";
                 if ($conn->query($sql) === TRUE) {
                     echo "Table items created successfully";
+                    $conn = new mysqli($servername, $username, $password, $dbname);
+                    $sql  = "CREATE TABLE orders (
+                    orderID INT(6) UNSIGNED,
+                    itemCode VARCHAR (255),
+                    itemType VARCHAR (50),
+                    itemName VARCHAR (255),
+                    quantity VARCHAR (255)
+                    )";
+
+                    if ($conn->query($sql) === TRUE) {
+                        echo "Table orders created successfully";
+                    } else {
+                        echo "Error creating table: " . $conn->error;
+                    }
                 }else {
                     echo "Error creating table: " . $conn->error;
                 }   
