@@ -19,7 +19,7 @@ if(isset($_POST['login'])){
 	}
 	else{
 		$_SESSION['user'] = $auth;
-		header('location:home.php');
+		header('location:index.php');
 	}
 }
 else{
