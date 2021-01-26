@@ -23,9 +23,10 @@ session_start();
     <head>
         <title>Key.Corp</title>
 
-        <link rel=" stylesheet" href="./css/home.css">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Saira:wght@300;400&display=swap" rel="stylesheet">
+        <link rel="icon" src="img/iconLogo.svg" size="32x32"/>
+        <link rel=" stylesheet" href="./css/home.css"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com"/>
+        <link href="https://fonts.googleapis.com/css2?family=Saira:wght@300;400&display=swap" rel="stylesheet"/>
 
         <script>
             function scroll1() {
