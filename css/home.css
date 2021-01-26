@@ -1,5 +1,5 @@
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 * {
@@ -44,7 +44,8 @@ nav ul {
     justify-content: center;
 }
 
-.nav-item2 li a, .buttonClick{
+.nav-item2 li a,
+.buttonClick {
     margin-right: 48px;
     font-family: 'Saira', sans-serif;
     font-style: normal;
@@ -59,10 +60,10 @@ nav ul {
     margin-right: -40px;
 }
 
-.buttonClick{
+.buttonClick {
     border: none;
     outline: none;
-    background-color: rgba(0,0,0,0);
+    background-color: rgba(0, 0, 0, 0);
 }
 
 .section1 {
