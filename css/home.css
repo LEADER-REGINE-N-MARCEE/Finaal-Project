@@ -8,6 +8,10 @@ html {
     padding: 0;
 }
 
+body {
+    font-family: 'Source Code Pro', monospace !important;
+}
+
 
 /* Navigator */
 
@@ -47,7 +51,7 @@ nav ul {
 .nav-item2 li a,
 .buttonClick {
     margin-right: 48px;
-    font-family: 'Saira', sans-serif;
+    font-family: 'Source Code Pro', monospace !important;
     font-style: normal;
     font-weight: 300;
     font-size: 18px;
@@ -73,7 +77,7 @@ nav ul {
 }
 
 .text1 {
-    font-family: saira;
+    font-family: 'Source Code Pro', monospace !important;
     font-style: normal;
     font-weight: 300;
     font-size: 45px;
@@ -85,7 +89,7 @@ nav ul {
 }
 
 .text2 {
-    font-family: saira;
+    ffont-family: 'Source Code Pro', monospace !important;
     font-style: normal;
     font-weight: normal;
     font-size: 25px;
@@ -106,7 +110,7 @@ nav ul {
 }
 
 .shop-btn p {
-    font-family: Saira;
+    font-family: 'Source Code Pro', monospace !important;
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
@@ -122,7 +126,7 @@ nav ul {
 
 .section2 h1 {
     text-align: center;
-    font-family: Saira;
+    font-family: 'Source Code Pro', monospace !important;
     font-style: normal;
     font-weight: normal;
     font-size: 50px;
@@ -140,7 +144,7 @@ nav ul {
 }
 
 .item-container .items h2 {
-    font-family: Saira;
+    font-family: 'Source Code Pro', monospace !important;
     font-style: normal;
     font-weight: normal;
     font-size: 21px;
@@ -150,7 +154,7 @@ nav ul {
 }
 
 .item-container .items p {
-    font-family: Saira;
+    font-family: 'Source Code Pro', monospace !important;
     font-style: normal;
     font-weight: 300;
     font-size: 14px;
@@ -165,7 +169,7 @@ nav ul {
 }
 
 .section3 h1 {
-    font-family: Saira;
+    font-family: 'Source Code Pro', monospace !important;
     font-style: normal;
     font-weight: normal;
     font-size: 50px;
@@ -212,7 +216,7 @@ nav ul {
     border-radius: 15px;
     width: 272px;
     height: 52px;
-    font-family: Saira;
+    font-family: 'Source Code Pro', monospace !important;
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
@@ -226,7 +230,7 @@ nav ul {
 }
 
 .section4 h1 {
-    font-family: Saira;
+    font-family: 'Source Code Pro', monospace !important;
     font-style: normal;
     font-weight: normal;
     font-size: 50px;
@@ -315,7 +319,7 @@ nav ul {
 }
 
 .footer-right p:nth-last-of-type(3) {
-    font-family: Saira;
+    font-family: 'Source Code Pro', monospace !important;
     font-style: normal;
     font-weight: bold;
     font-size: 18px;
@@ -324,7 +328,7 @@ nav ul {
 }
 
 .footer-right p {
-    font-family: Saira;
+    font-family: 'Source Code Pro', monospace !important;
     font-style: normal;
     font-weight: thin;
     font-size: 18px;
@@ -333,7 +337,7 @@ nav ul {
 }
 
 .copyright {
-    font-family: Saira;
+    font-family: 'Source Code Pro', monospace !important;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;

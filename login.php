@@ -104,7 +104,7 @@ if (isset($_SESSION['user'])) {
         <div class="footer">
             <div class="wrapper">
                 <div class="footer-left">
-                    <img class="logo-footer" src="logo1.png">
+                    <img class="logo-footer" src="./img/logo1.png">
                     <div>
                         <img class="social-icon" src="./img/fb.png">
                         <img class="social-icon" src="./img/ig.png">
