@@ -20,14 +20,23 @@ session_start();
 
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Key.Corp</title>
+    <head>
+        <title>Key.Corp</title>
 
-	<link rel=" stylesheet" href="./css/home.css">
+        <link rel=" stylesheet" href="./css/home.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Saira:wght@300;400&display=swap" rel="stylesheet">
 
-        </head>
+        <script>
+            function scroll1() {
+                window.scrollTo(0,2055);   
+            }
+            function scroll2() {
+                window.scrollTo(0,2815);   
+            }
+        </script>
+    
+    </head>
 
         <body>
             <div class="section1">
@@ -67,11 +76,11 @@ session_start();
                                 </li>
 
                                 <li>
-                                    <a href="#">Contact Us</a>
+                                    <button class="buttonClick" onclick="scroll1()">Contact Us</button>
                                 </li>
 
                                 <li>
-                                    <a href="#">About Us</a>
+                                    <button class="buttonClick" onclick="scroll2()">About Us</button>
                                 </li>
                             </ul>
                         </nav>
