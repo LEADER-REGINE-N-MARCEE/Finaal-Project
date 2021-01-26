@@ -24,7 +24,7 @@ session_start();
 <head>
     <title>Key.Corp</title>
 
-    <link rel="icon" src="img/iconLogo.svg" size="32x32" />
+    <link rel="icon" type="image/svg+xml" href="./img/iconLogo.svg">
     <link rel=" stylesheet" href="./css/home.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
