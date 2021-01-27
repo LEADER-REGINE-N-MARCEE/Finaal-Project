@@ -59,7 +59,8 @@ if ($conn->query($sql) === TRUE) {
                 subtitle TEXT,
                 quantity VARCHAR (255),
                 descriptions TEXT,
-                price DECIMAL (10,2)
+                price DECIMAL (10,2),
+                img_path VARCHAR (255)
                 )";
                 if ($conn->query($sql) === TRUE) {
                     echo "Table items created successfully";
