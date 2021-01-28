@@ -8,9 +8,7 @@ $link = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
 
 
 
-if (isset($_SESSION['user'])) {
-    
-}else {
+if (!isset($_SESSION['user'])) {
     header('location:login.php');
 }
 
@@ -115,7 +113,6 @@ $usrID = $_SESSION['user'];
                     echo "<td class=item-img><img src=".$img_path."></td>";
                     echo "<td class=item-name>" . $itemName . "</td>";
                     echo "<td class=item-quantity>" . $quantity . "</td>";
-
                     echo "<td class=item-price>" . $tprice . "</td>";
                     
                 }

@@ -107,8 +107,6 @@ td {
     width: 177px;
 }
 
-.item-quantity {}
-
 .checkout-btn {
     background: #FF8125;
     border-radius: 10px;
@@ -132,7 +130,7 @@ td {
 
 .footer {
     width: auto;
-    height: 236px;
+    height: 293px;
     left: 0px;
     top: 3869px;
     background: #171717;

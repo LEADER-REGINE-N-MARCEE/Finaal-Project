@@ -31,7 +31,7 @@ class productsView extends DbConnection
             echo "<p class= \'Quantity\'>Stocks: " . $quantity . "</p>\n";
             echo "<form method='POST' action='buynow.php'>";
             echo"<input type='text' placeholder='Quantity' name='quantity'>";
-            echo "<button type='submit' name='buynow' class= \'Buy Now\'>Buy Now</a>\n";
+            echo "<button type='submit' name='buynow' class= \'Buy Now\'>Add to Cart</a>\n";
             echo "</form>";
             return array ($itemCode, $itemName, $itemType);
         }
