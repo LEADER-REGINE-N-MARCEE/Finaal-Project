@@ -48,7 +48,7 @@ session_start();
             <div class="wrapper">
                 <nav class="nav1">
                     <div class="logo">
-                        <a href="index.php"><img src="./img/logo.png"></a>
+                        <a href="index"><img src="./img/logo.png"></a>
                     </div>
 
                     <ul class="nav-item1">
@@ -67,7 +67,7 @@ session_start();
                 <nav class="nav2">
                     <ul class="nav-item2">
                         <li>
-                            <a href="#">Home</a>
+                            <a href="index">Home</a>
                         </li>
 
                         <li>
@@ -83,7 +83,7 @@ session_start();
                         </li>
 
                         <li>
-                            <a href="aboutus.html">About Us</a>
+                            <a href="aboutus">About Us</a>
                         </li>
                     </ul>
                 </nav>

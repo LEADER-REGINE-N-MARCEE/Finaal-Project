@@ -79,7 +79,7 @@ if (isset($_SESSION['user'])) {
                 <form method="POST" action="login-backend.php">
 
                     <label>Email</label>
-                    <input class="input1" type="text" type="text" placeholder="Email" name="email" autofocus required>
+                    <input class="input1" type="text" placeholder="Email" name="email" autofocus required>
 
                     <label>Password</label>
                     <input class="input1" type="Password" placeholder="Password" type="password" name="password" required>

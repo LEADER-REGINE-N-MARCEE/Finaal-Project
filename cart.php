@@ -37,7 +37,7 @@ $usrID = $_SESSION['user'];
             <div class="wrapper">
                 <nav class="nav1">
                     <div class="logo">
-                        <a href="index.php"><img src="./img/logo.png"></a>
+                        <a href="index"><img src="./img/logo.png"></a>
                     </div>
 
                     <ul class="nav-item1">
@@ -52,7 +52,7 @@ $usrID = $_SESSION['user'];
                 <nav class="nav2">
                     <ul class="nav-item2">
                         <li>
-                            <a href="home.html">Home</a>
+                            <a href="index">Home</a>
                         </li>
 
                         <li>
@@ -68,7 +68,7 @@ $usrID = $_SESSION['user'];
                         </li>
 
                         <li>
-                            <a href="aboutus.html">About Us</a>
+                            <a href="aboutus">About Us</a>
                         </li>
                     </ul>
                 </nav>
