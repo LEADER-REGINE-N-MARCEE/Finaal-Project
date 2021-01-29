@@ -2,7 +2,7 @@
 //start session
 session_start();
 
-include_once('DBUsrSearch.php');
+include_once('UserDB.php');
 
 $user = new User();
 
