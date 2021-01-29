@@ -4,6 +4,7 @@ session_start();
 
 //redirect if logged in
 if (isset($_SESSION['user'])) {
+    
     header('location:home.php');
 }
 ?>
@@ -15,7 +16,7 @@ if (isset($_SESSION['user'])) {
 
 <head>
     <title></title>
-
+    <link rel="icon" type="image/svg+xml" href="./img/iconLogo.svg">
     <link rel="stylesheet" href="./css/signin.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Saira:wght@300;400&display=swap" rel="stylesheet">
@@ -29,7 +30,7 @@ if (isset($_SESSION['user'])) {
             <div class="wrapper">
                 <nav class="nav1">
                     <div class="logo">
-                        <img src="./img/logo.png">
+                        <a href="index.php"><img src="./img/logo.png"></a>
                     </div>
 
                     <ul class="nav-item1">
@@ -60,7 +61,7 @@ if (isset($_SESSION['user'])) {
                         </li>
 
                         <li>
-                            <a href="#">About Us</a>
+                            <a href="aboutus.html">About Us</a>
                         </li>
                     </ul>
                 </nav>
@@ -78,16 +79,16 @@ if (isset($_SESSION['user'])) {
                 <form method="POST" action="login-backend.php">
 
                     <label>Email</label>
-                    <input class="input1" type="text" type="text" placeholder="Email" name="email" autofocus required>
+                    <input class="input1" type="text" placeholder="Email" name="email" autofocus required>
 
                     <label>Password</label>
                     <input class="input1" type="Password" placeholder="Password" type="password" name="password" required>
                     <button class="signin-btn" type="submit" name="login">SIGN IN</button>
                 </form>
 
-                <button  type="button">
+                <button type="button">
                     <p>
-                       
+
                     </p>
                 </button>
                 <p class="or">or</p>
