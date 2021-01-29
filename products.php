@@ -7,6 +7,24 @@ $itemType = $_GET['itemType'];
 $products = new products();
 
 
-$crawl = $products->crawlDB($itemType);
+
 
 ?>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <?php
+
+    $crawl = $products->crawlDB($itemType);
+
+
+    ?>
+
+</body>
+
+</html>

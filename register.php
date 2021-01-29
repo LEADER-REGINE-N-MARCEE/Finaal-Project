@@ -4,7 +4,7 @@ session_start();
 
 //redirect if logged in
 if (isset($_SESSION['user'])) {
-    header('location:home.php');
+    header('location:index.php');
 }
 ?>
 <!DOCTYPE html>
@@ -12,7 +12,7 @@ if (isset($_SESSION['user'])) {
 
 <head>
     <title></title>
-
+    <link rel="icon" type="image/svg+xml" href="./img/iconLogo.svg">
     <link rel="stylesheet" href="./css/signin.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Saira:wght@300;400&display=swap" rel="stylesheet">
@@ -26,7 +26,7 @@ if (isset($_SESSION['user'])) {
             <div class="wrapper">
                 <nav class="nav1">
                     <div class="logo">
-                        <img src="./img/logo.png">
+                        <a href="index.php"><img src="./img/logo.png"></a>
                     </div>
 
                     <ul class="nav-item1">
@@ -57,7 +57,7 @@ if (isset($_SESSION['user'])) {
                         </li>
 
                         <li>
-                            <a href="#">About Us</a>
+                            <a href="aboutus.html">About Us</a>
                         </li>
                     </ul>
                 </nav>
@@ -93,7 +93,7 @@ if (isset($_SESSION['user'])) {
                     <input class="input1" type="Password" name="password2" required>
                     <button type="submit" class="signin-btn" name="register">Register</button>
                 </form>
-                
+
                 <p class="or">or</p>
                 <button class="signup-btn" type="button">
                     <p>
