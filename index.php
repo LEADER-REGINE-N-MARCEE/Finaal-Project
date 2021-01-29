@@ -48,7 +48,7 @@ session_start();
             <div class="wrapper">
                 <nav class="nav1">
                     <div class="logo">
-                        <a href="index"><img src="./img/logo.png"></a>
+                        <img src="./img/logo.png">
                     </div>
 
                     <ul class="nav-item1">
@@ -57,7 +57,7 @@ session_start();
                                 <img class="profile" src="./img/profile.png">
 
                             </a>
-                            <a class="nav-btn-container" href="cart.php">
+                            <a class="nav-btn-container" href="#">
 
                                 <img class="shop" src="./img/buy.png">
                             </a>
@@ -67,7 +67,7 @@ session_start();
                 <nav class="nav2">
                     <ul class="nav-item2">
                         <li>
-                            <a href="index">Home</a>
+                            <a href="#">Home</a>
                         </li>
 
                         <li>
@@ -83,7 +83,7 @@ session_start();
                         </li>
 
                         <li>
-                            <a href="aboutus">About Us</a>
+                            <button class="buttonClick" onclick="scroll2()">About Us</button>
                         </li>
                     </ul>
                 </nav>
@@ -215,7 +215,7 @@ session_start();
                 <h2>
                     Welcome to KEY.CORP
                 </h2>
-                <img src="./img/line.png">
+                <img src="line.png">
             </div>
 
             <p>

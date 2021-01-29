@@ -23,5 +23,4 @@ class DbConnection{
         return $this->connection;
     }
 }
-
 ?>
