@@ -70,11 +70,25 @@ if ($conn->query($sql) === TRUE) {
                     itemCode VARCHAR (255),
                     itemType VARCHAR (50),
                     itemName VARCHAR (255),
-                    quantity VARCHAR (255)
+                    quantity VARCHAR (255),
+                    invoiceNum VARCHAR (255)
                     )";
 
                     if ($conn->query($sql) === TRUE) {
                         echo "Table orders created successfully";
+                        $conn = new mysqli($servername, $username, $password, $dbname);
+                        $sql  = "CREATE TABLE invoice (
+                            orderID INT(6) UNSIGNED,
+                            invoiceNum VARCHAR (255),
+                            totalprice VARCHAR (255),
+                            totalquantity VARCHAR (255),
+                            order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+                            )";
+                        if ($conn->query($sql) === TRUE){
+                            echo "Table completed_orders created successfully";
+                        } else {
+                            echo "Error creating table: " . $conn->error;
+                        }
                     } else {
                         echo "Error creating table: " . $conn->error;
                     }
