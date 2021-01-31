@@ -55,18 +55,25 @@ class products extends DbConnection
             echo "<h6 class= \'Subtitle\'> " . $subtitle . "</h6>\n";
             echo "<p class= \'Descriptions\'> " . $description . "</p>\n";
             echo "<p class= \'Quantity\'>Stocks: " . $quantity . "</p>\n";
-            echo "<form method='POST' action='buynow.php'>";
+            echo "<form method='POST' action='addtocart.php'>";
             echo"<input type='text' placeholder='Quantity' name='quantity'>";
-            echo "<button type='submit' name='buynow' class= \'Buy Now\'>Add to Cart</a>\n";
+            echo "<button type='submit' name='addtocart' class= \'Add to Cart\'>Add to Cart</a>\n";
             echo "</form>";
             return array ($itemCode, $itemName, $itemType);
         }
         
     }
 
-    public function buy($itemCode, $usrID, $itemType, $itemName, $quantity){
+    public function buy($itemCode, $usrID, $itemType, $itemName, $quantity, $invoiceNum){
 
-        $sql = "INSERT INTO orders (orderID, itemCode, itemType, itemName, quantity) VALUES('$usrID', '$itemCode', '$itemType', '$itemName', '$quantity')";
+        $sql = "INSERT INTO orders (orderID, itemCode, itemType, itemName, quantity, invoiceNum) VALUES('$usrID', '$itemCode', '$itemType', '$itemName', '$quantity', '$invoiceNum')";
+        $query = $this->connection->query($sql);
+    }
+
+    public function checkout ($orderID ,$invoicenum, $totalprice, $totalquantity){
+        $sql = "INSERT INTO invoice (orderID, invoiceNum, totalprice, totalquantity) VALUES('$orderID' ,'$invoicenum', '$totalprice', '$totalquantity')";
+        $query = $this->connection->query($sql);
+        $sql = "DELETE from orders WHERE invoiceNum = '$invoicenum'";
         $query = $this->connection->query($sql);
     }
 

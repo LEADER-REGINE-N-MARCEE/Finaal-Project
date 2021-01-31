@@ -3,7 +3,9 @@
 session_start();
 
 include_once('UserDB.php');
+include_once('functions.php');
 
+$invoice = new otherFunctions();
 $user = new User();
 
 if(isset($_POST['login'])){
@@ -12,6 +14,8 @@ if(isset($_POST['login'])){
     
 
 	$auth = $user->check_login($email, $password);
+	$invoicenum = $invoice->generateInvoice();
+	$_SESSION['invoice'] = $invoicenum;
 
 	if(!$auth){
 		$_SESSION['message'] = 'Invalid username or password';

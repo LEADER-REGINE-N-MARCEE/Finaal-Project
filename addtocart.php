@@ -7,10 +7,10 @@ $itemCode = $_SESSION['itemCode'];
 $itemName = $_SESSION['itemName'];
 $itemType = $_SESSION['itemType'];
 $quantity = $_POST['quantity'];
-
+$invoiceNum = $_SESSION['invoice'];
 $productsView = new products();
 
 
-$buynow = $productsView->buy($itemCode, $usrID, $itemType, $itemName, $quantity)
+$buynow = $productsView->buy($itemCode, $usrID, $itemType, $itemName, $quantity, $invoiceNum);
 ?>
 

@@ -4,7 +4,7 @@ define('DB_SERVER', 'localhost');
 define('DB_USERNAME', 'root');
 define('DB_PASSWORD', '');
 define('DB_DATABASE', 'store');
-$link = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
+$link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
 
 
 
@@ -86,10 +86,10 @@ $usrID = $_SESSION['user'];
             <th>Price</th>
             </tr>";
 
-            $sql = "SELECT orderID, itemCode, itemType, itemName, quantity FROM orders WHERE orderID = '$usrID'";
-            $query = mysqli_query($link,$sql);
-
-
+            $sql = "SELECT orderID, itemCode, itemType, itemName, quantity, invoiceNum FROM orders WHERE orderID = '$usrID'";
+            $query = mysqli_query($link, $sql);
+            $totalprice = 0;
+            $totalquantity = 0;
             while ($row = mysqli_fetch_assoc($query)) {
                 $itemCode    = $row['itemCode'];
                 $itemName    = $row['itemName'];
@@ -97,42 +97,45 @@ $usrID = $_SESSION['user'];
                 
 
                 $sql2 = "SELECT price, img_path FROM items WHERE itemCode = '$itemCode'";
-                $query2 = mysqli_query($link,$sql2);
+                $query2 = mysqli_query($link, $sql2);
 
-                    echo "<tr>";
-                    
+                echo "<tr>";
+
 
                 if ($query2->num_rows > 0) {
                     $row = $query2->fetch_array();
+                    
                     $price = $row['price'];
                     $img_path = $row['img_path'];
-
-                    $tprice = bcmul($price, $quantity, "2");
-
                     
-                    echo "<td class=item-img><img src=".$img_path."></td>";
+                    $tprice = bcmul($price, $quantity, "2");
+                    $totalprice = $totalprice + $tprice;
+                    $totalquantity = $totalquantity + $quantity;
+                    echo "<td class=item-img><img src=" . $img_path . "></td>";
                     echo "<td class=item-name>" . $itemName . "</td>";
                     echo "<td class=item-quantity>" . $quantity . "</td>";
                     echo "<td class=item-price>" . $tprice . "</td>";
                     
                 }
-                echo "</tr>";
+                
             }
 
-
-
-
+            
+            $_SESSION['totalprice'] = $totalprice;
+            $_SESSION['totalquantity'] = $totalquantity;
 
             echo "</table>";
 
             ?>
 
+            <form method="POST" action='checkout.php'>
+                <button class="checkout-btn" type="submit">
+                    <p>
+                        Check Out
+                    </p>
+                </button>
+            </form>
 
-            <button class="checkout-btn" type="button">
-                <p>
-                    Check Out
-                </p>
-            </button>
 
 
 
