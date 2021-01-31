@@ -1,9 +1,9 @@
 <?php
 session_start();
-include_once('productPage-backend.php');
+include_once('productDB.php');
 $itemName = $_GET['itemName'];
 
-$productsView = new productsView();
+$productsView = new products();
 
 
 $view = $productsView->productDetails($itemName);

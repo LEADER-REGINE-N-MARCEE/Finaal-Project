@@ -1,16 +1,16 @@
 <?php
 session_start();
-include_once('productPage-backend.php');
+include_once('productDB.php');
 
 $usrID = $_SESSION['user'];
 $itemCode = $_SESSION['itemCode'];
 $itemName = $_SESSION['itemName'];
 $itemType = $_SESSION['itemType'];
 $quantity = $_POST['quantity'];
+$invoiceNum = $_SESSION['invoice'];
+$productsView = new products();
 
-$productsView = new productsView();
 
-
-$buynow = $productsView->buy($itemCode, $usrID, $itemType, $itemName, $quantity)
+$buynow = $productsView->buy($itemCode, $usrID, $itemType, $itemName, $quantity, $invoiceNum);
 ?>
 
