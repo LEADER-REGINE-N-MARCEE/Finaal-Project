@@ -1,15 +1,15 @@
 <?php
-session_start();
-include_once('productDB.php');
-$itemName = $_GET['itemName'];
-
-$productsView = new products();
-
-
-$view = $productsView->productDetails($itemName);
-
-$_SESSION['itemCode'] = $view[0];
-$_SESSION['itemName'] = $view[1];
-$_SESSION['itemType'] = $view[2];
-
+$itemCode = $_GET['itemCode'];
 ?>
+
+<html>
+<body>
+
+<div id="body"></div>
+
+
+<script type="text/javascript">var itemCode = <?php echo json_encode($itemCode) ?>;</script>
+<script src="./js/productPage.js"></script>
+</body>
+
+</html>

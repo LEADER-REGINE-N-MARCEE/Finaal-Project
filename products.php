@@ -1,11 +1,6 @@
 <?php
-session_start();
-include 'config2.php';
-
 
 $itemType = $_GET['itemType'];
-
-
 ?>
 
 <!DOCTYPE html>
@@ -94,28 +89,8 @@ $itemType = $_GET['itemType'];
             </div>
 
 
-            <div class="item-container">
-                <?php
-
-                $sql = "SELECT itemName, subtitle, img_path FROM items WHERE itemType = '$itemType'";
-                $query = mysqli_query($link, $sql);
-
-                while ($row = mysqli_fetch_assoc($query)) {
-                    $itemName = $row['itemName'];
-                    $subtitle = $row['subtitle'];
-                    $img_path = $row['img_path'];
-
-                    echo "<div class='items'>";
-                    echo "<a href='productPage.php?itemName=$itemName' class='item-link'>";
-                    echo "<img class='' src=" . $img_path . ">";
-                    echo "<div class='titles'>";
-                    echo "<h2 class= \'Item Name\'>" . $itemName . " <a></h2>\n";
-                    echo "<p class= \'Subtitle\'> " . $subtitle . "</p>\n";
-                    echo "</div>";
-                    echo "</a>";
-                    echo "</div>";
-                }
-                ?>
+            <div class="item-container" id="itemcontainer">
+                    
             </div>
 
         </div>
@@ -145,8 +120,8 @@ $itemType = $_GET['itemType'];
         </div>
         <p class="copyright">Copyright© 2021 | All Rights Reserved</p>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-
+    <script type="text/javascript">var itemType = "<?php echo $itemType ?>";</script>
+    <script src="./js/api.js"></script>
 </body>
 
 </html>
