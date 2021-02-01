@@ -72,7 +72,7 @@ session_start();
                         </li>
 
                         <li>
-                            <a href="#">Store</a>
+                            <a href="products.php?itemType=KB">Store</a>
                         </li>
 
                         <li>
