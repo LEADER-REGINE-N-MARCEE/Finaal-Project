@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Source Code Pro', monospace !important;
 }
 
 
@@ -75,7 +76,7 @@ nav ul {
 }
 
 .label1 {
-    font-family: Saira;
+    font-family: 'Source Code Pro', monospace !important;
     font-style: normal;
     font-weight: normal;
     margin-left: 75px;
@@ -121,7 +122,7 @@ input {
 .switches,
 .deskmat,
 .keyboard {
-    font-family: Saira;
+    font-family: 'Source Code Pro', monospace !important;
     font-style: normal;
     font-weight: normal;
     font-size: 30px;
@@ -143,7 +144,7 @@ input {
 }
 
 .item-container .items h2 {
-    font-family: Saira;
+    font-family: 'Source Code Pro', monospace !important;
     font-style: normal;
     font-weight: normal;
     font-size: 21px;
@@ -154,7 +155,7 @@ input {
 }
 
 .item-container .items p {
-    font-family: Saira;
+    font-family: 'Source Code Pro', monospace !important;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
@@ -198,7 +199,7 @@ input {
 }
 
 .footer-right p:nth-last-of-type(3) {
-    font-family: Saira;
+    font-family: 'Source Code Pro', monospace !important;
     font-style: normal;
     font-weight: bold;
     font-size: 18px;
@@ -207,7 +208,7 @@ input {
 }
 
 .footer-right p {
-    font-family: Saira;
+    font-family: 'Source Code Pro', monospace !important;
     font-style: normal;
     font-weight: thin;
     font-size: 18px;
@@ -216,7 +217,7 @@ input {
 }
 
 .copyright {
-    font-family: Saira;
+    font-family: 'Source Code Pro', monospace !important;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;

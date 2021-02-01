@@ -24,7 +24,7 @@ $usrID = $_SESSION['user'];
     <link rel="icon" type="image/svg+xml" href="./img/iconLogo.svg">
     <link rel="stylesheet" href="./css/cart.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Saira:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
 
 </head>
 
@@ -54,7 +54,7 @@ $usrID = $_SESSION['user'];
                         </li>
 
                         <li>
-                            <a href="#">Store</a>
+                            <a href="products.php?itemType=KB">Store</a>
                         </li>
 
                         <li>
