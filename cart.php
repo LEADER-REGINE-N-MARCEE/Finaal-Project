@@ -94,7 +94,7 @@ $usrID = $_SESSION['user'];
                 $itemCode    = $row['itemCode'];
                 $itemName    = $row['itemName'];
                 $quantity    = $row['quantity'];
-                
+
 
                 $sql2 = "SELECT price, img_path FROM items WHERE itemCode = '$itemCode'";
                 $query2 = mysqli_query($link, $sql2);
@@ -104,10 +104,10 @@ $usrID = $_SESSION['user'];
 
                 if ($query2->num_rows > 0) {
                     $row = $query2->fetch_array();
-                    
+
                     $price = $row['price'];
                     $img_path = $row['img_path'];
-                    
+
                     $tprice = bcmul($price, $quantity, "2");
                     $totalprice = $totalprice + $tprice;
                     $totalquantity = $totalquantity + $quantity;
@@ -115,12 +115,10 @@ $usrID = $_SESSION['user'];
                     echo "<td class=item-name>" . $itemName . "</td>";
                     echo "<td class=item-quantity>" . $quantity . "</td>";
                     echo "<td class=item-price>" . $tprice . "</td>";
-                    
                 }
-                
             }
 
-            
+
             $_SESSION['totalprice'] = $totalprice;
             $_SESSION['totalquantity'] = $totalquantity;
 
@@ -163,6 +161,12 @@ $usrID = $_SESSION['user'];
         </div>
         <p class="copyright">Copyright© 2021 | All Rights Reserved</p>
     </div>
+
+
+    <script type="text/javascript">
+        var itemCode = <?php echo json_encode($itemCode) ?>;
+    </script>
+    <script src="./js/cartAPI.js"></script>
 </body>
 
 </html>

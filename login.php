@@ -4,7 +4,7 @@ session_start();
 
 //redirect if logged in
 if (isset($_SESSION['user'])) {
-    
+
     header('location:home.php');
 }
 ?>
@@ -24,6 +24,7 @@ if (isset($_SESSION['user'])) {
 </head>
 
 <body>
+    
     <div class="section1">
 
         <div class="nav-container">

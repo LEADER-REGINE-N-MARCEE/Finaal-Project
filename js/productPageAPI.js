@@ -1,7 +1,16 @@
+function cart() {
+    var quantity = document.getElementById('quantity').value;
+    console.log(itemCode);
+    console.log(itemType);
+    console.log(quantity);
+    var xhttp = new XMLHttpRequest(); {
+        xhttp.open("GET", "../api/object/addtocart.php?itemCode=" + itemCode + "&itemType=" + itemType + "&quantity=" + quantity + " ");
+        xhttp.send();
+    }
+}
+
 window.onload = function() {
     var xhttp = new XMLHttpRequest(); {
-
-        console.log(itemCode);
         xhttp.open("GET", "../api/object/prodPage.php?itemCode=" + itemCode + "");
         xhttp.send();
         xhttp.onreadystatechange = function() {
@@ -11,6 +20,7 @@ window.onload = function() {
                 let results = JSON.parse(this.response);
 
                 for (let row of results.records) {
+
                     document.getElementById("body").insertAdjacentHTML("beforeend", `
                         <div class='items'>
                         
@@ -19,7 +29,9 @@ window.onload = function() {
                         <h2>${row.itemName}</h2>
                         <h6>${row.subtitle}</h6>
                         <p>${row.descriptions}</p>
-                        <p>Quantity: ${row.quantity}</p>
+                        <p>Stocks: ${row.quantity}</p>
+                            <input type='text' placeholder='Quantity' id="quantity" name='quantity'>
+                            <button type='button' name='cart' onclick="cart();">add to cart </button>
                         </div>
                         </div>
                         `);

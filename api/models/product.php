@@ -1,10 +1,10 @@
 <?php
-
-class Product{
+class Product
+{
 
     private $conn;
     private $table_name = "items";
-  
+    private $table_orders = "orders";
 
     public $itemID;
     public $itemCode;
@@ -16,60 +16,83 @@ class Product{
     public $price;
     public $img_path;
 
-    public function __construct($db){
+    public function __construct($db)
+    {
         $this->conn = $db;
     }
 
-function read($itemType){
+    function read($itemType)
+    {
 
-    $query = "SELECT itemID, itemCode, itemType, itemName, subtitle, quantity , descriptions, price, img_path FROM " . $this->table_name . " WHERE itemType = '".$itemType."'";
-    $stmt = $this->conn->prepare($query);
-    $stmt->execute();
-    return $stmt;
-}
-
-function prod($itemCode){
-
-    $query = "SELECT itemID, itemCode, itemType, itemName, subtitle, quantity , descriptions, price, img_path FROM " . $this->table_name . " WHERE itemCode = '".$itemCode."'";
-    $stmt = $this->conn->prepare($query);
-    $stmt->execute();
-    return $stmt;
-}
-
-
-
-function create(){
-  
-    $query = "INSERT INTO " . $this->table_name . " SET itemID=:itemID, itemCode=:itemCode, itemType=:itemType, itemName=:itemName, subtitle=:subtitle, quantity=:quantity, descriptions=:descriptions, price=:price, img_path=:img_path";
-    $stmt = $this->conn->prepare($query);
-  
-    $this->itemID=htmlspecialchars(strip_tags($this->itemID));
-    $this->itemCode=htmlspecialchars(strip_tags($this->itemCode));
-    $this->itemType=htmlspecialchars(strip_tags($this->itemType));
-    $this->itemName=htmlspecialchars(strip_tags($this->itemName));
-    $this->subtitle=htmlspecialchars(strip_tags($this->subtitle));
-    $this->quantity=htmlspecialchars(strip_tags($this->quantity));
-    $this->descriptions=htmlspecialchars(strip_tags($this->descriptions));
-    $this->price=htmlspecialchars(strip_tags($this->price));
-    $this->img_path=htmlspecialchars(strip_tags($this->img_path));
-  
-    $stmt->bindParam(":itemID", $this->itemID);
-    $stmt->bindParam(":itemCode", $this->itemCode);
-    $stmt->bindParam(":itemType", $this->itemType);
-    $stmt->bindParam(":itemName", $this->itemName);
-    $stmt->bindParam(":subtitle", $this->subtitle);
-    $stmt->bindParam(":quantity", $this->quantity);
-    $stmt->bindParam(":descriptions", $this->descriptions);
-    $stmt->bindParam(":price", $this->price);
-    $stmt->bindParam(":img_path", $this->img_path);
-  
-  
-    if($stmt->execute()){
-        return true;
+        $query = "SELECT itemID, itemCode, itemType, itemName, subtitle, quantity , descriptions, price, img_path FROM " . $this->table_name . " WHERE itemType = '" . $itemType . "'";
+        $stmt = $this
+            ->conn
+            ->prepare($query);
+        $stmt->execute();
+        return $stmt;
     }
-  
-    return false;
-      
-}
+
+    function prod($itemCode)
+    {
+
+        $query = "SELECT itemID, itemCode, itemType, itemName, subtitle, quantity , descriptions, price, img_path FROM " . $this->table_name . " WHERE itemCode = '" . $itemCode . "'";
+        $stmt = $this
+            ->conn
+            ->prepare($query);
+        $stmt->execute();
+        return $stmt;
+    }
+
+    function addtocart($itemCode, $itemType, $quantity)
+    {
+        $query = "INSERT INTO orders (orderID, itemCode, itemType, quantity) VALUES('3', '$itemCode', '$itemType', '$quantity')";
+        $stmt = $this
+            ->conn
+            ->prepare($query);
+
+        if ($stmt->execute())
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    function create()
+    {
+
+        $query = "INSERT INTO " . $this->table_name . " SET itemID=:itemID, itemCode=:itemCode, itemType=:itemType, itemName=:itemName, subtitle=:subtitle, quantity=:quantity, descriptions=:descriptions, price=:price, img_path=:img_path";
+        $stmt = $this
+            ->conn
+            ->prepare($query);
+
+        $this->itemID = htmlspecialchars(strip_tags($this->itemID));
+        $this->itemCode = htmlspecialchars(strip_tags($this->itemCode));
+        $this->itemType = htmlspecialchars(strip_tags($this->itemType));
+        $this->itemName = htmlspecialchars(strip_tags($this->itemName));
+        $this->subtitle = htmlspecialchars(strip_tags($this->subtitle));
+        $this->quantity = htmlspecialchars(strip_tags($this->quantity));
+        $this->descriptions = htmlspecialchars(strip_tags($this->descriptions));
+        $this->price = htmlspecialchars(strip_tags($this->price));
+        $this->img_path = htmlspecialchars(strip_tags($this->img_path));
+
+        $stmt->bindParam(":itemID", $this->itemID);
+        $stmt->bindParam(":itemCode", $this->itemCode);
+        $stmt->bindParam(":itemType", $this->itemType);
+        $stmt->bindParam(":itemName", $this->itemName);
+        $stmt->bindParam(":subtitle", $this->subtitle);
+        $stmt->bindParam(":quantity", $this->quantity);
+        $stmt->bindParam(":descriptions", $this->descriptions);
+        $stmt->bindParam(":price", $this->price);
+        $stmt->bindParam(":img_path", $this->img_path);
+
+        if ($stmt->execute())
+        {
+            return true;
+        }
+
+        return false;
+
+    }
 }
 ?>

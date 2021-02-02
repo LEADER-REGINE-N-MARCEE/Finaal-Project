@@ -121,7 +121,7 @@ $itemType = $_GET['itemType'];
         <p class="copyright">Copyright© 2021 | All Rights Reserved</p>
     </div>
     <script type="text/javascript">var itemType = "<?php echo $itemType ?>";</script>
-    <script src="./js/api.js"></script>
+    <script src="./js/productAPI.js"></script>
 </body>
 
 </html>
