@@ -2,11 +2,11 @@
 class Database{
   
     // database credentials
-    private $host = "localhost";
-    private $db_name = "store";
-    private $username = "root";
-    private $password = "";
-    public $conn;
+    private $host = "localhost"; #localhost
+    private $db_name = "store"; #name ng database
+    private $username = "root"; #username
+    private $password = "";#wala
+    public $conn; #variable ng connection
   
     // para maka connect sa database
     public function getConnection(){

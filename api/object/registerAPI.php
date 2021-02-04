@@ -41,7 +41,8 @@ if (!empty($data->firstname) && !empty($data->lastname) && !empty($data->email) 
                     SET firstname = :firstname,
                         lastname = :lastname,
                         email = :email,
-                        pass = :password";
+                        pass = :password,
+                        roles='user'";
 
         $stmt = $conn->prepare($query); #prep the query
 

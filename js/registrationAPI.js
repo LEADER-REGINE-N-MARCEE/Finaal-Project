@@ -9,7 +9,6 @@ window.onload = function() { /*para maload agad ung script pag naload ung web pa
         const form = forms[0]; /*initialize ung form constant with the start nung array formst */
 
         var data = toObject(form); /*initialize ung variable data. then icacall ung toObject na function the parameter ung form */
-
         var xhttp = new XMLHttpRequest(); { /*para sa API */
 
             xhttp.open("POST", "../api/object/registerAPI.php"); /*POST ung request, then icall ung registerAPI.php */

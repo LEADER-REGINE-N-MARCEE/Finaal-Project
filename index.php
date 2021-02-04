@@ -253,7 +253,7 @@
         </div>
         <p class="copyright">Copyright© 2021 | All Rights Reserved</p>
     </div>
-
+    <script src="./js/test.js"></script>
 </body>
 
 </html>

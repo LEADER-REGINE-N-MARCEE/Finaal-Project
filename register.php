@@ -63,7 +63,7 @@
             </h1>
 
             <div class="form1">
-                <form method="POST" action="./api/object/registerAPI.php">
+                <form method="POST">
 
                     <label>First Name:</label>
                     <input class="input1" type="text" name="firstname" autofocus required>

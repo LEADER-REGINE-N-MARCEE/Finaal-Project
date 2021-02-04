@@ -8,8 +8,15 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 
 // files for decoding jwt will be here
 include_once '../config/database.php';
+include_once '../models/userDB.php';
 require '../../vendor/autoload.php';
 use \Firebase\JWT\JWT;
+
+$databaseService = new Database(); #Database() is ung name ng class natin sa database.php
+$conn = $databaseService->getConnection(); #getConnection() class para maaccess ung databse
+
+$users = new User($conn); #initialize ung User class, parameter ung $conn para mavalidate if naka connect na sa database
+
  
 // decode jwt here
 $secret_key = "nwoWAkH3DltizN62b37V2zsyWf1QufF5";
@@ -34,12 +41,33 @@ if($jwt){
         http_response_code(200);
 
         $usrID = $decoded->data->id;
-        echo json_encode(array(
-            "message" => "Access granted:",
-            "user_data" => $decoded,
-            "id"=> $usrID
-        ));
+        $usrID = $decoded->data->id;
+        $itemCode = $data->itemCode;
+        $itemType = $data->itemType;
+        $quantity = $data->amount;
 
+        echo $usrID;
+        echo $itemCode;
+        echo $itemType;
+        echo $quantity;
+
+        $addtocart = $users->addtocart($usrID, $itemCode, $itemType, $quantity);
+        if ($addtocart == TRUE)
+        {
+
+            http_response_code(200);
+            echo json_encode(array(
+                "message" => "Successfully added to cart."
+            ));
+        }
+        else
+        {
+            http_response_code(400);
+
+            echo json_encode(array(
+                "message" => "Unable to add to cart."
+            ));
+        }
     }catch (Exception $e){
 
     http_response_code(401);
@@ -52,4 +80,3 @@ if($jwt){
 
 }
 ?>
-
