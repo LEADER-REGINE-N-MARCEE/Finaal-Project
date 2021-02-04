@@ -1,16 +1,3 @@
-<?php
-//start session
-session_start();
-
-//redirect if logged in
-if (isset($_SESSION['user'])) {
-
-    header('location:home.php');
-}
-?>
-
-
-
 <!DOCTYPE html>
 <html>
 
@@ -24,7 +11,7 @@ if (isset($_SESSION['user'])) {
 </head>
 
 <body>
-    
+
     <div class="section1">
 
         <div class="nav-container">
@@ -77,14 +64,14 @@ if (isset($_SESSION['user'])) {
             </h1>
 
             <div class="form1">
-                <form method="POST" action="login-backend.php">
+                <form method="POST">
 
                     <label>Email</label>
                     <input class="input1" type="text" placeholder="Email" name="email" autofocus required>
 
                     <label>Password</label>
                     <input class="input1" type="Password" placeholder="Password" type="password" name="password" required>
-                    <button class="signin-btn" type="submit" name="login">SIGN IN</button>
+                    <button class="signin-btn" type="button" id="btnSubmit" name="login">SIGN IN</button>
                 </form>
 
                 <button type="button">
@@ -122,6 +109,8 @@ if (isset($_SESSION['user'])) {
             </div>
             <p class="copyright">Copyright© 2021 | All Rights Reserved</p>
         </div>
+
+        <script src="./js/loginAPI.js"></script>
 </body>
 
 </html>

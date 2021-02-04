@@ -1,14 +1,14 @@
 <?php
 class Database{
   
-    // specify your own database credentials
+    // database credentials
     private $host = "localhost";
     private $db_name = "store";
     private $username = "root";
     private $password = "";
     public $conn;
   
-    // get the database connection
+    // para maka connect sa database
     public function getConnection(){
   
         $this->conn = null;

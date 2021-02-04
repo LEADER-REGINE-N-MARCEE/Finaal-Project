@@ -43,7 +43,7 @@ if($num > 0){
 
     if(password_verify($password, $password2))
     {
-        $secret_key = "YOUR_SECRET_KEY";
+        $secret_key = "nwoWAkH3DltizN62b37V2zsyWf1QufF5";
         $issuer_claim = "Key.Corp"; // this can be the servername
         $audience_claim = "THE_AUDIENCE";
         $issuedat_claim = time(); // issued at
@@ -62,7 +62,7 @@ if($num > 0){
                 "email" => $email
         ));
 
-        http_response_code(200);
+        http_response_code(202);
 
         $jwt = JWT::encode($token, $secret_key);
         echo json_encode(
