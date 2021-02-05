@@ -1,12 +1,3 @@
-<?php
-//start session
-session_start();
-
-//redirect if logged in
-if (isset($_SESSION['user'])) {
-    header('location:index.php');
-}
-?>
 <!DOCTYPE html>
 <html>
 
@@ -72,14 +63,14 @@ if (isset($_SESSION['user'])) {
             </h1>
 
             <div class="form1">
-                <form method="POST" action="register-backend.php">
+                <form method="POST">
 
                     <label>First Name:</label>
-                    <input class="input1" type="text" name="fname" autofocus required>
+                    <input class="input1" type="text" name="firstname" autofocus required>
 
 
                     <label>Last Name:</label>
-                    <input class="input1" type="text" name="lname" autofocus required>
+                    <input class="input1" type="text" name="lastname" autofocus required>
 
 
                     <label>Email:</label>
@@ -88,10 +79,7 @@ if (isset($_SESSION['user'])) {
 
                     <label>Password:</label>
                     <input class="input1" type="Password" name="password" required>
-
-                    <label>Confirm Password:</label>
-                    <input class="input1" type="Password" name="password2" required>
-                    <button type="submit" class="signin-btn" name="register">Register</button>
+                    <button type="button" class="signin-btn" id="btnSubmit" name="register">Register</button>
                 </form>
 
                 <p class="or">or</p>
@@ -124,6 +112,8 @@ if (isset($_SESSION['user'])) {
             </div>
             <p class="copyright">Copyright© 2021 | All Rights Reserved</p>
         </div>
+
+        <script src="./js/registrationAPI.js"></script>
 </body>
 
 </html>

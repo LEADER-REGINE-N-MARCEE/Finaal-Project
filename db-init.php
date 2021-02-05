@@ -30,6 +30,7 @@ if ($conn->query($sql) === TRUE) {
         lastname VARCHAR(30) NOT NULL,
         email VARCHAR(50), 
         pass VARCHAR(255),
+        roles varchar(10),
         reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
     )";
 
