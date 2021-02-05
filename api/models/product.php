@@ -4,7 +4,6 @@ class Product
 
     private $conn;
     private $table_name = "items";
-    private $table_orders = "orders";
 
     public $itemID;
     public $itemCode;
@@ -32,6 +31,18 @@ class Product
         return $stmt;
     }
 
+    function cart($usrID)
+    {
+
+        $query = "SELECT * FROM items i JOIN orders o ON i.`itemCode` = o.`itemCode` WHERE o.`orderID`='" . $usrID . "'";
+        $stmt = $this
+            ->conn
+            ->prepare($query);
+        $stmt->execute();
+        return $stmt;
+    }
+
+
     function prod($itemCode)
     {
 
@@ -43,9 +54,9 @@ class Product
         return $stmt;
     }
 
-    function addtocart($itemCode, $itemType, $quantity)
+    function addtocart($usrID ,$itemCode, $itemType, $itemName, $quantity)
     {
-        $query = "INSERT INTO orders (orderID, itemCode, itemType, quantity) VALUES('3', '$itemCode', '$itemType', '$quantity')";
+        $query = "INSERT INTO orders (orderID, itemCode, itemType, itemName, quantity) VALUES('$usrID', '$itemCode', '$itemType', '$itemName', '$quantity')";
         $stmt = $this
             ->conn
             ->prepare($query);

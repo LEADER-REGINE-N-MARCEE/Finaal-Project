@@ -18,8 +18,6 @@ $password = '';
 $databaseService = new Database();
 $conn = $databaseService->getConnection();
 
-
-
 $data = json_decode(file_get_contents("php://input"));
 
 $email = $data->email;
@@ -47,8 +45,8 @@ if($num > 0){
         $issuer_claim = "Key.Corp"; // this can be the servername
         $audience_claim = "USER";
         $issuedat_claim = time(); // issued at
-        $notbefore_claim = $issuedat_claim + 10; //not before in seconds
-        $expire_claim = $issuedat_claim + 3600; // expire time in seconds
+        $notbefore_claim = $issuedat_claim + 5; //not before in seconds
+        $expire_claim = $issuedat_claim + 180; // expire time in seconds
         $token = array(
             "iss" => $issuer_claim,
             "aud" => $audience_claim,
@@ -62,7 +60,7 @@ if($num > 0){
                 "email" => $email
         ));
 
-        http_response_code(202);
+        
 
         $jwt = JWT::encode($token, $secret_key);
         echo json_encode(
@@ -72,6 +70,9 @@ if($num > 0){
                 "email" => $email,
                 "expireAt" => $expire_claim
             ));
+
+            
+            http_response_code(202);
     }
     else{
 

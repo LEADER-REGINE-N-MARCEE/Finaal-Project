@@ -30,7 +30,7 @@ class User{
 
     public function addtocart($usrID, $itemCode, $itemType, $quantity){
 
-        $sql = "INSERT INTO orders (orderID, itemCode, itemType, quantity) VALUES('$usrID', '$itemCode', '$itemType', '$quantity')";
+        $sql = "INSERT INTO orders (orderID, itemCode, itemType, amount) VALUES('$usrID', '$itemCode', '$itemType', '$quantity')";
         $query = $this->conn->prepare($sql);
         $query->execute();
 

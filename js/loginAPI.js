@@ -1,10 +1,10 @@
 window.onload = function() {
     const btnSubmit = document.getElementById("btnSubmit");
-    btnSubmit.addEventListener("click", register)
+    btnSubmit.addEventListener("click", login)
 
 
 
-    function register() {
+    function login() {
         const forms = document.querySelectorAll("form");
         const form = forms[0];
 
@@ -67,7 +67,6 @@ window.onload = function() {
 
     function home() {
         var jwt = getCookie('jwt');
-        console.log(jwt);
         var xhttp = new XMLHttpRequest(); {
 
             xhttp.open("POST", "../api/object/validateTokenAPI.php");
@@ -75,7 +74,7 @@ window.onload = function() {
             xhttp.send(JSON.stringify({ jwt: jwt }));
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
-                    window.location.href = '../index.php';
+                    window.location.href = '../index.html';
 
                 }
             };

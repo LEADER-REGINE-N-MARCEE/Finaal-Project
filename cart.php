@@ -1,21 +1,3 @@
-<?php
-session_start();
-define('DB_SERVER', 'localhost');
-define('DB_USERNAME', 'root');
-define('DB_PASSWORD', '');
-define('DB_DATABASE', 'store');
-$link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
-
-
-
-if (!isset($_SESSION['user'])) {
-    header('location:login.php');
-}
-
-$usrID = $_SESSION['user'];
-
-?>
-
 <!DOCTYPE html>
 <html>
 
@@ -76,55 +58,14 @@ $usrID = $_SESSION['user'];
 
     <div class="section2">
         <div class="wrapper">
+            <table class=table-cart id="carttable">
+                <tr class=table-title>
+                    <th colspan=2>Item(s)</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
 
-            <?php
-
-            echo "<table class=table-cart>
-            <tr class=table-title>
-            <th colspan=2>Item(s)</th>
-            <th>Quantity</th>
-            <th>Price</th>
-            </tr>";
-
-            $sql = "SELECT orderID, itemCode, itemType, itemName, quantity, invoiceNum FROM orders WHERE orderID = '$usrID'";
-            $query = mysqli_query($link, $sql);
-            $totalprice = 0;
-            $totalquantity = 0;
-            while ($row = mysqli_fetch_assoc($query)) {
-                $itemCode    = $row['itemCode'];
-                $itemName    = $row['itemName'];
-                $quantity    = $row['quantity'];
-
-
-                $sql2 = "SELECT price, img_path FROM items WHERE itemCode = '$itemCode'";
-                $query2 = mysqli_query($link, $sql2);
-
-                echo "<tr>";
-
-
-                if ($query2->num_rows > 0) {
-                    $row = $query2->fetch_array();
-
-                    $price = $row['price'];
-                    $img_path = $row['img_path'];
-
-                    $tprice = bcmul($price, $quantity, "2");
-                    $totalprice = $totalprice + $tprice;
-                    $totalquantity = $totalquantity + $quantity;
-                    echo "<td class=item-img><img src=" . $img_path . "></td>";
-                    echo "<td class=item-name>" . $itemName . "</td>";
-                    echo "<td class=item-quantity>" . $quantity . "</td>";
-                    echo "<td class=item-price>" . $tprice . "</td>";
-                }
-            }
-
-
-            $_SESSION['totalprice'] = $totalprice;
-            $_SESSION['totalquantity'] = $totalquantity;
-
-            echo "</table>";
-
-            ?>
+            </table>
 
             <form method="POST" action='checkout.php'>
                 <button class="checkout-btn" type="submit">
@@ -162,10 +103,6 @@ $usrID = $_SESSION['user'];
         <p class="copyright">Copyright© 2021 | All Rights Reserved</p>
     </div>
 
-
-    <script type="text/javascript">
-        var itemCode = <?php echo json_encode($itemCode) ?>;
-    </script>
     <script src="./js/cartAPI.js"></script>
 </body>
 

@@ -28,8 +28,6 @@ $conn = $databaseService->getConnection();
 $data = json_decode(file_get_contents("php://input"));
 
 
-$headers = getallheaders();
-$data->jwt= $headers['Authorization'];
 $jwt = $data->jwt;
 if($jwt){
 
@@ -41,9 +39,9 @@ if($jwt){
         http_response_code(200);
 
         $usrID = $decoded->data->id;
-        $usrID = $decoded->data->id;
         $itemCode = $data->itemCode;
         $itemType = $data->itemType;
+        $itemName = $data->itemName;
         $quantity = $data->amount;
 
         echo $usrID;

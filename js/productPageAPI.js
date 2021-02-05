@@ -5,11 +5,11 @@ window.onload = function() {
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
 
-
+                var decodedCookie = decodeURIComponent(document.cookie);
+                var cookie = decodedCookie.replace(/jwt=/g, '');
                 let results = JSON.parse(this.response);
 
                 for (let row of results.records) {
-                    console.log(results);
                     document.getElementById("body").insertAdjacentHTML("beforeend", `
                         <div class='items'>
                         
@@ -52,7 +52,7 @@ window.onload = function() {
                             }
                         }
 
-
+                        console.log(JSON.stringify(formdata));
                         var xhttp = new XMLHttpRequest(); { /*para sa API */
 
                             xhttp.open("POST", "../api/object/addtocartAPI.php"); /*POST ung request, then icall ung registerAPI.php */
@@ -87,13 +87,3 @@ window.onload = function() {
         }
     }
 }
-
-
-/*            echo "<h2 class= \'Item Name\'>" . $itemName . "</h2>\n";
-            echo "<h6 class= \'Subtitle\'> " . $subtitle . "</h6>\n";
-            echo "<p class= \'Descriptions\'> " . $description . "</p>\n";
-            echo "<p class= \'Quantity\'>Stocks: " . $quantity . "</p>\n";
-            echo "<form method='POST' action='addtocart.php'>";
-            echo"<input type='text' placeholder='Quantity' name='quantity'>";
-            echo "<button type='submit' name='addtocart' class= \'Add to Cart\'>Add to Cart</a>\n";
-            echo "</form>"; */
