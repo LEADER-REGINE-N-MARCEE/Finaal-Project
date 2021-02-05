@@ -36,7 +36,9 @@ if($num>0){
             "descriptions" => html_entity_decode($descriptions),
             "quantity" => $quantity,
             "price" => $price,
-            "img_path" => $img_path
+            "img_path" => $img_path,
+            "img_path2" => $img_path2,
+            "img_path3" => $img_path3
         );
   
         array_push($products_arr["records"], $product_item);

@@ -46,7 +46,7 @@ class Product
     function prod($itemCode)
     {
 
-        $query = "SELECT itemID, itemCode, itemType, itemName, subtitle, quantity , descriptions, price, img_path FROM " . $this->table_name . " WHERE itemCode = '" . $itemCode . "'";
+        $query = "SELECT itemID, itemCode, itemType, itemName, subtitle, quantity , descriptions, price, img_path, img_path2, img_path3 FROM " . $this->table_name . " WHERE itemCode = '" . $itemCode . "'";
         $stmt = $this
             ->conn
             ->prepare($query);

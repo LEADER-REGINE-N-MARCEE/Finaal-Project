@@ -1,12 +1,8 @@
-<?php
-$itemCode = $_GET['itemCode'];
-$itemType = $_GET['itemType'];
-?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>Store</title>
+    <title></title>
 
     <link rel="stylesheet" href="./css/Productpage.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -26,7 +22,7 @@ $itemType = $_GET['itemType'];
 
                     <ul class="nav-item1">
                         <li>
-                            <a class="nav-btn-container">
+                            <a class="nav-btn-container" href="#">
                                 <img class="profile" src="./img/profile.png">
                                 <img class="shop" src="./img/buy.png">
                             </a>
@@ -36,7 +32,7 @@ $itemType = $_GET['itemType'];
                 <nav class="nav2">
                     <ul class="nav-item2">
                         <li>
-                            <a href="index.html">Home</a>
+                            <a href="home.html">Home</a>
                         </li>
 
                         <li>
@@ -62,7 +58,22 @@ $itemType = $_GET['itemType'];
 
 
     <div class="details-container" id="body">
-    
+
+
+        <img id=featured src="./img/featureditem.png">
+
+        <div class="text-details">
+            <br>
+            <h1>GMK HANAMI DANGO</h1>
+            <h4>$134.99</h4>
+            <p>Hanami Dango, a colorful Japanese sweet, is most popular during the spring cherry blossom viewing. Portly pink, white, and green mochi-rice dumplings are skewered together in tantalizing combinations. Celebrate this tradition with the set
+                designer and friendly enthusiasts around the world.</p><br>
+            <label for="">Quantity </label>
+            <input type="number" value="1" min="1" max="20" onkeydown="false"><br>
+            <button class="add-to-cart-btn">Add to Cart</button>
+            <button class="buy-btn">Buy it Now</button>
+
+        </div>
     </div>
 
     <div class="footer">
@@ -107,11 +118,7 @@ $itemType = $_GET['itemType'];
             })
         }
     </script>
-    <script type="text/javascript">
-        var itemCode = <?php echo json_encode($itemCode) ?>;
-        var itemType = <?php echo json_encode($itemType) ?>;
-    </script>
-    <script src="./js/productPageAPI.js"></script>
-</body> 
+
+</body>
 
 </html>

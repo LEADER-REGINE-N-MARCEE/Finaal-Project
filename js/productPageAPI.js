@@ -11,21 +11,32 @@ window.onload = function() {
 
                 for (let row of results.records) {
                     document.getElementById("body").insertAdjacentHTML("beforeend", `
-                        <div class='items'>
-                        
-                        <img src= '${row.img_path}'>
-                        <div class='titles'>
-                        <h2 id="itemname">${row.itemName}</h2>
-                        <h6>${row.subtitle}</h6>
-                        <h4>${row.price}</h4>
-                        <p>${row.descriptions}</p>
-                        <p>Stocks: ${row.quantity}</p>
-                        <form>
-                            <input type='text' placeholder='Quantity' id="quantity" name='amount'>
-                            <button type='button' name='cart' id="btnAddToCart">add to cart </button>
-                        </form>
-                        </div>
-                        </div>
+
+                <div class="thumb-image">
+                    <img class="thumbnail active" src="${row.img_path}">
+                    <img class="thumbnail" src="${row.img_path2}">
+                    <img class="thumbnail" src="${row.img_path3}">
+
+                </div>
+
+                <img id=featured src="${row.img_path}">
+
+                <div class="text-details">
+                <br>
+                <h1>${row.itemName}</h1>
+                <h3>${row.subtitle}</h3>
+                <h4>$${row.price}</h4>
+                <p>${row.descriptions}</p><br>
+                <h5>Stocks: ${row.quantity}</h5>
+                <label for="">Quantity </label>
+                <form>
+                <input type="number" value="1" min="1" max="20" onkeydown="false" name='amount' id="quantity"><br>
+                <button class="add-to-cart-btn" id="btnAddToCart" name='cart'>Add to Cart</button>
+                </form>
+                
+
+                    </div>
+
                         `);
 
                     const btnAddToCart = document.getElementById("btnAddToCart"); /*kunin ung id ng btn para magkaron ng event listener*/
