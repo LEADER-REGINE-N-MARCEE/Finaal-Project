@@ -85,6 +85,7 @@ if ($conn->query($sql) === TRUE) {
                             invoiceNum VARCHAR (255),
                             totalprice VARCHAR (255),
                             totalquantity VARCHAR (255),
+                            order_status TEXT,
                             order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
                             )";
                         if ($conn->query($sql) === TRUE){
