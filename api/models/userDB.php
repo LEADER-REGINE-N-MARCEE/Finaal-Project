@@ -28,9 +28,9 @@ class User{
         }
     }
 
-    public function addtocart($usrID, $itemCode, $itemType, $quantity){
+    public function addtocart($usrID, $itemCode, $itemType, $itemName, $quantity){
 
-        $sql = "INSERT INTO orders (orderID, itemCode, itemType, amount) VALUES('$usrID', '$itemCode', '$itemType', '$quantity')";
+        $sql = "INSERT INTO orders (orderID, itemCode, itemType, itemName, amount) VALUES('$usrID', '$itemCode', '$itemType', '$itemName', '$quantity')";
         $query = $this->conn->prepare($sql);
         $query->execute();
 

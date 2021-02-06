@@ -67,13 +67,7 @@
 
             </table>
 
-            <form method="POST" action='checkout.php'>
-                <button class="checkout-btn" type="submit">
-                    <p>
-                        Check Out
-                    </p>
-                </button>
-            </form>
+            
 
 
 

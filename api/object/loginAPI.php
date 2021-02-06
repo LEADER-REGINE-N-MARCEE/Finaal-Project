@@ -9,11 +9,10 @@ header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Max-Age: 3600");
-header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
-
 
 $email = '';
 $password = '';
+$e = null;
 
 $databaseService = new Database();
 $conn = $databaseService->getConnection();
@@ -25,7 +24,7 @@ $password = $data->password;
 
 $table_name = 'users';
 
-$query = "SELECT id, firstname, lastname, pass FROM " . $table_name . " WHERE email = ? LIMIT 0,1";
+$query = "SELECT id, firstname, lastname, pass, roles FROM " . $table_name . " WHERE email = ? LIMIT 0,1";
 
 $stmt = $conn->prepare( $query );
 $stmt->bindParam(1, $email);
@@ -38,15 +37,17 @@ if($num > 0){
     $firstname = $row['firstname'];
     $lastname = $row['lastname'];
     $password2 = $row['pass'];
+    $role = $row['roles'];
 
     if(password_verify($password, $password2))
     {
+        
         $secret_key = "nwoWAkH3DltizN62b37V2zsyWf1QufF5";
         $issuer_claim = "Key.Corp"; // this can be the servername
         $audience_claim = "USER";
         $issuedat_claim = time(); // issued at
         $notbefore_claim = $issuedat_claim + 5; //not before in seconds
-        $expire_claim = $issuedat_claim + 180; // expire time in seconds
+        $expire_claim = $issuedat_claim + 30; // expire time in seconds
         $token = array(
             "iss" => $issuer_claim,
             "aud" => $audience_claim,
@@ -57,7 +58,8 @@ if($num > 0){
                 "id" => $id,
                 "firstname" => $firstname,
                 "lastname" => $lastname,
-                "email" => $email
+                "email" => $email,
+                "role"=> $role
         ));
 
         

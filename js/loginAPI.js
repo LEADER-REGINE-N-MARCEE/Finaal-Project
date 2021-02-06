@@ -26,6 +26,7 @@ window.onload = function() {
                     alert(result.message);
                     console.log(result);
                 }
+
             };
         }
     }
@@ -46,9 +47,28 @@ window.onload = function() {
         document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
     }
 
+    function home() {
+        let jwt = getCookie('jwt');
+        var xhttp = new XMLHttpRequest(); {
+            xhttp.open("POST", "../api/object/validateTokenAPI.php");
+            xhttp.send(JSON.stringify({ jwt: jwt }));
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    let results4 = JSON.parse(this.response);
+                    var rdr = results4.redirect;
+                    window.location.href = rdr;
+                } else if (this.readyState == 4 && this.status == 401) {
+                    console.log(this.status);
+                    let results4 = JSON.stringify(this.response);
+                    console.log(results4);
+                }
+            }
+        }
+    }
+
     // get or read cookie
     function getCookie(cname) {
-        console.log(cname);
+
         var name = cname + "=";
         var decodedCookie = decodeURIComponent(document.cookie);
         var ca = decodedCookie.split(';');
@@ -62,24 +82,9 @@ window.onload = function() {
                 return c.substring(name.length, c.length);
             }
         }
-        return "";
+        return '';
     }
 
-    function home() {
-        var jwt = getCookie('jwt');
-        var xhttp = new XMLHttpRequest(); {
-
-            xhttp.open("POST", "../api/object/validateTokenAPI.php");
-            xhttp.setRequestHeader("Content-Type", "application/json");
-            xhttp.send(JSON.stringify({ jwt: jwt }));
-            xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    window.location.href = '../index.html';
-
-                }
-            };
-        }
-    }
 
 
 }
