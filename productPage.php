@@ -1,20 +1,7 @@
-<?php
-$itemCode = $_GET['itemCode'];
-$itemType = $_GET['itemType'];
-?>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <title>Store</title>
-
-    <link rel="stylesheet" href="./css/Productpage.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Saira:wght@300;400&display=swap" rel="stylesheet">
-
-</head>
-
-<body>
+<?php $itemCode = $_GET['itemCode'];
+      $itemType = $_GET['itemType'];?>
+<?php require('header.php')?>
+<link rel="stylesheet" href="css/productPage.css">
     <div class="section1">
 
         <div class="nav-container">
@@ -67,28 +54,6 @@ $itemType = $_GET['itemType'];
     
     </div>
 
-    <div class="footer">
-        <div class="wrapper">
-            <div class="footer-left">
-                <img class="logo-footer" src="./img/logo1.png">
-                <div>
-                    <img class="social-icon" src="./img/fb.png">
-                    <img class="social-icon" src="./img/ig.png">
-                    <img class="social-icon" src="./img/tweeter.png">
-                </div>
-
-            </div>
-
-            <div class="footer-right">
-                <p>CONTACT US</p>
-                <p>Phone: (044) 766 2451 | (044) 664 5762</p>
-                <p>Email: info@keycorp.ph</p>
-            </div>
-        </div>
-        <p class="copyright">Copyright© 2021 | All Rights Reserved</p>
-    </div>
-
-
     <script type="text/javascript">
         let thumbnails = document.getElementsByClassName('thumbnail')
 
@@ -114,6 +79,4 @@ $itemType = $_GET['itemType'];
         var itemType = <?php echo json_encode($itemType) ?>;
     </script>
     <script src="./js/productPageAPI.js"></script>
-</body> 
-
-</html>
+<?php require('footer.php')?>

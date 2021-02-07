@@ -1,44 +1,5 @@
-<!--<html>
-
-<head>
-    <title>Key.Corp</title>
-</head>
-
-<body>
-    <a href="products.php?itemType=KB">Keyboards</a>
-    <a href="products.php?itemType=KC"">Keycaps</a>
-    <a href=" products.php?itemType=SW"">Switches</a>
-    <a href="products.php?itemType=DM"">Deskmats</a>
-</body>
-
-</html>-->
-
-
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>Key.Corp</title>
-
-    <link rel="icon" type="image/svg+xml" href="./img/iconLogo.svg">
-    <link rel=" stylesheet" href="./css/home.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <script>
-        function scroll1() {
-            window.scrollTo(0, 2055);
-        }
-
-        function scroll2() {
-            window.scrollTo(0, 2815);
-        }
-    </script>
-
-</head>
-
-<body id="body">
-
+<?php require('header.php')?>
+<link rel=" stylesheet" href="css/home.css">
     <div class="section2">
         <div class="wrapper">
             <h1>TOP SELLING</h1>
@@ -170,27 +131,5 @@
             </div>
         </div>
     </div>
-
-    <div class="footer">
-        <div class="wrapper">
-            <div class="footer-left">
-                <img class="logo-footer" src="./img/logo1.png">
-                <div>
-                    <img class="social-icon" src="./img/fb.png">
-                    <img class="social-icon" src="./img/ig.png">
-                    <img class="social-icon" src="./img/tweeter.png">
-                </div>
-
-            </div>
-            <div class="footer-right">
-                <p>CONTACT US</p>
-                <p>Phone: (044) 766 2451 | (044) 664 5762</p>
-                <p>Email: info@keycorp.ph</p>
-            </div>
-        </div>
-        <p class="copyright">Copyright© 2021 | All Rights Reserved</p>
-    </div>
     <script src="./js/index.js"></script>
-</body>
-
-</html>
+<?php require('footer.php')?>

@@ -1,16 +1,5 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title></title>
-    <link rel="icon" type="image/svg+xml" href="./img/iconLogo.svg">
-    <link rel="stylesheet" href="./css/cart.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
-
-</head>
-
-<body>
+<?php require('header.php')?>
+<link rel="stylesheet" href="./css/cart.css">
     <div class="section1">
 
         <div class="nav-container">
@@ -76,28 +65,5 @@
         </div>
 
     </div>
-
-
-    <div class="footer">
-        <div class="wrapper">
-            <div class="footer-left">
-                <img class="logo-footer" src="./img/logo1.png">
-                <div>
-                    <img class="social-icon" src="./img/fb.png">
-                    <img class="social-icon" src="./img/ig.png">
-                    <img class="social-icon" src="./img/tweeter.png">
-                </div>
-            </div>
-            <div class="footer-right">
-                <p>CONTACT US</p>
-                <p>Phone: (044) 766 2451 | (044) 664 5762</p>
-                <p>Email: info@keycorp.ph</p>
-            </div>
-        </div>
-        <p class="copyright">Copyright© 2021 | All Rights Reserved</p>
-    </div>
-
     <script src="./js/cartAPI.js"></script>
-</body>
-
-</html>
+<?php require('footer.php')?>
