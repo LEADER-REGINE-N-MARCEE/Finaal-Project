@@ -34,7 +34,7 @@ window.onload = function() {
                         <input class="input1" type="text" name="barangay" value = "${row.barangay}" autofocus required>
                         <label>Mobile Number:</label>
                         <input class="input1" type="text" name="mobilenum" value = "${row.mobilenum}" autofocus required>
-                    </form>
+                        </form>
                             `);
                         }
                         xhttp.open("POST", "../api/object/cartAPI.php");
@@ -83,7 +83,7 @@ window.onload = function() {
                                     xhttp.send(JSON.stringify(formdata2));
                                     xhttp.onreadystatechange = function() {
                                         if (this.readyState == 4 && this.status == 201) {
-                                            console.log(this.status);
+                                            window.location.href = '../index';
                                         } else if (this.readyState == 4 && this.status == 503) {
                                             console.log(this.status);
                                         }

@@ -3,13 +3,11 @@ window.onload = function() {
     var jwt = getCookie('jwt');
     console.log(jwt);
     var xhttp = new XMLHttpRequest(); {
-
         xhttp.open("POST", "../api/object/validateTokenAPI.php");
         xhttp.setRequestHeader("Content-Type", "application/json");
         xhttp.send(JSON.stringify({
             jwt: jwt
         }));
-
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 var results = JSON.parse(this.response);
@@ -31,7 +29,6 @@ window.onload = function() {
                             <td class=item-price>${tprice}</td>
                             `);
                         }
-
                         document.getElementById("carttable").insertAdjacentHTML("afterend", `
                         <form method="POST" action='checkout.php'>
                         <button class="checkout-btn" id="btnCheckout" name="checkout" type="button">
@@ -39,13 +36,11 @@ window.onload = function() {
                         </button>
                         </form>
                             `);
-
                         const btnCheckout = document.getElementById("btnCheckout"); /*kunin ung id ng btn para magkaron ng event listener*/
                         btnCheckout.addEventListener("click", checkout);
 
                         function checkout() {
                             window.location.href = "./checkout";
-
                         }
                     } else if (this.readyState == 4 && this.status == 404) {
                         console.log(this.response);
@@ -63,14 +58,12 @@ window.onload = function() {
     function getCookie(cname) {
         var name = cname + "=";
         var decodedCookie = decodeURIComponent(document.cookie);
-
         var ca = decodedCookie.split(';');
         for (var i = 0; i < ca.length; i++) {
             var c = ca[i];
             while (c.charAt(0) == ' ') {
                 c = c.substring(1);
             }
-
             if (c.indexOf(name) == 0) {
                 return c.substring(name.length, c.length);
             }

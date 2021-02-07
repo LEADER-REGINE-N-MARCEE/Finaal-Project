@@ -42,7 +42,6 @@ class Product
         return $stmt;
     }
 
-
     function prod($itemCode)
     {
 

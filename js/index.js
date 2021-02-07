@@ -109,7 +109,7 @@ window.onload = function() { /*para maload agad ung script pag naload ung web pa
                     <nav class="nav2">
                         <ul class="nav-item2">
                             <li>
-                                <a href="index">Home</a>
+                                <a href="#">Home</a>
                             </li>
     
                             <li>

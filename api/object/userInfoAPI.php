@@ -43,8 +43,11 @@ if ($num > 0)
 
 }
 
-else {
+else
+{
     http_response_code(206);
-    echo json_encode(array("message" => "User information not set. Please fill out the form."));
+    echo json_encode(array(
+        "message" => "User information not set. Please fill out the form."
+    ));
 }
 ?>

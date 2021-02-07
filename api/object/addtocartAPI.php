@@ -20,7 +20,6 @@ $itemType = $data->records[0]->itemType;
 $itemName = $data->records[0]->itemName;
 $quantity = $data->amount;
 
-
 $addtocart = $users->addtocart($usrID, $itemCode, $itemType, $itemName, $quantity);
 if ($addtocart == true)
 {
