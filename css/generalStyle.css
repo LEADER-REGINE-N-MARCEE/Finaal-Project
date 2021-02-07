@@ -43,7 +43,7 @@ nav ul {
     justify-content: center;
 }
 
-.nav-item2 li a {
+.nav-item2 li a, .buttonClick{
     margin-right: 48px;
     font-family: 'Saira', sans-serif;
     font-style: normal;

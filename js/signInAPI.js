@@ -1,4 +1,5 @@
 window.onload = function() {
+    console.log("Yes");
     const btnSubmit = document.getElementById("btnSubmit");
     btnSubmit.addEventListener("click", login)
 

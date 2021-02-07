@@ -17,7 +17,7 @@ window.onload = function() { /*para maload agad ung script pag naload ung web pa
                 if (this.readyState == 4 && this.status == 201) {
                     let result = JSON.parse(this.response);
                     alert(result.message);
-                    window.location.href = '../login.php';
+                    window.location.href = '../signIn.php';
 
                 } else if (this.readyState == 4 && this.status == 400) {
                     let result = JSON.parse(this.response);

@@ -1,5 +1,6 @@
-<?php require('header.php')?>
+<link rel=" stylesheet" href="css/generalStyle.css">
 <link rel=" stylesheet" href="css/home.css">
+<body id="body">
     <div class="section2">
         <div class="wrapper">
             <h1>TOP SELLING</h1>
@@ -131,5 +132,5 @@
             </div>
         </div>
     </div>
-    <script src="./js/index.js"></script>
+    <script src="js/index.js"></script>
 <?php require('footer.php')?>
