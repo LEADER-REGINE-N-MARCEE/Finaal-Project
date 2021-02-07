@@ -18,21 +18,29 @@ echo $data->invoiceNum;
 
 if(
     !empty($data->id) &&
-    !empty($data->totalprice)
+    !empty($data->fullname) &&
+    !empty($data->flrnum)&&
+    !empty($data->province) &&
+    !empty($data->municipality) &&
+    !empty($data->barangay) &&
+    !empty($data->mobilenum)
 )
 
 {
   
-    $user->orderID = $data->id;
-    $user->invoiceNum = $data->invoiceNum;
-    $user->totalprice = $data->totalprice;
-
+    $user->infoID = $data->id;
+    $user->fullname = $data->fullname;
+    $user->flrnum = $data->flrnum;
+    $user->province = $data->province;
+    $user->municipality = $data->municipality;
+    $user->barangay = $data->barangay;
+    $user->mobilenum = $data->mobilenum;
   
-    if($user->checkout()){
+    if($user->addInfo()){
   
         http_response_code(201);
   
-        echo json_encode(array("message" => "Checkout Successfully Complete."));
+        echo json_encode(array("message" => "Adding User Information Successfully Completed."));
     }
   
     else{
@@ -47,7 +55,7 @@ if(
 else{
       http_response_code(400);
   
-    echo json_encode(array("message" => "Unable to create product. Data is incomplete."));
+    echo json_encode(array("message" => "Unable to update User information. Data is incomplete."));
 }
 
 function invoice($length_of_string) 

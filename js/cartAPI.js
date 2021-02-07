@@ -49,7 +49,7 @@ window.onload = function() {
                         }
                     } else if (this.readyState == 4 && this.status == 404) {
                         console.log(this.response);
-                        document.getElementById("carttable").insertAdjacentHTML("afterbegin", `
+                        document.getElementById("carttable").insertAdjacentHTML("beforeend", `
                             <p>no products in cart</p>
                         `);
                     }
