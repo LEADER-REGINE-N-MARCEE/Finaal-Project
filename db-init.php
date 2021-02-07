@@ -79,7 +79,7 @@ if ($conn->query($sql) === true)
                     itemCode VARCHAR (255),
                     itemType VARCHAR (50),
                     itemName VARCHAR (255),
-                    amount VARCHAR (255),
+                    quantity VARCHAR (255),
                     invoiceNum VARCHAR (255)
                     )";
 
@@ -96,7 +96,7 @@ if ($conn->query($sql) === true)
                             )";
                     if ($conn->query($sql) === true)
                     {
-                        echo "Table invoice created successfully";
+                        echo "Table completed_orders created successfully";
                     }
                     else
                     {
