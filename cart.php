@@ -40,7 +40,7 @@
                         </li>
 
                         <li>
-                            <a href="#">Group Buys</a>
+                            <a href="products.php?itemType=GB">Group Buys</a>
                         </li>
 
                         <li>
@@ -67,13 +67,7 @@
 
             </table>
 
-            <form method="POST" action='checkout.php'>
-                <button class="checkout-btn" type="submit">
-                    <p>
-                        Check Out
-                    </p>
-                </button>
-            </form>
+            
 
 
 

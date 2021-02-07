@@ -6,20 +6,23 @@ $password = "";
 // Create connection
 $conn = new mysqli($servername, $username, $password);
 // Check connection
-if ($conn->connect_error) {
+if ($conn->connect_error)
+{
     die("Connection failed: " . $conn->connect_error);
 }
 
 // Create database
 $sql = "CREATE DATABASE store character set UTF8mb4 collate utf8mb4_bin";
-if ($conn->query($sql) === TRUE) {
+if ($conn->query($sql) === true)
+{
     echo "Database created successfully";
     $dbname = "store";
 
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
     // Check connection
-    if ($conn->connect_error) {
+    if ($conn->connect_error)
+    {
         die("Connection failed: " . $conn->connect_error);
     }
 
@@ -34,7 +37,8 @@ if ($conn->query($sql) === TRUE) {
         reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
     )";
 
-    if ($conn->query($sql) === TRUE) {
+    if ($conn->query($sql) === true)
+    {
         $conn = new mysqli($servername, $username, $password, $dbname);
         echo "Table users created successfully";
         $sql = "CREATE TABLE user_info (
@@ -47,12 +51,13 @@ if ($conn->query($sql) === TRUE) {
             mobilenum VARCHAR (15),
             FOREIGN KEY (infoID) REFERENCES users(id)
             )";
-            if ($conn->query($sql) === TRUE) {
-                
-                echo "Table user_info created successfully";
+        if ($conn->query($sql) === true)
+        {
 
-                $conn = new mysqli($servername, $username, $password, $dbname);
-                $sql  = "CREATE TABLE items (
+            echo "Table user_info created successfully";
+
+            $conn = new mysqli($servername, $username, $password, $dbname);
+            $sql = "CREATE TABLE items (
                 itemID INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
                 itemCode VARCHAR (255),
                 itemType VARCHAR (50),
@@ -65,10 +70,11 @@ if ($conn->query($sql) === TRUE) {
                 img_path2 TEXT,
                 img_path3 TEXT
                 )";
-                if ($conn->query($sql) === TRUE) {
-                    echo "Table items created successfully";
-                    $conn = new mysqli($servername, $username, $password, $dbname);
-                    $sql  = "CREATE TABLE orders (
+            if ($conn->query($sql) === true)
+            {
+                echo "Table items created successfully";
+                $conn = new mysqli($servername, $username, $password, $dbname);
+                $sql = "CREATE TABLE orders (
                     orderID INT(6) UNSIGNED,
                     itemCode VARCHAR (255),
                     itemType VARCHAR (50),
@@ -77,35 +83,45 @@ if ($conn->query($sql) === TRUE) {
                     invoiceNum VARCHAR (255)
                     )";
 
-                    if ($conn->query($sql) === TRUE) {
-                        echo "Table orders created successfully";
-                        $conn = new mysqli($servername, $username, $password, $dbname);
-                        $sql  = "CREATE TABLE invoice (
+                if ($conn->query($sql) === true)
+                {
+                    echo "Table orders created successfully";
+                    $conn = new mysqli($servername, $username, $password, $dbname);
+                    $sql = "CREATE TABLE invoice (
                             orderID INT(6) UNSIGNED,
                             invoiceNum VARCHAR (255),
                             totalprice VARCHAR (255),
-                            totalquantity VARCHAR (255),
+                            order_status TEXT,
                             order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
                             )";
-                        if ($conn->query($sql) === TRUE){
-                            echo "Table completed_orders created successfully";
-                        } else {
-                            echo "Error creating table: " . $conn->error;
-                        }
-                    } else {
+                    if ($conn->query($sql) === true)
+                    {
+                        echo "Table completed_orders created successfully";
+                    }
+                    else
+                    {
                         echo "Error creating table: " . $conn->error;
                     }
-                }else {
+                }
+                else
+                {
                     echo "Error creating table: " . $conn->error;
-                }   
-
-            } else {
+                }
+            }
+            else
+            {
                 echo "Error creating table: " . $conn->error;
-            }    
-    } else 
-        echo "Error creating table: " . $conn->error; 
-    } else 
-    echo "Error creating database: " . $conn->error;
+            }
+
+        }
+        else
+        {
+            echo "Error creating table: " . $conn->error;
+        }
+    }
+    else echo "Error creating table: " . $conn->error;
+}
+else echo "Error creating database: " . $conn->error;
 
 $conn->close();
 ?>

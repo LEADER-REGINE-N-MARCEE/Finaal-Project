@@ -42,7 +42,6 @@ class Product
         return $stmt;
     }
 
-
     function prod($itemCode)
     {
 
@@ -52,21 +51,6 @@ class Product
             ->prepare($query);
         $stmt->execute();
         return $stmt;
-    }
-
-    function addtocart($usrID ,$itemCode, $itemType, $itemName, $quantity)
-    {
-        $query = "INSERT INTO orders (orderID, itemCode, itemType, itemName, quantity) VALUES('$usrID', '$itemCode', '$itemType', '$itemName', '$quantity')";
-        $stmt = $this
-            ->conn
-            ->prepare($query);
-
-        if ($stmt->execute())
-        {
-            return true;
-        }
-
-        return false;
     }
 
     function create()

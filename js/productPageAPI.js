@@ -4,9 +4,6 @@ window.onload = function() {
         xhttp.send();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-
-                var decodedCookie = decodeURIComponent(document.cookie);
-                var cookie = decodedCookie.replace(/jwt=/g, '');
                 let results = JSON.parse(this.response);
 
                 for (let row of results.records) {
@@ -31,7 +28,7 @@ window.onload = function() {
                 <label for="">Quantity </label>
                 <form>
                 <input type="number" value="1" min="1" max="20" onkeydown="false" name='amount' id="quantity"><br>
-                <button class="add-to-cart-btn" id="btnAddToCart" name='cart'>Add to Cart</button>
+                <button type="button" class="add-to-cart-btn" id="btnAddToCart" name='cart'>Add to Cart</button>
                 </form>
                 
 
@@ -43,45 +40,8 @@ window.onload = function() {
                     btnAddToCart.addEventListener("click", addtocart)
 
                     function addtocart() {
-                        const forms = document.querySelectorAll("form"); /*kukuhanin nya lahat ng values sa form, iisa lang naman kaya queryselectorall gamit. ibigsabihin lagat ng forms sa html mo ipaparse nya */
-                        const form = forms[0];
+                        validate();
 
-                        /*initialize ung variable data. then icacall ung toObject na function the parameter ung form */
-                        var data2 = toObject(form);
-                        const formdata = {};
-                        let key;
-
-                        for (key in results) {
-                            if (results.hasOwnProperty(key)) {
-                                formdata[key] = results[key];
-                            }
-                        }
-
-                        for (key in data2) {
-                            if (data2.hasOwnProperty(key)) {
-                                formdata[key] = data2[key];
-                            }
-                        }
-
-                        console.log(JSON.stringify(formdata));
-                        var xhttp = new XMLHttpRequest(); { /*para sa API */
-
-                            xhttp.open("POST", "../api/object/addtocartAPI.php"); /*POST ung request, then icall ung registerAPI.php */
-                            xhttp.send(JSON.stringify(formdata)); /*isesend ung data na nakuha dun sa form */
-
-                            xhttp.onreadystatechange = function() {
-                                if (this.readyState == 4 && this.status == 201) {
-                                    let result = JSON.parse(this.response);
-                                    alert(result.message);
-
-
-                                } else if (this.readyState == 4 && this.status == 400) {
-                                    let result = JSON.parse(this.response);
-                                    alert(result.message);
-                                    console.log(result);
-                                }
-                            };
-                        }
                     }
 
                     function toObject(formArray) { /*to object function*/
@@ -90,6 +50,85 @@ window.onload = function() {
                             returnArray[formArray[i]["name"]] = formArray[i]["value"]; /*ipapasa na ung mga nasa form to array, */
                         }
                         return returnArray; /*then irereturn ung result */
+                    }
+
+                    function getCookie(cname) {
+                        var name = cname + "=";
+                        var decodedCookie = decodeURIComponent(document.cookie);
+
+                        var ca = decodedCookie.split(';');
+                        for (var i = 0; i < ca.length; i++) {
+                            var c = ca[i];
+                            while (c.charAt(0) == ' ') {
+                                c = c.substring(1);
+                            }
+
+                            if (c.indexOf(name) == 0) {
+                                return c.substring(name.length, c.length);
+                            }
+                        }
+                        return "";
+                    }
+
+                    function validate() {
+                        let jwt = getCookie('jwt');
+                        var xhttp = new XMLHttpRequest(); {
+                            xhttp.open("POST", "../api/object/validateTokenAPI.php");
+                            xhttp.send(JSON.stringify({ jwt: jwt }));
+                            xhttp.onreadystatechange = function() {
+                                if (this.readyState == 4 && this.status == 200) {
+                                    let results1 = JSON.parse(this.response);
+                                    console.log(results1);
+                                    const forms = document.querySelectorAll("form"); /*kukuhanin nya lahat ng values sa form, iisa lang naman kaya queryselectorall gamit. ibigsabihin lagat ng forms sa html mo ipaparse nya */
+                                    const form = forms[0];
+
+                                    /*initialize ung variable data. then icacall ung toObject na function the parameter ung form */
+                                    var data2 = toObject(form);
+                                    const formdata = {};
+                                    let key;
+
+                                    for (key in results) {
+                                        if (results.hasOwnProperty(key)) {
+                                            formdata[key] = results[key];
+                                        }
+                                    }
+
+                                    for (key in data2) {
+                                        if (data2.hasOwnProperty(key)) {
+                                            formdata[key] = data2[key];
+                                        }
+                                    }
+
+                                    for (key in results1) {
+                                        if (results1.hasOwnProperty(key)) {
+                                            formdata[key] = results1[key];
+                                        }
+                                    }
+
+                                    console.log(JSON.stringify(formdata));
+                                    var xhttp = new XMLHttpRequest(); { /*para sa API */
+
+                                        xhttp.open("POST", "../api/object/addtocartAPI.php"); /*POST ung request, then icall ung registerAPI.php */
+                                        xhttp.send(JSON.stringify(formdata)); /*isesend ung data na nakuha dun sa form */
+
+                                        xhttp.onreadystatechange = function() {
+                                            if (this.readyState == 4 && this.status == 201) {
+                                                let result = JSON.parse(this.response);
+                                                alert(result.message);
+
+
+                                            } else if (this.readyState == 4 && this.status == 400) {
+                                                let result = JSON.parse(this.response);
+                                                alert(result.message);
+                                                console.log(result);
+                                            }
+                                        };
+                                    }
+                                } else if (this.readyState == 4 && this.status == 401) {
+                                    window.location.href = "./login";
+                                }
+                            }
+                        }
                     }
                 }
 
