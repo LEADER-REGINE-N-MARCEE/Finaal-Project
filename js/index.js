@@ -42,7 +42,7 @@ window.onload = function() { /*para maload agad ung script pag naload ung web pa
                                         </li>
                 
                                         <li>
-                                            <a href="#">Group Buys</a>
+                                            <a href="products.php?itemType=GB">Group Buys</a>
                                         </li>
                 
                                         <li>
@@ -72,7 +72,7 @@ window.onload = function() { /*para maload agad ung script pag naload ung web pa
                             </button>
                         </div>
                     </div>`);
- 
+
             } else if (this.readyState == 4 && this.status == 401) {
                 console.log(this.status);
                 document.getElementById("body").insertAdjacentHTML("afterbegin", `
@@ -108,7 +108,7 @@ window.onload = function() { /*para maload agad ung script pag naload ung web pa
                                         </li>
                 
                                         <li>
-                                            <a href="#">Group Buys</a>
+                                            <a href="products.php?itemType=GB">Group Buys</a>
                                         </li>
                 
                                         <li>

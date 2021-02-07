@@ -1,5 +1,4 @@
 window.onload = function() {
-    console.log("Yes");
     const btnSubmit = document.getElementById("btnSubmit");
     btnSubmit.addEventListener("click", login)
 
@@ -51,6 +50,7 @@ window.onload = function() {
                 if (this.readyState == 4 && this.status == 200) {
                     let results4 = JSON.parse(this.response);
                     var rdr = results4.redirect;
+                    console.log(rdr);
                     window.location.href = rdr;
                 } else if (this.readyState == 4 && this.status == 401) {
                     console.log(this.status);
