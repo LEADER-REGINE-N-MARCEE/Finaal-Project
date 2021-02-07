@@ -34,7 +34,7 @@ class Product
     function cart($usrID)
     {
 
-        $query = "SELECT * FROM items i JOIN orders o ON i.`itemCode` = o.`itemCode` WHERE o.`orderID`='" . $usrID . "'";
+        $query = "SELECT * FROM items i JOIN orders o ON i.`itemCode` = o.`itemCode` WHERE o.`invoiceNum` IS NULL AND o.`orderID`='" . $usrID . "'";
         $stmt = $this
             ->conn
             ->prepare($query);

@@ -50,7 +50,7 @@
                             </li>
 
                             <li>
-                                <a href="#">Group Buys</a>
+                                <a href="products.php?itemType=GB">Group Buys</a>
                             </li>
 
                             <li>

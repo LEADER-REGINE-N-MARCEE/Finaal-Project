@@ -40,7 +40,7 @@ window.onload = function() {
                         btnCheckout.addEventListener("click", checkout);
 
                         function checkout() {
-                            window.location.href = "./checkout";
+                            window.location.href = "./checkout.html";
                         }
                     } else if (this.readyState == 4 && this.status == 404) {
                         console.log(this.response);
@@ -50,7 +50,7 @@ window.onload = function() {
                     }
                 };
             } else if (this.readyState == 4 && this.status == 401) {
-                window.location.href = '../login.php';
+                window.location.href = '../signIn.php';
             }
         };
     }

@@ -24,7 +24,7 @@
                     </p>
                 </button>
                 <p class="or">or</p>
-                <button onclick="window.location.href='register.php'" class="signup-btn" type="button">
+                <button onclick="window.location.href='signUp.php'" class="signup-btn" type="button">
                     <p>
                         SIGN UP
                     </p>

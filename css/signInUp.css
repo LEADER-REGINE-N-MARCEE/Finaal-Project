@@ -51,7 +51,7 @@ h1 {
 
 .or {
     text-align: center;
-    font-family: Font Awesome 5 Brands;
+    font-family: 'Source Code Pro', monospace !important;
     font-style: normal;
     font-weight: normal;
     font-size: 21px;
@@ -61,7 +61,7 @@ h1 {
 
 .signin-btn,
 .signup-btn {
-    font-family: Font Awesome 5 Brands;
+    font-family: 'Source Code Pro', monospace !important;
     font-style: normal;
     font-weight: normal;
     font-size: 21px;
@@ -71,7 +71,7 @@ h1 {
 }
 
 form label {
-    font-family: Font Awesome 5 Brands;
+    font-family: 'Source Code Pro', monospace !important;
     font-style: normal;
     font-weight: normal;
     font-size: 21px;

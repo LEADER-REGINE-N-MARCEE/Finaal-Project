@@ -124,17 +124,8 @@ class User
             $stmt2->bindParam(":invoiceNum", $this->invoiceNum);
             if ($stmt2->execute())
             {
-                $query3 = "DELETE FROM orders WHERE invoiceNum = :invoiceNum";
-                $stmt3 = $this
-                    ->conn
-                    ->prepare($query3);
-                $this->invoiceNum = htmlspecialchars(strip_tags($this->invoiceNum));
-                $stmt3->bindParam(":invoiceNum", $this->invoiceNum);
-                if ($stmt3->execute())
-                {
+                
                     return true;
-                }
-
             }
 
         }

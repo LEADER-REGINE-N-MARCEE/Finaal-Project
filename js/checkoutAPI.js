@@ -52,18 +52,52 @@ window.onload = function() {
                                 }
                                 var totalprice = subtotal + 15;
                                 document.getElementById("body2").insertAdjacentHTML("beforeend", `
-                                <form id="checkout-form>
-                                <input type="text" value="$${subtotal}" disabled>
-                                <input type="text" value="$15" disabled>
-                                <input type="text" value="${totalprice}" id="totalprice" name="totalprice" disabled>
-                                <button type="button" id="btnCheckout" name="checkout">Checkout</button>
+
+                                    <div>
+                                        <img src="./img/voucher.png">
+                                        <form>
+                                            <label>Enter voucher/discount code</label><br>
+                                            <input class="vouch" type="text" id="fname" name="fname" disabled>
+                                            <button class="apply" disabled>APPLY</button>
+                                        </form>
+                                    </div>
+                                    <div class="hl"></div>
+                                        <div>
+                                            <table>
+                                                <tr>
+                                                    <td>Subtotal</td>
+                                                    <td>$${subtotal} </td>
+                                                    <td> </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Shipping Fee</td>
+                                                    <td>$15 </td>
+                                                    <td> </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <div class="hl"></div>
+                                        <div>
+                                            <table>
+                                                <tr>
+                                                    <td>Order Amount</td>
+                                                    <td>${totalprice} </td>
+                                                    <td> </td>
+                                                </tr>
+                                            </table>
+                     
+                                            <button class="checkout" type="button" id="btnCheckout" name="checkout">CHECK OUT</button>
+                                        </div>
+                                        
+                                
                                 </form>
                                 `);
                                 const btnCheckout = document.getElementById("btnCheckout"); /*kunin ung id ng btn para magkaron ng event listener*/
                                 btnCheckout.addEventListener("click", checkout);
 
                                 function checkout() {
-                                    var total = document.getElementById("totalprice").value;
+                                    var total = totalprice;
+                                    console.log(total);
                                     var totalObj = new Object;
                                     totalObj["totalprice"] = total;
                                     const formdata2 = {};
@@ -84,6 +118,7 @@ window.onload = function() {
                                     xhttp.onreadystatechange = function() {
                                         if (this.readyState == 4 && this.status == 201) {
                                             window.location.href = '../index';
+
                                         } else if (this.readyState == 4 && this.status == 503) {
                                             console.log(this.status);
                                         }
@@ -111,7 +146,7 @@ window.onload = function() {
                         <input class="input1" type="text" name="barangay" autofocus required>
                         <label>Mobile Number:</label>
                         <input class="input1" type="text" name="mobilenum" autofocus required>
-                        <button type="button" class="signin-btn" id="btnUpdate" name="register">UPDATE USER INFORMATION</button>
+                        <button class="update" type="button" id="btnUpdate" name="update">UPDATE USER INFORMATION</button>
                         </form>
                             `);
                         xhttp.open("POST", "../api/object/cartAPI.php");
@@ -128,6 +163,10 @@ window.onload = function() {
                                     totalprice = tprice + totalprice;
                                 }
                                 document.getElementById("body2").insertAdjacentHTML("beforeend", `
+                                    
+                                    
+                                
+                                
                                     <form id="checkout-form>
                                     <input type="text" value="$${totalprice}" disabled>
                                     <input type="text" value="$15" disabled>
@@ -180,7 +219,7 @@ window.onload = function() {
                     };
                 };
             } else if (this.readyState == 4 && this.status == 401) {
-                window.location.href = "./login";
+                window.location.href = "./signIn.php";
             }
         };
     }
@@ -210,3 +249,12 @@ window.onload = function() {
         return "";
     }
 }
+
+/*
+
+
+                        
+
+
+
+*/
