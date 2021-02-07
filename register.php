@@ -17,7 +17,7 @@
             <div class="wrapper">
                 <nav class="nav1">
                     <div class="logo">
-                        <a href="index"><img src="./img/logo.png"></a>
+                        <a href="index.html"><img src="./img/logo.png"></a>
                     </div>
 
                     <ul class="nav-item1">
@@ -34,7 +34,7 @@
                 <nav class="nav2">
                     <ul class="nav-item2">
                         <li>
-                            <a href="home.html">Home</a>
+                            <a href="index.html">Home</a>
                         </li>
 
                         <li>
@@ -42,7 +42,7 @@
                         </li>
 
                         <li>
-                            <a href="#">Group Buys</a>
+                            <a href="products.php?itemType=GB">Group Buys</a>
                         </li>
 
                         <li>

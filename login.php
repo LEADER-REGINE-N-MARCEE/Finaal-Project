@@ -18,7 +18,7 @@
             <div class="wrapper">
                 <nav class="nav1">
                     <div class="logo">
-                        <a href="index"><img src="./img/logo.png"></a>
+                        <a href="index.html"><img src="./img/logo.png"></a>
                     </div>
 
                     <ul class="nav-item1">

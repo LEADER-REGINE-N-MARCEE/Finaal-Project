@@ -6,7 +6,7 @@ class Database
     private $host = "localhost"; #localhost
     private $db_name = "store"; #name ng database
     private $username = "root"; #username
-    private $password = ""; #wala
+    private $password = "finalproject"; #wala
     public $conn; #variable ng connection
     // para maka connect sa database
     public function getConnection()

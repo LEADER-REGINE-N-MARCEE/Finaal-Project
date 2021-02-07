@@ -22,7 +22,7 @@ $itemType = $_GET['itemType'];
             <div class="wrapper">
                 <nav class="nav1">
                     <div class="logo">
-                        <a href="index"><img src="./img/logo.png"></a>
+                        <a href="index.html"><img src="./img/logo.png"></a>
                     </div>
 
                     <ul class="nav-item1">
@@ -39,7 +39,7 @@ $itemType = $_GET['itemType'];
                 <nav class="nav2">
                     <ul class="nav-item2">
                         <li>
-                            <a href="index">Home</a>
+                            <a href="index.html">Home</a>
                         </li>
 
                         <li>
@@ -55,7 +55,7 @@ $itemType = $_GET['itemType'];
                         </li>
 
                         <li>
-                            <a href="aboutus">About Us</a>
+                            <a href="aboutus.html">About Us</a>
                         </li>
                     </ul>
                 </nav>

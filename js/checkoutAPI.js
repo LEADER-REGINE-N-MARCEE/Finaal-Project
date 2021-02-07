@@ -83,7 +83,7 @@ window.onload = function() {
                                     xhttp.send(JSON.stringify(formdata2));
                                     xhttp.onreadystatechange = function() {
                                         if (this.readyState == 4 && this.status == 201) {
-                                            window.location.href = '../index';
+                                            window.location.href = '../index.php';
                                         } else if (this.readyState == 4 && this.status == 503) {
                                             console.log(this.status);
                                         }
@@ -180,7 +180,7 @@ window.onload = function() {
                     };
                 };
             } else if (this.readyState == 4 && this.status == 401) {
-                window.location.href = "./login";
+                window.location.href = "./login.php";
             }
         };
     }

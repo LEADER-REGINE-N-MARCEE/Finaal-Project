@@ -125,7 +125,7 @@ window.onload = function() {
                                         };
                                     }
                                 } else if (this.readyState == 4 && this.status == 401) {
-                                    window.location.href = "./login";
+                                    window.location.href = "./login.php";
                                 }
                             }
                         }

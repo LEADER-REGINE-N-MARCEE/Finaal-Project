@@ -35,7 +35,7 @@ window.onload = function() { /*para maload agad ung script pag naload ung web pa
                     <nav class="nav2">
                         <ul class="nav-item2">
                             <li>
-                                <a href="index">Home</a>
+                                <a href="index.php">Home</a>
                             </li>
     
                             <li>
@@ -43,7 +43,7 @@ window.onload = function() { /*para maload agad ung script pag naload ung web pa
                             </li>
     
                             <li>
-                                <a href="#">Group Buys</a>
+                                <a href="products.php?itemType=GB">Group Buys</a>
                             </li>
     
                             <li>
@@ -51,7 +51,7 @@ window.onload = function() { /*para maload agad ung script pag naload ung web pa
                             </li>
     
                             <li>
-                                <a href="aboutus">About Us</a>
+                                <a href="aboutus.html">About Us</a>
                             </li>
                         </ul>
                     </nav>
@@ -90,7 +90,7 @@ window.onload = function() { /*para maload agad ung script pag naload ung web pa
                 <div class="wrapper">
                     <nav class="nav1">
                         <div class="logo">
-                            <a href="index"><img src="./img/logo.png"></a>
+                            <a href="index.html"><img src="./img/logo.png"></a>
                         </div>
     
                         <ul class="nav-item1">
@@ -109,7 +109,7 @@ window.onload = function() { /*para maload agad ung script pag naload ung web pa
                     <nav class="nav2">
                         <ul class="nav-item2">
                             <li>
-                                <a href="#">Home</a>
+                                <a href="index.html">Home</a>
                             </li>
     
                             <li>
@@ -117,7 +117,7 @@ window.onload = function() { /*para maload agad ung script pag naload ung web pa
                             </li>
     
                             <li>
-                                <a href="#">Group Buys</a>
+                                <a href="products.php?itemType=GB>Group Buys</a>
                             </li>
     
                             <li>
@@ -125,7 +125,7 @@ window.onload = function() { /*para maload agad ung script pag naload ung web pa
                             </li>
     
                             <li>
-                                <a href="aboutus">About Us</a>
+                                <a href="aboutus.html">About Us</a>
                             </li>
                         </ul>
                     </nav>
