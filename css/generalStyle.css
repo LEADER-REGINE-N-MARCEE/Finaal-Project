@@ -60,6 +60,7 @@ nav ul {
     border: none;
     outline: none;
     background-color: transparent;
+    cursor: pointer;
 }
 
 .nav-item2 li:nth-last-of-type(1) {
