@@ -20,7 +20,7 @@ if (empty($data->itemID) && empty($data->itemCode) && empty($data->itemType) && 
     )); 
     return;
 }
-$product->itemID = $data->itemID;
+$invoice->itemID = $data->itemID;
 $product->itemCode = $data->itemCode;
 $product->itemType = $data->itemType;
 $product->itemName = $data->itemName;
