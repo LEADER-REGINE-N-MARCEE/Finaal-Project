@@ -11,7 +11,7 @@ window.onload = function() { /*para maload agad ung script pag naload ung web pa
         var data = toObject(form); /*initialize ung variable data. then icacall ung toObject na function the parameter ung form */
         var xhttp = new XMLHttpRequest(); { /*para sa API */
 
-            xhttp.open("POST", "../api/object/registerAPI.php"); /*POST ung request, then icall ung registerAPI.php */
+            xhttp.open("POST", API.userDB.signUp); /*POST ung request, then icall ung registerAPI.php */
             xhttp.send(JSON.stringify(data)); /*isesend ung data na nakuha dun sa form */
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 201) {
@@ -35,6 +35,4 @@ window.onload = function() { /*para maload agad ung script pag naload ung web pa
         }
         return returnArray; /*then irereturn ung result */
     }
-
-
 }

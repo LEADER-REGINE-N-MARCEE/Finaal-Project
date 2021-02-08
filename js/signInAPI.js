@@ -7,7 +7,7 @@ window.onload = function() {
         const form = forms[0];
         var data = toObject(form);
         var xhttp = new XMLHttpRequest(); {
-            xhttp.open("POST", "../api/object/signInAPI.php");
+            xhttp.open("POST", API.userDB.signIn);
             xhttp.send(JSON.stringify(data));
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 202) {
@@ -42,7 +42,7 @@ window.onload = function() {
     function home() {
         let jwt = getCookie('jwt');
         var xhttp = new XMLHttpRequest(); {
-            xhttp.open("POST", "../api/object/validateTokenAPI.php");
+            xhttp.open("POST", API.userDB.tokenValid);
             xhttp.send(JSON.stringify({
                 jwt: jwt
             }));

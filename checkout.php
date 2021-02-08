@@ -1,11 +1,24 @@
 <?php require('header.php')?>
-    <div id="body">
+<link rel="stylesheet" href="css/checkout.css"/>
 
+    <div class="section2">
+        <div class="wrapper">
+            <h1>CHECK OUT</h1>
+
+            <div class="sect2-container">
+                <div class="div1" id="body">
+
+                </div>
+                <div class="vl">
+
+                </div>
+                <div class="div2" id="body2">
+
+                </div>
+            </div>
+
+        </div>
     </div>
 
-    <div id="body2">
-
-
-    </div>
-    <script src="js/checkOutAPI.js"></script>
+    <script src="./js/checkoutAPI.js"></script>
 <?php require('footer.php')?>

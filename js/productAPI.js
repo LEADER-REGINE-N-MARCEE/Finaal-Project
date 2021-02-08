@@ -2,7 +2,7 @@ window.onload = function() {
     var xhttp = new XMLHttpRequest(); {
 
         console.log(itemType);
-        xhttp.open("GET", "../api/object/read.php?itemType=" + itemType + "");
+        xhttp.open("GET", API.product.read + "?itemType=" + itemType + "");
         xhttp.send();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {

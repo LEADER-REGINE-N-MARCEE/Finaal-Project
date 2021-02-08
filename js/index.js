@@ -2,7 +2,7 @@ window.onload = function() { /*para maload agad ung script pag naload ung web pa
     var jwt = getCookie('jwt');
     var xhttp = new XMLHttpRequest(); {
 
-        xhttp.open("POST", "../api/object/validateTokenAPI.php");
+        xhttp.open("POST", API.userDB.tokenValid);
         xhttp.setRequestHeader("Content-Type", "application/json");
         xhttp.send(JSON.stringify({ jwt: jwt }));
         xhttp.onreadystatechange = function() {

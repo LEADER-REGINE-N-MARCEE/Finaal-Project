@@ -1,6 +1,5 @@
 <?php
-class Product
-{
+class Product {
 
     private $conn;
     private $table_name = "items";
@@ -15,14 +14,11 @@ class Product
     public $price;
     public $img_path;
 
-    public function __construct($db)
-    {
+    public function __construct($db) {
         $this->conn = $db;
     }
 
-    function read($itemType)
-    {
-
+    function read($itemType) {
         $query = "SELECT itemID, itemCode, itemType, itemName, subtitle, quantity , descriptions, price, img_path FROM " . $this->table_name . " WHERE itemType = '" . $itemType . "'";
         $stmt = $this
             ->conn
@@ -31,9 +27,7 @@ class Product
         return $stmt;
     }
 
-    function cart($usrID)
-    {
-
+    function cart($usrID) {
         $query = "SELECT * FROM items i JOIN orders o ON i.`itemCode` = o.`itemCode` WHERE o.`invoiceNum` IS NULL AND o.`orderID`='" . $usrID . "'";
         $stmt = $this
             ->conn
@@ -42,9 +36,7 @@ class Product
         return $stmt;
     }
 
-    function prod($itemCode)
-    {
-
+    function prod($itemCode) {
         $query = "SELECT itemID, itemCode, itemType, itemName, subtitle, quantity , descriptions, price, img_path, img_path2, img_path3 FROM " . $this->table_name . " WHERE itemCode = '" . $itemCode . "'";
         $stmt = $this
             ->conn
@@ -53,9 +45,7 @@ class Product
         return $stmt;
     }
 
-    function create()
-    {
-
+    function create() {
         $query = "INSERT INTO " . $this->table_name . " SET itemID=:itemID, itemCode=:itemCode, itemType=:itemType, itemName=:itemName, subtitle=:subtitle, quantity=:quantity, descriptions=:descriptions, price=:price, img_path=:img_path";
         $stmt = $this
             ->conn
@@ -81,13 +71,10 @@ class Product
         $stmt->bindParam(":price", $this->price);
         $stmt->bindParam(":img_path", $this->img_path);
 
-        if ($stmt->execute())
-        {
+        if ($stmt->execute()) {
             return true;
         }
-
         return false;
-
     }
 }
 ?>

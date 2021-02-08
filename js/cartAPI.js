@@ -3,7 +3,7 @@ window.onload = function() {
     var jwt = getCookie('jwt');
     console.log(jwt);
     var xhttp = new XMLHttpRequest(); {
-        xhttp.open("POST", "../api/object/validateTokenAPI.php");
+        xhttp.open("POST", API.userDB.tokenValid);
         xhttp.setRequestHeader("Content-Type", "application/json");
         xhttp.send(JSON.stringify({
             jwt: jwt
@@ -12,7 +12,7 @@ window.onload = function() {
             if (this.readyState == 4 && this.status == 200) {
                 var results = JSON.parse(this.response);
                 var usrID = results.id;
-                xhttp.open("POST", "../api/object/cartAPI.php");
+                xhttp.open("POST", API.product.cart);
                 xhttp.send(JSON.stringify({
                     id: usrID
                 }));
@@ -40,7 +40,7 @@ window.onload = function() {
                         btnCheckout.addEventListener("click", checkout);
 
                         function checkout() {
-                            window.location.href = "./checkout.html";
+                            window.location.href = "./checkout.php";
                         }
                     } else if (this.readyState == 4 && this.status == 404) {
                         console.log(this.response);

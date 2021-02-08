@@ -1,6 +1,6 @@
 window.onload = function() {
     var xhttp = new XMLHttpRequest(); {
-        xhttp.open("GET", "../api/object/prodPage.php?itemCode=" + itemCode + "");
+        xhttp.open("GET", API.product.prodPage + "?itemCode=" + itemCode + "");
         xhttp.send();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
@@ -9,39 +9,33 @@ window.onload = function() {
                 for (let row of results.records) {
                     document.getElementById("body").insertAdjacentHTML("beforeend", `
 
-                <div class="thumb-image">
-                    <img class="thumbnail active" src="${row.img_path}">
-                    <img class="thumbnail" src="${row.img_path2}">
-                    <img class="thumbnail" src="${row.img_path3}">
-
-                </div>
-
-                <img id=featured src="${row.img_path}">
-
-                <div class="text-details">
-                <br>
-                <h1>${row.itemName}</h1>
-                <h3>${row.subtitle}</h3>
-                <h4>$${row.price}</h4>
-                <p>${row.descriptions}</p><br>
-                <h5>Stocks: ${row.quantity}</h5>
-                <label for="">Quantity </label>
-                <form>
-                <input type="number" value="1" min="1" max="20" onkeydown="false" name='amount' id="quantity"><br>
-                <button type="button" class="add-to-cart-btn" id="btnAddToCart" name='cart'>Add to Cart</button>
-                </form>
-                
-
+                    <div class="thumb-image">
+                        <img class="thumbnail active" src="${row.img_path}">
+                        <img class="thumbnail" src="${row.img_path2}">
+                        <img class="thumbnail" src="${row.img_path3}">
                     </div>
 
-                        `);
+                    <img id=featured src="${row.img_path}">
+
+                    <div class="text-details">
+                        <br>
+                        <h1>${row.itemName}</h1>
+                        <h3>${row.subtitle}</h3>
+                        <h4>$${row.price}</h4>
+                        <p>${row.descriptions}</p><br>
+                        <h5>Stocks: ${row.quantity}</h5>
+                        <label for="">Quantity </label>
+                        <form>
+                            <input type="number" value="1" min="1" max="20" onkeydown="false" name='amount' id="quantity"><br>
+                            <button type="button" class="add-to-cart-btn" id="btnAddToCart" name='cart'>Add to Cart</button>
+                        </form>
+                    </div>`);
 
                     const btnAddToCart = document.getElementById("btnAddToCart"); /*kunin ung id ng btn para magkaron ng event listener*/
                     btnAddToCart.addEventListener("click", addtocart)
 
                     function addtocart() {
                         validate();
-
                     }
 
                     function toObject(formArray) { /*to object function*/
@@ -62,7 +56,6 @@ window.onload = function() {
                             while (c.charAt(0) == ' ') {
                                 c = c.substring(1);
                             }
-
                             if (c.indexOf(name) == 0) {
                                 return c.substring(name.length, c.length);
                             }
@@ -131,8 +124,6 @@ window.onload = function() {
                         }
                     }
                 }
-
-
             }
         }
     }

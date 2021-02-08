@@ -2,7 +2,7 @@ window.onload = function() {
     /*para maload agad ung script pag naload ung web page*/
     var jwt = getCookie('jwt');
     var xhttp = new XMLHttpRequest(); {
-        xhttp.open("POST", "../api/object/validateTokenAPI.php");
+        xhttp.open("POST", API.userDB.tokenValid);
         xhttp.setRequestHeader("Content-Type", "application/json");
         xhttp.send(JSON.stringify({
             jwt: jwt
@@ -11,7 +11,7 @@ window.onload = function() {
             if (this.readyState == 4 && this.status == 200) {
                 var results = JSON.parse(this.response);
                 var usrID = results.id;
-                xhttp.open("POST", "../api/object/userInfoAPI.php");
+                xhttp.open("POST", API.userDB.userInfo);
                 xhttp.send(JSON.stringify({
                     id: usrID
                 }));
@@ -37,7 +37,7 @@ window.onload = function() {
                         </form>
                             `);
                         }
-                        xhttp.open("POST", "../api/object/cartAPI.php");
+                        xhttp.open("POST", API.product.cart);
                         xhttp.send(JSON.stringify({
                             id: usrID
                         }));
@@ -113,7 +113,7 @@ window.onload = function() {
                                         }
                                     }
                                     console.log(JSON.stringify(formdata2));
-                                    xhttp.open("POST", "../api/object/checkoutAPI.php");
+                                    xhttp.open("POST", API.product.checkout);
                                     xhttp.send(JSON.stringify(formdata2));
                                     xhttp.onreadystatechange = function() {
                                         if (this.readyState == 4 && this.status == 201) {
@@ -134,19 +134,19 @@ window.onload = function() {
                     } else if (this.readyState == 4 && this.status == 206) {
                         document.getElementById("body").insertAdjacentHTML("beforeend", `
                         <form method="POST">
-                        <label>Full Name:</label>
-                        <input class="input1" type="text" name="fullname" autofocus required>
-                        <label>Floor/Unit Number:</label>
-                        <input class="input1" type="text" name="flrnum" autofocus required>
-                        <label>Province:</label>
-                        <input class="input1" type="text" name="province" autofocus required>
-                        <label>Municipality:</label>
-                        <input class="input1" type="text" name="municipality" autofocus required>
-                        <label>Barangay:</label>
-                        <input class="input1" type="text" name="barangay" autofocus required>
-                        <label>Mobile Number:</label>
-                        <input class="input1" type="text" name="mobilenum" autofocus required>
-                        <button class="update" type="button" id="btnUpdate" name="update">UPDATE USER INFORMATION</button>
+                            <label>Full Name:</label>
+                            <input class="input1" type="text" name="fullname" autofocus required>
+                            <label>Floor/Unit Number:</label>
+                            <input class="input1" type="text" name="flrnum" autofocus required>
+                            <label>Province:</label>
+                            <input class="input1" type="text" name="province" autofocus required>
+                            <label>Municipality:</label>
+                            <input class="input1" type="text" name="municipality" autofocus required>
+                            <label>Barangay:</label>
+                            <input class="input1" type="text" name="barangay" autofocus required>
+                            <label>Mobile Number:</label>
+                            <input class="input1" type="text" name="mobilenum" autofocus required>
+                            <button class="update" type="button" id="btnUpdate" name="update">UPDATE USER INFORMATION</button>
                         </form>
                             `);
                         xhttp.open("POST", "../api/object/cartAPI.php");
@@ -163,14 +163,10 @@ window.onload = function() {
                                     totalprice = tprice + totalprice;
                                 }
                                 document.getElementById("body2").insertAdjacentHTML("beforeend", `
-                                    
-                                    
-                                
-                                
                                     <form id="checkout-form>
-                                    <input type="text" value="$${totalprice}" disabled>
-                                    <input type="text" value="$15" disabled>
-                                    <button type="button" id="btnCheckout" name="checkout" disabled>Checkout</button>
+                                        <input type="text" value="$${totalprice}" disabled>
+                                        <input type="text" value="$15" disabled>
+                                        <button type="button" id="btnCheckout" name="checkout" disabled>Checkout</button>
                                     </form>
                                     `);
                             } else if (this.readyState == 4 && this.status == 404) {
@@ -203,7 +199,7 @@ window.onload = function() {
                             var xhttp = new XMLHttpRequest(); {
                                 /*para sa API */
                                 console.log(formdata2);
-                                xhttp.open("POST", "../api/object/updateInfoAPI.php"); /*POST ung request, then icall ung registerAPI.php */
+                                xhttp.open("POST", API.userDB.updateInfo); /*POST ung request, then icall ung registerAPI.php */
                                 xhttp.send(JSON.stringify(formdata2)); /*isesend ung data na nakuha dun sa form */
                                 xhttp.onreadystatechange = function() {
                                     if (this.readyState == 4 && this.status == 201) {
@@ -249,12 +245,3 @@ window.onload = function() {
         return "";
     }
 }
-
-/*
-
-
-                        
-
-
-
-*/

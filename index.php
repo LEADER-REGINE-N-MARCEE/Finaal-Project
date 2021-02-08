@@ -1,3 +1,4 @@
+<script src="./js/api.js"/>
 <link rel=" stylesheet" href="css/generalStyle.css">
 <link rel=" stylesheet" href="css/home.css">
 <body id="body">
