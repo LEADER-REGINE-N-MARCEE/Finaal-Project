@@ -20,11 +20,11 @@ window.onload = function() { /*para maload agad ung script pag naload ung web pa
                 
                                     <ul class="nav-item1">
                                         <li>
-                                            <a class="nav-btn-container" href="signIn.php">
+                                            <a class="nav-btn-container" href="account.php">
                                                 <img class="profile" src="./img/profile.png">
                 
                                             </a>
-                                            <a class="nav-btn-container" href="login.php">
+                                            <a class="nav-btn-container" href="cart.php">
                 
                                                 <img class="shop" src="./img/buy.png">
                                             </a>
@@ -90,7 +90,7 @@ window.onload = function() { /*para maload agad ung script pag naload ung web pa
                                                 <img class="profile" src="./img/profile.png">
                 
                                             </a>
-                                            <a class="nav-btn-container" href="login.php">
+                                            <a class="nav-btn-container" href="signIn.php">
                 
                                                 <img class="shop" src="./img/buy.png">
                                             </a>

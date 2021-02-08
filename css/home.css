@@ -23,7 +23,7 @@
 }
 
 .text2 {
-    ffont-family: 'Source Code Pro', monospace !important;
+    font-family: 'Source Code Pro', monospace !important;
     font-style: normal;
     font-weight: normal;
     font-size: 25px;
