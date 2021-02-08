@@ -7,7 +7,7 @@ window.onload = function() {
         const form = forms[0];
         var data = toObject(form);
         var xhttp = new XMLHttpRequest(); {
-            xhttp.open("POST", "../api/object/loginAPI.php");
+            xhttp.open("POST", "../api/object/signInAPI.php");
             xhttp.send(JSON.stringify(data));
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 202) {
