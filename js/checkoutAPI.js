@@ -20,7 +20,7 @@ window.onload = function() {
                         let results2 = JSON.parse(this.response);
                         console.log(results2);
                         for (let row of results2.info) {
-                            document.getElementById("body").insertAdjacentHTML("beforeend", `
+                            document.getElementById("body1").insertAdjacentHTML("beforeend", `
                         <form method="POST">
                         <label>Full Name:</label>
                         <input class="input1" type="text" name="fullname" value = "${row.fullname}" autofocus required>
@@ -53,14 +53,7 @@ window.onload = function() {
                                 var totalprice = subtotal + 15;
                                 document.getElementById("body2").insertAdjacentHTML("beforeend", `
 
-                                    <div>
-                                        <img src="./img/voucher.png">
-                                        <form>
-                                            <label>Enter voucher/discount code</label><br>
-                                            <input class="vouch" type="text" id="fname" name="fname" disabled>
-                                            <button class="apply" disabled>APPLY</button>
-                                        </form>
-                                    </div>
+                                    
                                     <div class="hl"></div>
                                         <div>
                                             <table>
@@ -92,6 +85,7 @@ window.onload = function() {
                                 
                                 </form>
                                 `);
+
                                 const btnCheckout = document.getElementById("btnCheckout"); /*kunin ung id ng btn para magkaron ng event listener*/
                                 btnCheckout.addEventListener("click", checkout);
 

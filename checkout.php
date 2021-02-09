@@ -6,7 +6,7 @@
             <h1>CHECK OUT</h1>
 
             <div class="sect2-container">
-                <div class="div1" id="body">
+                <div class="div1" id="body1">
 
                 </div>
                 <div class="vl">

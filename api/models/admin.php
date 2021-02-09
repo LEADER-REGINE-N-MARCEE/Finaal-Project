@@ -18,8 +18,8 @@ class Product {
         $this->conn = $db;
     }
 
-    function discount($discountCode){
-        $query = "SELECT * FROM `discounts` WHERE `discountCode` = '" . $discountCode . "' AND `discount_status` = 'ACTIVE'";
+    function items() {
+        $query = "SELECT * FROM `items`";
         $stmt = $this
             ->conn
             ->prepare($query);
@@ -27,8 +27,8 @@ class Product {
         return $stmt;
     }
 
-    function read($itemType) {
-        $query = "SELECT itemID, itemCode, itemType, itemName, subtitle, quantity , descriptions, price, img_path FROM " . $this->table_name . " WHERE itemType = '" . $itemType . "'";
+    function neworders() {
+        $query = "SELECT * FROM `invoice` WHERE `order_status`='PENDING'";
         $stmt = $this
             ->conn
             ->prepare($query);
@@ -36,17 +36,8 @@ class Product {
         return $stmt;
     }
 
-    function cart($usrID) {
-        $query = "SELECT * FROM items i JOIN orders o ON i.`itemCode` = o.`itemCode` WHERE o.`invoiceNum` IS NULL AND o.`orderID`='" . $usrID . "'";
-        $stmt = $this
-            ->conn
-            ->prepare($query);
-        $stmt->execute();
-        return $stmt;
-    }
-
-    function prod($itemCode) {
-        $query = "SELECT itemID, itemCode, itemType, itemName, subtitle, quantity , descriptions, price, img_path, img_path2, img_path3 FROM " . $this->table_name . " WHERE itemCode = '" . $itemCode . "'";
+    function activeDiscounts() {
+        $query = "SELECT * FROM `discounts` WHERE `discount_status`='ACTIVE'";
         $stmt = $this
             ->conn
             ->prepare($query);
@@ -87,7 +78,45 @@ class Product {
     }
 }
 
+class User {
+    private $conn;
 
+    public $id;
+    public $firstname;
+    public $lastname;
+    public $email;
+    public $orderID;
+    public $invoiceNum;
+    public $totalprice;
+    public $totalquantity;
+    public $order_status;
 
+    public function __construct($db) {
+        $this->conn = $db;
+    }
 
+    public function viewUsers() {
+        $qr = "SELECT * FROM users WHERE roles <> 'admin'";
+        $query2 = $this
+            ->conn
+            ->prepare($qr);
+        $query2->execute();
+
+        return $query2;
+    }
+
+    function updateInvoice($orderID, $invoiceNum) {
+        $query = "UPDATE orders SET invoiceNum = '$invoiceNum' WHERE orderID = '$orderID'";
+        $query = $this
+            ->conn
+            ->prepare($query);
+        $query->execute();
+    }
+
+    public function escape_string($value) {
+        return $this
+            ->connection
+            ->real_escape_string($value); #ewan ko kung bakit may ganito baka di need pero nilagay ko parin
+    }
+}
 ?>
