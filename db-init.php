@@ -97,6 +97,17 @@ if ($conn->query($sql) === true)
                     if ($conn->query($sql) === true)
                     {
                         echo "Table invoice created successfully";
+
+                        $conn = new mysqli($servername, $username, $password, $dbname);
+                        $sql = "CREATE TABLE `store`.`discounts` ( `discountID` INT NOT NULL AUTO_INCREMENT , `discountCode` VARCHAR (255) NULL DEFAULT NULL , `discountDate` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , `discount` INT NULL DEFAULT NULL, `discount_status` TEXT , PRIMARY KEY (`discountID`)) ENGINE = InnoDB;";
+                        if ($conn->query($sql) === true)
+                        {
+                            echo "Table discounts created successfully";
+                        }
+                        else
+                        {
+                            echo "Error creating table: " . $conn->error;
+                        }
                     }
                     else
                     {
