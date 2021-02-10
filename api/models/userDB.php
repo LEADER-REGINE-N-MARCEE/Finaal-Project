@@ -96,7 +96,7 @@ class User {
         $stmt->bindParam(":order_status", $this->order_status);
 
         if ($stmt->execute()) {
-            $query2 = "UPDATE orders SET invoiceNum = :invoiceNum WHERE orderID = :orderID";
+            $query2 = "UPDATE orders SET invoiceNum = :invoiceNum WHERE invoiceNum IS NULL AND orderID = :orderID";
             $stmt2 = $this
                 ->conn
                 ->prepare($query2);
@@ -118,6 +118,15 @@ class User {
             ->conn
             ->prepare($query);
         $query->execute();
+    }
+
+    function getInvoice($usrID) {
+        $sql = "SELECT * FROM invoice WHERE orderID = '$usrID'";
+        $query = $this
+            ->conn
+            ->prepare($sql);
+        $query->execute();
+        return $query;
     }
 
     public function escape_string($value) {

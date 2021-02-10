@@ -21,22 +21,42 @@ window.onload = function() {
                 xhttp.send();
                 xhttp.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
+
                         var results2 = JSON.parse(this.response);
                         for (let rows of results2.neworders) {
+
                             document.getElementById("neworderTable").insertAdjacentHTML("beforeend", `
                             <tr>
-                            <td class=item-img>${rows.invoiceNum}</td>
-                            <td class=item-name>${rows.order_status}</td>
+                            <td class=item-img><input type="text" value="${rows.invoiceNum}" id="invoiceNum" disabled></td>
+                            <TD ALIGN="center">
+                                <select id="initial_status">        
+                                    <option value="PENDING">PENDING</option>
+                                </select>
+                                <a href="">Accept</a>
+                                <a href="">Decline</a>
+                            </TD>
                             <td class=item-quantity>${rows.totalprice}</td>
+                            
                             <tr>
                             `);
+
                         }
+
                     } else if (this.readyState == 4 && this.status == 404) {
                         console.log(this.response);
                         document.getElementById("neworderTable").insertAdjacentHTML("beforeend", `
                             <p>no New Orders Made.</p>
                         `);
                     }
+                    const btnapplySelection = document.getElementById("btnapplySelection");
+                    btnapplySelection.addEventListener("click", applySelection)
+
+                    function applySelection() {
+                        var selection = document.getElementById("initial_status").value;
+                        var invoiceNum = document.getElementById("invoiceNum").value;
+                        console.log(invoiceNum);
+                    }
+
 
 
                 };
