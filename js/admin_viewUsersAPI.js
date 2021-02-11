@@ -13,6 +13,8 @@ window.onload = function() {
                                 <td class=item-quantity>${rows.lastname}</td>
                                 <td class=item-name>${rows.email}</td>
                                 <td class=item-quantity>${rows.reg_date}</td>
+                                <td><button type="button">Edit</button></td>
+                                <td><button type="button">Delete</button></td>
                                 <tr>
                                 `);
             }

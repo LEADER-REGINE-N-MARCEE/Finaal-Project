@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>Users</title>
+    <title>Products</title>
     <script src="./js/api.js"></script>
     <link rel="stylesheet" href="./css/admin.css">
 
@@ -34,14 +34,15 @@
 
         <div class="wrapper">
             <div id="body1">
-                <h2>Registered Users</h2>
-                <table id="viewUsersTable">
+                <h2>PRODUCTS</h2>
+                <table id="viewProductsTable">
                     <tr>
-                        <td>User ID</td>
-                        <td>First Name</td>
-                        <td>Last Name</td>
-                        <td>E-mail</td>
-                        <td>Registration Date</td>
+                        <td>Item Code</td>
+                        <td>Item Type</td>
+                        <td>Item Name</td>
+                        <td>Subtitle</td>
+                        <td>Price</td>
+                        <td>Stocks</td>
                     </tr>
 
                 </table>
@@ -51,7 +52,7 @@
     </div>
 </body>
 
-<script src="./js/admin_viewUsersAPI.js"></script>
+<script src="./js/admin_viewProductsAPI.js"></script>
 
 </html>
 
