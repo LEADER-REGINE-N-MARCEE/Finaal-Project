@@ -1,5 +1,4 @@
-<?php require('header.php')
-?>
+<?php require('header.php') ?>
 <script src="js/api.js"></script>
 <link rel=" stylesheet" href="css/generalStyle.css">
 <link rel=" stylesheet" href="css/home.css">

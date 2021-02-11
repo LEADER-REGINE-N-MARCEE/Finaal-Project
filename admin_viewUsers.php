@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>Admin Dashboard</title>
+    <title>Users</title>
     <script src="./js/api.js"></script>
     <link rel="stylesheet" href="./css/admin.css">
 
@@ -35,33 +35,23 @@
         <div class="wrapper">
             <div id="body1">
                 <h2>NEW ORDERS</h2>
-                <table id="neworderTable">
+                <table id="viewUsersTable">
                     <tr>
-                        <td>Invoice</td>
-                        <td>Order Status</td>
-                        <td>Total Price</td>
+                        <td>User ID</td>
+                        <td>First Name</td>
+                        <td>Last Name</td>
+                        <td>E-mail</td>
+                        <td>Registration Date</td>
                     </tr>
 
                 </table>
             </div>
-
-            <div id="body2">
-                <h2>PRODUCT OVERVIEW</h2>
-                <table id="productoverviewTable">
-                    <tr>
-                        <td>Item Code</td>
-                        <td>Product Name</td>
-                        <td>Stocks</td>
-                    </tr>
-                </table>
-            </div>
-
 
         </div>
     </div>
 </body>
 
-<script src="./js/admin_newOrdersAPI.js"></script>
+<script src="./js/admin_viewUsersAPI.js"></script>
 
 </html>
 
@@ -129,18 +119,7 @@
 
 <!--
 
-<div id="body3">
-                <h2>USERS</h2>
-                <table id="viewUsersTable">
-                    <tr>
-                        <td>User ID</td>
-                        <td>First Name</td>
-                        <td>Last Name</td>
-                        <td>E-mail</td>
-                        <td>Registration Date</td>
-                    </tr>
-                </table>
-            </div>
+
 
             <div id="body3">
                 <h2>ACTIVE DISCOUNTS</h2>

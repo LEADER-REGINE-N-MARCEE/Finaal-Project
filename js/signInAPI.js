@@ -1,6 +1,6 @@
 window.onload = function() {
     const btnSubmit = document.getElementById("btnSubmit");
-    btnSubmit.addEventListener("click", login)
+    btnSubmit.addEventListener("click", login);
 
     function login() {
         const forms = document.querySelectorAll("form");

@@ -36,6 +36,15 @@ class Product {
         return $stmt;
     }
 
+    function viewOrders() {
+        $query = "SELECT * FROM `invoice`";
+        $stmt = $this
+            ->conn
+            ->prepare($query);
+        $stmt->execute();
+        return $stmt;
+    }
+
     function activeDiscounts() {
         $query = "SELECT * FROM `discounts` WHERE `discount_status`='ACTIVE'";
         $stmt = $this
