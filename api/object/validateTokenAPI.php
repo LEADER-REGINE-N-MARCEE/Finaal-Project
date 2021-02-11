@@ -37,11 +37,11 @@ if ($jwt)
 
         if ($role == "admin")
         {
-            $redirect = "admindashboard";
+            $redirect = "admindashboard.html";
         }
         else
         {
-            $redirect = "index";
+            $redirect = "index.php";
         }
         // show user details
         echo json_encode(array(
