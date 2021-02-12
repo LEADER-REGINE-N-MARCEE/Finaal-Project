@@ -22,7 +22,7 @@
                     <li><a href="./admin_viewUsers.php">USERS</a></li>
                     <li><a href="./admin_viewOrders.html">ORDERS</a></li>
                     <li><a href="">DISCOUNTS</a></li>
-                    <li><a href="">LOGOUT</a></li>
+                    <li><a href="javascript:signout();">LOGOUT</a></li>
                 </ul>
 
 
@@ -50,7 +50,7 @@
         </div>
     </div>
 </body>
-
+<script src="./js/signoutAPI.js"></script>
 <script src="./js/admin_viewUsersAPI.js"></script>
 
 </html>
