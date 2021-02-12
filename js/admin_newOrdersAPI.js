@@ -29,14 +29,14 @@ window.onload = function() {
                             <tr>
                             <td class=item-img><input type="text" value="${rows.invoiceNum}" id="invoiceNum" disabled></td>
                             <TD ALIGN="center">
-                                <select id="initial_status">        
+                                <select id="initial_status">
                                     <option value="PENDING">PENDING</option>
                                 </select>
-                                <a href="">Accept</a>
-                                <a href="">Decline</a>
+                                <button type="button" id="btnAcceptOrder">Accept</button>
+                                <button type="button" id="btnDeclineOrder">Decline</button>
                             </TD>
                             <td class=item-quantity>${rows.totalprice}</td>
-                            
+
                             <tr>
                             `);
 
@@ -48,13 +48,50 @@ window.onload = function() {
                             <p>no New Orders Made.</p>
                         `);
                     }
-                    const btnapplySelection = document.getElementById("btnapplySelection");
-                    btnapplySelection.addEventListener("click", applySelection)
+                    const btnAcceptOrder = document.getElementById("btnAcceptOrder");
+                    btnAcceptOrder.addEventListener("click", acceptOrder);
+                    const btnDeclineOrder = document.getElementById("btnDeclineOrder");
+                    btnDeclineOrder.addEventListener("click", declineOrder);
 
-                    function applySelection() {
-                        var selection = document.getElementById("initial_status").value;
+
+                    function acceptOrder() {
+                        var choice = "ACCEPTED";
                         var invoiceNum = document.getElementById("invoiceNum").value;
-                        console.log(invoiceNum);
+                        var xhttp = new XMLHttpRequest();
+                        xhttp.open("POST", "api/object/admin_orderChoiceAPI.php");
+                        xhttp.send(JSON.stringify({
+                            choice: choice,
+                            invoiceNum: invoiceNum
+                        }));
+                        xhttp.onreadystatechange = function(){
+                          if (this.readyState == 4 && this.status == 200){
+                            console.log(this.status);
+                            alert("Order Accepted")
+                            window.location.reload;
+                          } else if (this.readyState == 4 && this.status == 401) {
+                            console.log("error")
+                          }
+                        };
+                    }
+
+                    function declineOrder() {
+                      var choice = "DECLINED";
+                      var invoiceNum = document.getElementById("invoiceNum").value;
+                      var xhttp = new XMLHttpRequest();
+                      xhttp.open("POST", "api/object/admin_orderChoiceAPI.php");
+                      xhttp.send(JSON.stringify({
+                          choice: choice,
+                          invoiceNum: invoiceNum
+                      }));
+                      xhttp.onreadystatechange = function(){
+                        if (this.readyState == 4 && this.status == 200){
+                          console.log(this.status);
+                          alert("Order Accepted")
+                          window.location.reload;
+                        } else if (this.readyState == 4 && this.status == 401) {
+                          console.log("error")
+                        }
+                      };
                     }
 
 

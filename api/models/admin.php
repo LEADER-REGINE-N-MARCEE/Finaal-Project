@@ -114,6 +114,25 @@ class User {
         return $query2;
     }
 
+    public function updateOrder() {
+        $query = "UPDATE invoice SET invoiceNum=:invoiceNum, order_status=:order_status";
+        $stmt = $this
+            ->conn
+            ->prepare($query);
+
+        $this->order_status = htmlspecialchars(strip_tags($this->order_status));
+        $this->invoiceNum = htmlspecialchars(strip_tags($this->invoiceNum));
+
+        $stmt->bindParam(":invoiceNum", $this->invoiceNum);
+        $stmt->bindParam(":order_status", $this->order_status);
+
+        if ($stmt->execute()) {
+            return true;
+
+        }
+        return false;
+    }
+
     function updateInvoice($orderID, $invoiceNum) {
         $query = "UPDATE orders SET invoiceNum = '$invoiceNum' WHERE orderID = '$orderID'";
         $query = $this

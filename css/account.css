@@ -71,6 +71,19 @@ th {
     color: #E40E0E;
 }
 
+.declined {
+    color: #E40E0E;
+}
+
+.accepted {
+    color: #14b8e0;
+}
+
+.delivered {
+    color: #b8b8b8;
+}
+
+
 .cancel-button {
     display: flex;
     width: 200px;
