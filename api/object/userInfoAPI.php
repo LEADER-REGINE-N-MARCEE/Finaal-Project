@@ -1,53 +1,48 @@
 <?php
-header("Access-Control-Allow-Origin: *");
-header("Content-Type: application/json; charset=utf-8");
-header("Access-Control-Allow-Methods: POST");
 
-include_once '../config/database.php';
-include_once '../models/userDB.php';
+    header("Access-Control-Allow-Origin: *");
+    header("Content-Type: application/json; charset=utf-8");
+    header("Access-Control-Allow-Methods: POST");
 
-$databaseService = new Database(); #Database() is ung name ng class natin sa database.php
-$conn = $databaseService->getConnection(); #getConnection() class para maaccess ung databse
-$users = new User($conn);
+    include_once '../config/database.php';
+    include_once '../models/userDB.php';
 
-$data = json_decode(file_get_contents("php://input"));
+    $databaseService = new Database(); #Database() is ung name ng class natin sa database.php
+    $conn = $databaseService->getConnection(); #getConnection() class para maaccess ung databse
+    $users = new User($conn);
 
-$usrID = $data->id;
-$stmt = $users->user_info($usrID);
-$num = $stmt->rowCount();
+    $data = json_decode(file_get_contents("php://input"));
 
-if ($num > 0)
-{
+    $usrID = $data->id;
+    $stmt = $users->user_info($usrID);
+    $num = $stmt->rowCount();
 
-    $user_arr = array();
-    $user_arr["info"] = array();
+    if ($num > 0) {
+        
+        $user_arr = array();
+        $user_arr["info"] = array();
 
-    while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
-    {
-        extract($row);
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            extract($row);
 
-        $user_info = array(
-            "infoID" => $infoID,
-            "fullname" => $fullname,
-            "flrnum" => $flrnum,
-            "province" => $province,
-            "municipality" => $municipality,
-            "barangay" => $barangay,
-            "mobilenum" => $mobilenum
-        );
+            $user_info = array(
+                "infoID" => $infoID,
+                "fullname" => $fullname,
+                "flrnum" => $flrnum,
+                "province" => $province,
+                "municipality" => $municipality,
+                "barangay" => $barangay,
+                "mobilenum" => $mobilenum
+            );
 
-        array_push($user_arr["info"], $user_info);
+            array_push($user_arr["info"], $user_info);
+        }
+        http_response_code(200);
+        echo json_encode($user_arr);
+
+    } else {
+        http_response_code(206);
+        echo json_encode(array(
+            "message" => "User information not set. Please fill out the form."
+        ));
     }
-    http_response_code(200);
-    echo json_encode($user_arr);
-
-}
-
-else
-{
-    http_response_code(206);
-    echo json_encode(array(
-        "message" => "User information not set. Please fill out the form."
-    ));
-}
-?>
