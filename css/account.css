@@ -1,6 +1,6 @@
 .section2 h1 {
     margin-top: 80px;
-    font-family: Saira;
+    font-family: 'Source Code Pro', monospace !important;
     font-style: normal;
     font-weight: normal;
     line-height: 71px;
@@ -9,7 +9,7 @@
 }
 
 .section2 h2 {
-    font-family: Saira;
+    font-family: 'Source Code Pro', monospace !important;
     font-style: normal;
     font-weight: normal;
     line-height: 71px;
@@ -21,7 +21,7 @@
     width: 199px;
     height: 35px;
     background: #171717;
-    font-family: Font Awesome 5 Brands;
+    font-family: 'Source Code Pro', monospace !important;
     font-style: normal;
     font-weight: normal;
     line-height: 24px;
@@ -41,7 +41,7 @@ th {
 }
 
 th {
-    font-family: Saira;
+    font-family: 'Source Code Pro', monospace !important;
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
@@ -53,7 +53,7 @@ th {
 .pending,
 .shipping,
 .canceled {
-    font-family: Saira;
+    font-family: 'Source Code Pro', monospace !important;
     font-style: normal;
     font-weight: bold;
     line-height: 44px;
@@ -83,14 +83,13 @@ th {
     color: #b8b8b8;
 }
 
-
 .cancel-button {
     display: flex;
     width: 200px;
 }
 
 .cancel-button p {
-    font-family: Saira;
+    font-family: 'Source Code Pro', monospace !important;
     font-style: normal;
     font-weight: normal;
     line-height: 44px;
@@ -107,7 +106,7 @@ th {
 }
 
 .invoice {
-    font-family: Saira;
+    font-family: 'Source Code Pro', monospace !important;
     font-style: normal;
     font-weight: normal;
     line-height: 44px;
@@ -155,7 +154,7 @@ th {
 }
 
 .footer-right p:nth-last-of-type(3) {
-    font-family: Saira;
+    font-family: 'Source Code Pro', monospace !important;
     font-style: normal;
     font-weight: bold;
     font-size: 18px;
@@ -164,7 +163,7 @@ th {
 }
 
 .footer-right p {
-    font-family: Saira;
+    font-family: 'Source Code Pro', monospace !important;
     font-style: normal;
     font-weight: thin;
     font-size: 18px;
@@ -173,7 +172,7 @@ th {
 }
 
 .copyright {
-    font-family: Saira;
+    font-family: 'Source Code Pro', monospace !important;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;

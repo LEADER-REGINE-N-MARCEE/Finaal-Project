@@ -129,6 +129,25 @@ class User {
         return $query;
     }
 
+    public function cancelOrder() {
+        $query = "UPDATE invoice SET order_status=:order_status WHERE invoiceNum=:invoiceNum";
+        $stmt = $this
+            ->conn
+            ->prepare($query);
+
+        $this->order_status = htmlspecialchars(strip_tags($this->order_status));
+        $this->invoiceNum = htmlspecialchars(strip_tags($this->invoiceNum));
+
+        $stmt->bindParam(":invoiceNum", $this->invoiceNum);
+        $stmt->bindParam(":order_status", $this->order_status);
+
+        if ($stmt->execute()) {
+            return true;
+
+        }
+        return false;
+    }
+
     public function escape_string($value) {
         return $this
             ->connection

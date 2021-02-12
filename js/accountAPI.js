@@ -39,15 +39,43 @@ window.onload = function() {
                             console.log(status);
                             document.getElementById("orderTable").insertAdjacentHTML("beforeend", `
                             <tr>
-                            <td class="invoice">${rows.invoiceNum}</td>
+                            <td class="invoice"><p id="invoiceNum">${rows.invoiceNum}</p></td>
                             <td class="${status}">${rows.order_status}</td>
                             <td class="cancel-button">
-                                <img src="./img/cancel1.png">
-                                <a href="" class="cancel1">CANCEL ORDER</a>
+                                <img src="./img/cancel1.png" id="cancelImg">
+                                <a href="#" id="btnCancelOrder" class="cancel1">CANCEL ORDER</a>
                             </td>
                              </tr>
                             
                             `);
+                            const cancelImg = document.getElementById("cancelImg");
+                            const btnCancelOrder = document.getElementById("btnCancelOrder");
+                            btnCancelOrder.addEventListener("click", cancelOrder, false);
+
+                            if (rows.order_status == "CANCELLED") {
+                                btnCancelOrder.style.display = "none";
+                                cancelImg.style.display = "none";
+                            }
+
+                            function cancelOrder() {
+                                var choice = "CANCELLED";
+                                var invoiceNum = document.getElementById("invoiceNum").textContent;
+                                var xhttp = new XMLHttpRequest();
+                                xhttp.open("POST", "api/object/cancelOrderAPI.php");
+                                xhttp.send(JSON.stringify({
+                                    choice: choice,
+                                    invoiceNum: invoiceNum
+                                }));
+                                xhttp.onreadystatechange = function() {
+                                    if (this.readyState == 4 && this.status == 200) {
+                                        console.log(this.status);
+                                        alert("Order Cancelled")
+                                        window.location.reload();
+                                    } else if (this.readyState == 4 && this.status == 401) {
+                                        console.log("error")
+                                    }
+                                };
+                            }
                         }
 
                     }
@@ -58,7 +86,6 @@ window.onload = function() {
             }
         }
     }
-
 
 
 

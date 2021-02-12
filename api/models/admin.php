@@ -115,7 +115,7 @@ class User {
     }
 
     public function updateOrder() {
-        $query = "UPDATE invoice SET invoiceNum=:invoiceNum, order_status=:order_status";
+        $query = "UPDATE invoice SET order_status=:order_status WHERE invoiceNum=:invoiceNum";
         $stmt = $this
             ->conn
             ->prepare($query);

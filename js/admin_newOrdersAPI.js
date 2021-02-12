@@ -63,35 +63,35 @@ window.onload = function() {
                             choice: choice,
                             invoiceNum: invoiceNum
                         }));
-                        xhttp.onreadystatechange = function(){
-                          if (this.readyState == 4 && this.status == 200){
-                            console.log(this.status);
-                            alert("Order Accepted")
-                            window.location.reload;
-                          } else if (this.readyState == 4 && this.status == 401) {
-                            console.log("error")
-                          }
+                        xhttp.onreadystatechange = function() {
+                            if (this.readyState == 4 && this.status == 200) {
+                                console.log(this.status);
+                                alert("Order Accepted")
+                                window.location.reload();
+                            } else if (this.readyState == 4 && this.status == 401) {
+                                console.log("error")
+                            }
                         };
                     }
 
                     function declineOrder() {
-                      var choice = "DECLINED";
-                      var invoiceNum = document.getElementById("invoiceNum").value;
-                      var xhttp = new XMLHttpRequest();
-                      xhttp.open("POST", "api/object/admin_orderChoiceAPI.php");
-                      xhttp.send(JSON.stringify({
-                          choice: choice,
-                          invoiceNum: invoiceNum
-                      }));
-                      xhttp.onreadystatechange = function(){
-                        if (this.readyState == 4 && this.status == 200){
-                          console.log(this.status);
-                          alert("Order Accepted")
-                          window.location.reload;
-                        } else if (this.readyState == 4 && this.status == 401) {
-                          console.log("error")
-                        }
-                      };
+                        var choice = "DECLINED";
+                        var invoiceNum = document.getElementById("invoiceNum").value;
+                        var xhttp = new XMLHttpRequest();
+                        xhttp.open("POST", "api/object/admin_orderChoiceAPI.php");
+                        xhttp.send(JSON.stringify({
+                            choice: choice,
+                            invoiceNum: invoiceNum
+                        }));
+                        xhttp.onreadystatechange = function() {
+                            if (this.readyState == 4 && this.status == 200) {
+                                console.log(this.status);
+                                alert("Order Accepted")
+                                window.location.reload();
+                            } else if (this.readyState == 4 && this.status == 401) {
+                                console.log("error")
+                            }
+                        };
                     }
 
 

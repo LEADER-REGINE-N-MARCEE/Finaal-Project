@@ -16,7 +16,7 @@
 }
 
 .section2 h2 {
-    font-family: Font Awesome 5 Brands;
+    font-family: 'Source Code Pro', monospace !important;
     font-style: normal;
     font-weight: normal;
     font-size: 30px;
@@ -44,7 +44,7 @@
     margin-top: 50px;
     text-indent: 50px;
     text-align: justify;
-    font-family: Font Awesome 5 Brands;
+    font-family: 'Source Code Pro', monospace !important;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;

@@ -11,7 +11,7 @@
             <p class="p1">PRESS WITH CONFIDENCE</p>
             <p class="p2">We will make your keyboard experience better</p>
             <div class="btn-container">
-                <button class="shop-btn">Shop Now</button>
+                <button class="shop-btn" id="btnShop">Shop Now</button>
             </div>
         </div>
         <div class="intro">
