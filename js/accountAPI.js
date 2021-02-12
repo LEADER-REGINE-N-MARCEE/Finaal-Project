@@ -52,7 +52,7 @@ window.onload = function() {
                             const btnCancelOrder = document.getElementById("btnCancelOrder");
                             btnCancelOrder.addEventListener("click", cancelOrder, false);
 
-                            if (rows.order_status == "CANCELLED") {
+                            if (rows.order_status == "CANCELLED" || rows.order_status == "SHIPPING") {
                                 btnCancelOrder.style.display = "none";
                                 cancelImg.style.display = "none";
                             }
