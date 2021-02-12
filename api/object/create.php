@@ -1,61 +1,50 @@
 <?php
-header("Access-Control-Allow-Origin: *");
-header("Content-Type: application/json; charset=utf-8");
 
-include_once '../config/database.php';
-include_once '../models/product.php';
+    header("Access-Control-Allow-Origin: *");
+    header("Content-Type: application/json; charset=utf-8");
 
-$database = new Database();
-$db = $database->getConnection();
+    include_once '../config/database.php';
+    include_once '../models/product.php';
 
-$product = new Product($db);
+    $database = new Database();
+    $db = $database->getConnection();
 
-$data = json_decode(file_get_contents("php://input"));
+    $product = new Product($db);
 
-if (!empty($data->itemID) && !empty($data->itemCode) && !empty($data->itemType) && !empty($data->itemName) && !empty($data->subtitle) && !empty($data->quantity) && !empty($data->descriptions) && !empty($data->price) && !empty($data->img_path) && !empty($data->img_path3) && !empty($data->img_path3))
+    $data = json_decode(file_get_contents("php://input"));
 
-{
-
-    $product->itemID = $data->itemID;
-    $product->itemCode = $data->itemCode;
-    $product->itemType = $data->itemType;
-    $product->itemName = $data->itemName;
-    $product->subtitle = $data->subtitle;
-    $product->quantity = $data->quantity;
-    $product->descriptions = $data->descriptions;
-    $product->price = $data->price;
-    $product->img_path = $data->img_path;
-    $product->img_path = $data->img_path2;
-    $product->img_path = $data->img_path3;
-
-    if ($product->create())
+    if (!empty($data->itemID) && !empty($data->itemCode) && !empty($data->itemType) && !empty($data->itemName) && !empty($data->subtitle) && !empty($data->quantity) && !empty($data->descriptions) && !empty($data->price) && !empty($data->img_path) && !empty($data->img_path3) && !empty($data->img_path3))
     {
 
-        http_response_code(201);
+        $product->itemID = $data->itemID;
+        $product->itemCode = $data->itemCode;
+        $product->itemType = $data->itemType;
+        $product->itemName = $data->itemName;
+        $product->subtitle = $data->subtitle;
+        $product->quantity = $data->quantity;
+        $product->descriptions = $data->descriptions;
+        $product->price = $data->price;
+        $product->img_path = $data->img_path;
+        $product->img_path = $data->img_path2;
+        $product->img_path = $data->img_path3;
 
+        if ($product->create()) {
+
+            http_response_code(201);
+            echo json_encode(array(
+                "message" => "Product was created."
+            ));
+        } else {
+
+            http_response_code(503);
+            echo json_encode(array(
+                "message" => "Unable to create product."
+            ));
+        }
+    } else { #Tell the user data is incomplete
+
+        http_response_code(400);
         echo json_encode(array(
-            "message" => "Product was created."
+            "message" => "Unable to create product. Data is incomplete."
         ));
     }
-
-    else
-    {
-
-        http_response_code(503);
-
-        echo json_encode(array(
-            "message" => "Unable to create product."
-        ));
-    }
-}
-
-// tell the user data is incomplete
-else
-{
-    http_response_code(400);
-
-    echo json_encode(array(
-        "message" => "Unable to create product. Data is incomplete."
-    ));
-}
-?>
