@@ -67,7 +67,7 @@ window.onload = function() {
                           if (this.readyState == 4 && this.status == 200){
                             console.log(this.status);
                             alert("Order Accepted")
-                            window.location.reload();
+                            window.location.reload;
                           } else if (this.readyState == 4 && this.status == 401) {
                             console.log("error")
                           }
@@ -87,7 +87,7 @@ window.onload = function() {
                         if (this.readyState == 4 && this.status == 200){
                           console.log(this.status);
                           alert("Order Accepted")
-                          window.location.reload();
+                          window.location.reload;
                         } else if (this.readyState == 4 && this.status == 401) {
                           console.log("error")
                         }
