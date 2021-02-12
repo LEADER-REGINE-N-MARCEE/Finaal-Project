@@ -20,7 +20,7 @@
 
 <body id="body">
 
-    <div class="section1">
+    <div class="header">
 
             <div class="nav-container">
                 <div class="wrapper">

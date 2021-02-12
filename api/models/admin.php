@@ -36,6 +36,15 @@ class Product {
         return $stmt;
     }
 
+    function viewOrders() {
+        $query = "SELECT * FROM `invoice`";
+        $stmt = $this
+            ->conn
+            ->prepare($query);
+        $stmt->execute();
+        return $stmt;
+    }
+
     function activeDiscounts() {
         $query = "SELECT * FROM `discounts` WHERE `discount_status`='ACTIVE'";
         $stmt = $this
@@ -103,6 +112,25 @@ class User {
         $query2->execute();
 
         return $query2;
+    }
+
+    public function updateOrder() {
+        $query = "UPDATE invoice SET order_status=:order_status WHERE invoiceNum=:invoiceNum";
+        $stmt = $this
+            ->conn
+            ->prepare($query);
+
+        $this->order_status = htmlspecialchars(strip_tags($this->order_status));
+        $this->invoiceNum = htmlspecialchars(strip_tags($this->invoiceNum));
+
+        $stmt->bindParam(":invoiceNum", $this->invoiceNum);
+        $stmt->bindParam(":order_status", $this->order_status);
+
+        if ($stmt->execute()) {
+            return true;
+
+        }
+        return false;
     }
 
     function updateInvoice($orderID, $invoiceNum) {

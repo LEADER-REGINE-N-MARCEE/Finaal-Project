@@ -3,60 +3,64 @@
 <head>
     <title>Admin Dashboard</title>
     <script src="./js/api.js"></script>
+    <link rel="stylesheet" href="./css/admin.css">
+
 </head>
 
 <body>
-    <div id="body1">
-        <h2>NEW ORDERS</h2>
-        <table id="neworderTable">
-            <tr>
-                <td>Invoice</td>
-                <td>Order Status</td>
-                <td>Total Price</td>
-            </tr>
-        </table>
+    <div class="section2">
+        <nav>
+            <div class="hamburger">
+                <button>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="">ADMIN<br>ADMIN</a></li>
+                    <li><a href="">PRODUCTS</a></li>
+                    <li><a href="./admin_viewUsers.php">USERS</a></li>
+                    <li><a href="./admin_viewOrders.html">ORDERS</a></li>
+                    <li><a href="">DISCOUNTS</a></li>
+                    <li><a href="javascript:signout();">LOGOUT</a></li>
+                </ul>
+
+
+            </div>
+            <h1>ADMIN DASHBOARD</h1>
+            <img src="./img/logo.png">
+        </nav>
+
+
+        <div class="wrapper">
+            <div id="body1">
+                <h2>NEW ORDERS</h2>
+                <table id="neworderTable">
+                    <tr>
+                        <td>Invoice</td>
+                        <td>Order Status</td>
+                        <td>Total Price</td>
+                    </tr>
+
+                </table>
+            </div>
+
+            <div id="body2">
+                <h2>PRODUCT OVERVIEW</h2>
+                <table id="productoverviewTable">
+                    <tr>
+                        <td>Item Code</td>
+                        <td>Product Name</td>
+                        <td>Stocks</td>
+                    </tr>
+                </table>
+            </div>
+
+
+        </div>
     </div>
-
-    <div id="body2">
-        <h2>PRODUCT OVERVIEW</h2>
-        <table id="productoverviewTable">
-            <tr>
-                <td>Item Code</td>
-                <td>Product Name</td>
-                <td>Stocks</td>
-            </tr>
-        </table>
-    </div>
-
-    <div id="body3">
-        <h2>USERS</h2>
-        <table id="viewUsersTable">
-            <tr>
-                <td>User ID</td>
-                <td>First Name</td>
-                <td>Last Name</td>
-                <td>E-mail</td>
-                <td>Registration Date</td>
-            </tr>
-        </table>
-    </div>
-
-    <div id="body3">
-        <h2>ACTIVE DISCOUNTS</h2>
-        <table id="activeDiscountsTable">
-            <tr>
-                <td>Discount ID</td>
-                <td>Discount Code</td>
-                <td>Discount</td>
-                <td>Discount Status</td>
-                <td>Discount Date</td>
-            </tr>
-        </table>
-    </div>
-
-
 </body>
-
+<script src="./js/signoutAPI.js"></script>
 <script src="./js/admin_newOrdersAPI.js"></script>
 
 </html>

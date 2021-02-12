@@ -21,22 +21,79 @@ window.onload = function() {
                 xhttp.send();
                 xhttp.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
+
                         var results2 = JSON.parse(this.response);
                         for (let rows of results2.neworders) {
+
                             document.getElementById("neworderTable").insertAdjacentHTML("beforeend", `
                             <tr>
-                            <td class=item-img>${rows.invoiceNum}</td>
-                            <td class=item-name>${rows.order_status}</td>
+                            <td class=item-img><input type="text" value="${rows.invoiceNum}" id="invoiceNum" disabled></td>
+                            <TD ALIGN="center">
+                                <select id="initial_status">
+                                    <option value="PENDING">PENDING</option>
+                                </select>
+                                <button type="button" id="btnAcceptOrder">Accept</button>
+                                <button type="button" id="btnDeclineOrder">Decline</button>
+                            </TD>
                             <td class=item-quantity>${rows.totalprice}</td>
+
                             <tr>
                             `);
+
                         }
+
                     } else if (this.readyState == 4 && this.status == 404) {
                         console.log(this.response);
                         document.getElementById("neworderTable").insertAdjacentHTML("beforeend", `
                             <p>no New Orders Made.</p>
                         `);
                     }
+                    const btnAcceptOrder = document.getElementById("btnAcceptOrder");
+                    btnAcceptOrder.addEventListener("click", acceptOrder);
+                    const btnDeclineOrder = document.getElementById("btnDeclineOrder");
+                    btnDeclineOrder.addEventListener("click", declineOrder);
+
+
+                    function acceptOrder() {
+                        var choice = "ACCEPTED";
+                        var invoiceNum = document.getElementById("invoiceNum").value;
+                        var xhttp = new XMLHttpRequest();
+                        xhttp.open("POST", "api/object/admin_orderChoiceAPI.php");
+                        xhttp.send(JSON.stringify({
+                            choice: choice,
+                            invoiceNum: invoiceNum
+                        }));
+                        xhttp.onreadystatechange = function() {
+                            if (this.readyState == 4 && this.status == 200) {
+                                console.log(this.status);
+                                alert("Order Accepted")
+                                window.location.reload();
+                            } else if (this.readyState == 4 && this.status == 401) {
+                                console.log("error")
+                            }
+                        };
+                    }
+
+                    function declineOrder() {
+                        var choice = "DECLINED";
+                        var invoiceNum = document.getElementById("invoiceNum").value;
+                        var xhttp = new XMLHttpRequest();
+                        xhttp.open("POST", "api/object/admin_orderChoiceAPI.php");
+                        xhttp.send(JSON.stringify({
+                            choice: choice,
+                            invoiceNum: invoiceNum
+                        }));
+                        xhttp.onreadystatechange = function() {
+                            if (this.readyState == 4 && this.status == 200) {
+                                console.log(this.status);
+                                alert("Order Accepted")
+                                window.location.reload();
+                            } else if (this.readyState == 4 && this.status == 401) {
+                                console.log("error")
+                            }
+                        };
+                    }
+
 
 
                 };
@@ -64,30 +121,7 @@ window.onload = function() {
 
 
                 };
-                var xhttp = new XMLHttpRequest();
-                xhttp.open("POST", "api/object/admin_viewUsersAPI.php");
-                xhttp.send();
-                xhttp.onreadystatechange = function() {
-                    if (this.readyState == 4 && this.status == 200) {
-                        var results4 = JSON.parse(this.response);
-                        for (let rows of results4.users) {
-                            document.getElementById("viewUsersTable").insertAdjacentHTML("beforeend", `
-                                            <tr>
-                                            <td class=item-img>${rows.id}</td>
-                                            <td class=item-name>${rows.firstname}</td>
-                                            <td class=item-quantity>${rows.lastname}</td>
-                                            <td class=item-name>${rows.email}</td>
-                                            <td class=item-quantity>${rows.reg_date}</td>
-                                            <tr>
-                                            `);
-                        }
-                    } else if (this.readyState == 4 && this.status == 404) {
-                        console.log(this.response);
-                        document.getElementById("viewUsersTable").insertAdjacentHTML("beforeend", `
-                                            <p>No Users Registered in the Database.</p>
-                                        `);
-                    }
-                };
+
                 var xhttp = new XMLHttpRequest();
                 xhttp.open("POST", "api/object/admin_activeDiscountsAPI.php");
                 xhttp.send();

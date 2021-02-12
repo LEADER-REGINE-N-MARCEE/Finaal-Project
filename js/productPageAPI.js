@@ -7,7 +7,7 @@ window.onload = function() {
                 let results = JSON.parse(this.response);
 
                 for (let row of results.records) {
-                    document.getElementById("body").insertAdjacentHTML("beforeend", `
+                    document.getElementById("item-container").insertAdjacentHTML("beforeend", `
 
                     <div class="thumb-image">
                         <img class="thumbnail active" src="${row.img_path}">
@@ -108,7 +108,7 @@ window.onload = function() {
                                             if (this.readyState == 4 && this.status == 201) {
                                                 let result = JSON.parse(this.response);
                                                 alert(result.message);
-
+                                                window.location.href = "./cart.php";
 
                                             } else if (this.readyState == 4 && this.status == 400) {
                                                 let result = JSON.parse(this.response);
@@ -126,5 +126,24 @@ window.onload = function() {
                 }
             }
         }
+    }
+
+    let thumbnails = document.getElementsByClassName('thumbnail')
+
+    let activeImages = document.getElementsByClassName('active')
+
+    for (var i = 0; i < thumbnails.length; i++) {
+
+        thumbnails[i].addEventListener('mouseover', function() {
+            console.log(activeImages)
+
+            if (activeImages.length > 0) {
+                activeImages[0].classList.remove('active')
+            }
+
+
+            this.classList.add('active')
+            document.getElementById('featured').src = this.src
+        })
     }
 }

@@ -1,9 +1,36 @@
-<?php require('header.php')
-?>
+
 <script src="js/api.js"></script>
 <link rel=" stylesheet" href="css/generalStyle.css">
 <link rel=" stylesheet" href="css/home.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@700&family=Roboto:wght@100;300&display=swap" rel="stylesheet">
 <body id="body">
+    <div class="section1">
+        <?php require('header1.php') ?>
+        <div class="header-p">
+            <p class="p1">PRESS WITH CONFIDENCE</p>
+            <p class="p2">We will make your keyboard experience better</p>
+            <div class="btn-container">
+                <button class="shop-btn" id="btnShop">Shop Now</button>
+            </div>
+        </div>
+        <div class="intro">
+            <div class="intro-text">
+                <h1 class="hide">
+                    <span class="text">Ano</span>
+                </h1>
+                <h1 class="hide">
+                    <span class="text">Maganda</span>
+                </h1>
+                <h1 class="hide">
+                    <span class="text">Ilagay</span>
+                </h1>
+            </div>
+        </div>
+        <div class="slider"></div>
+    </div>
+
+
     <div class="section2">
         <div class="wrapper">
             <h1>TOP SELLING</h1>
@@ -135,5 +162,12 @@
             </div>
         </div>
     </div>
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"
+      integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/index-intro.js"></script>
     <script src="js/index.js"></script>
 <?php require('footer.php')?>

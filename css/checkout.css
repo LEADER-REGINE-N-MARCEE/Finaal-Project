@@ -1,119 +1,111 @@
-.sect2-container{
-	display: flex;
+.sect2-container {
+    display: flex;
 }
 
-.section2 h1{
-	font-family: Saira;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 45px;
-	line-height: 71px;
-
-
-	text-align: center;
-	margin-top: 80px;
-	margin-bottom: 60px;
-	color: #FF8125;
+.section2 h1 {
+    font-family: 'Source Code Pro', monospace !important;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 45px;
+    line-height: 71px;
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 60px;
+    color: #FF8125;
 }
 
-.section2 label{
-	font-family: Font Awesome 5 Brands;
-	font-style: normal;
-	font-weight: normal;
-	line-height: 50px;
-	
-}
-.div1{
-	width: 560px;
+.section2 label {
+    font-family: 'Source Code Pro', monospace !important;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 50px;
 }
 
-.div1 input{
-  border: none;
-  width: 560px;
-  border-bottom: 1px solid #171717;
+.div1 {
+    width: 560px;
 }
 
-.update{
-	margin-top: 50px;
-	background: #FF8125;
-	font-family: Font Awesome 5 Brands;
-	font-style: normal;
-	font-weight: normal;
-	border: none;
-	line-height: 24px;
-	text-align: center;
-	width: 560px;
-	color: #FFFFFF;
-	height: 34px;
+.div1 input {
+    border: none;
+    width: 560px;
+    border-bottom: 1px solid #171717;
+}
+
+.update {
+    margin-top: 50px;
+    background: #FF8125;
+    font-family: 'Source Code Pro', monospace !important;
+    font-style: normal;
+    font-weight: normal;
+    border: none;
+    line-height: 24px;
+    text-align: center;
+    width: 560px;
+    color: #FFFFFF;
+    height: 34px;
 }
 
 .vl {
-  border-left: 1px solid #171717;
-  margin-left: 20px;
-  height: 410px;
+    border-left: 1px solid #171717;
+    margin-left: 20px;
+    height: 410px;
 }
 
-
-.div2{
-	width: 463px;
-	margin-left: 97px;
+.div2 {
+    width: 463px;
+    margin-left: 97px;
 }
 
-.apply{
-
-	width: 173px;
-	font-family: Saira;
-	font-style: normal;
-	font-weight: normal;
-	margin-left: 16px;
-	line-height: 33px;
-	border: none;
-	background: #618DB9;
-	color: #FFFFFF;
-}
-.div2 img{
-	display: block;
-	width: 180px;
-	margin-left: auto;
-	margin-right: auto;
+.apply {
+    width: 173px;
+    font-family: 'Source Code Pro', monospace !important;
+    font-style: normal;
+    font-weight: normal;
+    margin-left: 16px;
+    line-height: 33px;
+    border: none;
+    background: #618DB9;
+    color: #FFFFFF;
 }
 
-
-.hl{
-	border-bottom: 1px solid #171717;
-  	margin-top: 20px;
-  	margin-bottom: 20px;
-  	width: 463px;
+.div2 img {
+    display: block;
+    width: 180px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-table{
-	width: 100%;
-	
+.hl {
+    border-bottom: 1px solid #171717;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 463px;
 }
 
-td{
-	height: 37px;
+table {
+    width: 100%;
 }
 
-.checkout{
-	width: 463px;
-height: 34px;
-margin-top: 36px;
-
-background: #FF8125;
-border: none;
-font-family: Font Awesome 5 Brands;
-font-style: normal;
-font-weight: normal;
-
-line-height: 24px;
-text-align: center;
-
-color: #FFFFFF;
+td {
+    height: 37px;
 }
 
-.vouch{
-	width: 270px;
-  	border: none;
-  	border-bottom: 1px solid #171717;
+.checkout {
+    width: 463px;
+    height: 34px;
+    margin-top: 36px;
+    background: #FF8125;
+    border: none;
+    font-family: 'Source Code Pro', monospace !important;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 24px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.vouch {
+    width: 270px;
+    border: none;
+    border-bottom: 1px solid #171717;
 }
