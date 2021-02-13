@@ -186,7 +186,7 @@ window.onload = function() {
                                             </table>
                      
                                             <button class="checkout" type="button" id="btnCheckout" name="checkout" disabled>CHECK OUT</button>
-                                            <em>Update the User Information First</em>
+                                            <em>*Update the User Information First</em>
                                         </div>
                                         
                                 
