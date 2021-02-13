@@ -15,14 +15,14 @@ window.onload = function() {
                 
                 var data = formToObject(form);
 
-                var xhttp1 = new XMLHttpRequest();
-                xhttp1.open("POST", API.admin.create);
-                xhttp1.send();
-                xhttp1.onreadystatechange = function() {
-                    if (this.readyState == 4 && this.status == 200) {
-                        console.log(xhttp1);
+                var xhttp = new XMLHttpRequest();
+                    xhttp.open("POST", API.admin.create);
+                    xhttp.send();
+                    xhttp.onreadystatechange = function() {
+                        if (this.readyState == 4 && this.status == 200) {
+                            console.log(xhttp);
+                        }
                     }
-                }
             } else if (this.readyState == 4 && this.status == 401) {
                 console.log("Unauthorized Access! Authentication required.");
                 window.location.href = '../signIn.php';
