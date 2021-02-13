@@ -18,7 +18,7 @@
 
 .p1{
     margin-top: 100px;
-    
+
     font-style: normal;
     font-weight: 100;
     font-size: 45px;
@@ -78,8 +78,8 @@
     background-color: transparent;
     width: 229px;
     height: 52px;
-    
-    
+
+
 }
 
 .shop-btn p {
@@ -319,6 +319,10 @@
     margin: 45px auto;
 }
 
+.items img {
+    width: 359px;
+    height: 220px
+}
 
 @media screen and (max-width: 768px){
     .item-container,
@@ -336,7 +340,7 @@
     }
 
     .map1{
-        
+
         display: block;
         margin: 0 auto;
         width: 90%;
