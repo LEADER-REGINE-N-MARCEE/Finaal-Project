@@ -34,22 +34,8 @@
     <div class="section2">
         <div class="wrapper">
             <h1>TOP SELLING</h1>
-            <div class="item-container">
-                <div class="items">
-                    <img class="" src="./img/item1.png">
-                    <h2>EPBT</h2>
-                    <p>FULLY ASSEMBLED MECHANICAL KEYBOARD</p>
-                </div>
-                <div class="items">
-                    <img class="" src="./img/item2.png">
-                    <h2>KBD75</h2>
-                    <p>FULLY ASSEMBLED MECHANICAL KEYBOARD</p>
-                </div>
-                <div class="items">
-                    <img class="" src="./img/item3.png">
-                    <h2>DROP CTRL</h2>
-                    <p>PREMIUM MECHANICAL KEYBOARD</p>
-                </div>
+            <div class="item-container" id="topkeyboards">
+
             </div>
 
             <h1>TOP SWITCHES</h1>
@@ -162,7 +148,7 @@
             </div>
         </div>
     </div>
-    
+
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"
       integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ=="

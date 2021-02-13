@@ -1,4 +1,4 @@
-const baseUrl = "http://127.168.0.101:81/"; /*change to YOUR URL */
+const baseUrl = "http://localhost/"; /*change to YOUR URL */
 
 const API = {
     product: {
