@@ -17,7 +17,7 @@
 }
 
 .section2 button {
-    margin-left: 470px;
+    margin-left: 15px;
     width: 199px;
     height: 35px;
     background: #171717;
@@ -82,7 +82,6 @@ th {
 .delivered {
     color: #b8b8b8;
 }
-
 
 .cancel-button {
     display: flex;

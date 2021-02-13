@@ -46,3 +46,5 @@
             "message" => "Unable to create product."
         ));
     }
+
+?>
