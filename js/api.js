@@ -20,5 +20,6 @@ const API = {
         admin_newOrdersAPI: baseUrl + "api/object/admin_newOrdersAPI.php",
         admin_productOverviewAPI: baseUrl + "api/object/admin_productOverviewAPI.php",
         admin_viewUsersAPI: baseUrl + "api/object/admin_viewUsersAPI.php",
+        create: baseUrl + "api/object/create.php",
     },
 };
