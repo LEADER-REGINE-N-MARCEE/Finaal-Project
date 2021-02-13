@@ -36,6 +36,15 @@ class Product {
         return $stmt;
     }
 
+    function indexRead($itemType) {
+        $query = "SELECT itemID, itemCode, itemType, itemName, subtitle, quantity , descriptions, price, img_path FROM " . $this->table_name . " WHERE itemType = '" . $itemType . "' LIMIT 3";
+        $stmt = $this
+            ->conn
+            ->prepare($query);
+        $stmt->execute();
+        return $stmt;
+    }
+
     function cart($usrID) {
         $query = "SELECT * FROM items i JOIN orders o ON i.`itemCode` = o.`itemCode` WHERE o.`invoiceNum` IS NULL AND o.`orderID`='" . $usrID . "'";
         $stmt = $this

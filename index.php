@@ -39,41 +39,13 @@
             </div>
 
             <h1>TOP SWITCHES</h1>
-            <div class="item-container">
-                <div class="items">
-                    <img class="" src="./img/item4.png">
-                    <h2>Healios (ZealPC)</h2>
-                    <p>Silent Linear Mechanical Switch</p>
-                </div>
-                <div class="items">
-                    <img class="" src="./img/item5.png">
-                    <h2>DROP + INVYR HOLY PANDA</h2>
-                    <p>Tactile Mechanical Switch</p>
-                </div>
-                <div class="items">
-                    <img class="" src="./img/item6.png">
-                    <h2>Zealios V2 (ZealPC)</h2>
-                    <p>Zealios V2 (ZealPC)</p>
-                </div>
+            <div class="item-container" id="topswitches">
+
             </div>
 
             <h1>TOP KEYCAPS</h1>
-            <div class="item-container">
-                <div class="items">
-                    <img class="" src="./img/item7.png">
-                    <h2>MULTI COLORED 1U</h2>
-                    <p>OEM BLACK KEYCAPS</p>
-                </div>
-                <div class="items">
-                    <img class="" src="./img/item8.png">
-                    <h2>M7 GAME CONSOLE</h2>
-                    <p>ARTISAN KEYCAPS</p>
-                </div>
-                <div class="items">
-                    <img class="" src="./img/item9.png">
-                    <h2>CHEMICAL ELEMENTS</h2>
-                    <p>DYE SUB KEYCPAS </p>
-                </div>
+            <div class="item-container" id="topkeycaps">
+
             </div>
         </div>
     </div>

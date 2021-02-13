@@ -12,17 +12,17 @@ window.onload = function() { /*para maload agad ung script pag naload ung web pa
 
 
             } else if (this.readyState == 4 && this.status == 401) {
-                  var itemType = "KB";
-                  var xhttp = new XMLHttpRequest();
-                  xhttp.open("GET", API.product.read + "?itemType=" + itemType + "");
-                  xhttp.send();
-                  xhttp.onreadystatechange = function() {
-                      if (this.readyState == 4 && this.status == 200) {
-                          let results = JSON.parse(this.response);
-                          console.log(results);
-                          for (let row of results.records) {
+                var itemType = "KB";
+                var xhttp = new XMLHttpRequest();
+                xhttp.open("GET", API.product.indexRead + "?itemType=" + itemType + "");
+                xhttp.send();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        let results = JSON.parse(this.response);
+                        console.log(results);
+                        for (let row of results.records) {
 
-                              document.getElementById("topkeyboards").insertAdjacentHTML("beforeend", `
+                            document.getElementById("topkeyboards").insertAdjacentHTML("beforeend", `
                                   <div class='items'>
                                   <a href='productPage.php?itemCode=${row.itemCode}&itemType=${row.itemType}' class='item-link'>
                                   <img src= '${row.img_path}'>
@@ -32,12 +32,60 @@ window.onload = function() { /*para maload agad ung script pag naload ung web pa
                                   </div>
                                   </div>
                                   `);
-                          }
-                      }
-                  }
+                        }
+                    }
+                }
+
+                var itemType2 = "SW";
+                var xhttp = new XMLHttpRequest();
+                xhttp.open("GET", API.product.indexRead + "?itemType=" + itemType2 + "");
+                xhttp.send();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        let results = JSON.parse(this.response);
+                        console.log(results);
+                        for (let row of results.records) {
+
+                            document.getElementById("topswitches").insertAdjacentHTML("beforeend", `
+                                  <div class='items'>
+                                  <a href='productPage.php?itemCode=${row.itemCode}&itemType=${row.itemType}' class='item-link'>
+                                  <img src= '${row.img_path}'>
+                                  <div class='titles'>
+                                  <h2>${row.itemName}</h2>
+                                  <p>${row.subtitle}</p>
+                                  </div>
+                                  </div>
+                                  `);
+                        }
+                    }
+                }
+
+                var itemType3 = "KC";
+                var xhttp = new XMLHttpRequest();
+                xhttp.open("GET", API.product.indexRead + "?itemType=" + itemType3 + "");
+                xhttp.send();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        let results = JSON.parse(this.response);
+                        console.log(results);
+                        for (let row of results.records) {
+
+                            document.getElementById("topkeycaps").insertAdjacentHTML("beforeend", `
+                                  <div class='items'>
+                                  <a href='productPage.php?itemCode=${row.itemCode}&itemType=${row.itemType}' class='item-link'>
+                                  <img src= '${row.img_path}'>
+                                  <div class='titles'>
+                                  <h2>${row.itemName}</h2>
+                                  <p>${row.subtitle}</p>
+                                  </div>
+                                  </div>
+                                  `);
+                        }
+                    }
+                }
             }
-          }
-}
+        }
+    }
 }
 
 const btnShop = document.getElementById("btnShop");
