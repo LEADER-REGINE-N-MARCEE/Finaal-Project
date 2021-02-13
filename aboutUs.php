@@ -1,5 +1,7 @@
 <?php require('header.php')?>
 <link rel="stylesheet" href="css/aboutUs.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@700&family=Roboto:wght@100;300&display=swap" rel="stylesheet">
 
     <div class="section2">
         <div class="wrapper">
@@ -35,6 +37,30 @@
                 4. To always improve and gain feedback on how to make our ecommerce platform better, we want to push the possibilities that ecommerce offers.
             </p>
             <div class="aboutus-item">
+                <div class="aboutus-img">
+                    
+                    <img src="./img/about1.png">
+                    <img src="./img/about2.png">
+                    <img src="./img/about3.png">
+                    <img src="./img/about4.png">
+                </div>
+                <div class="aboutus-img">
+                    <img src="./img/about5.png">
+                    <img src="./img/about6.png">
+                    <img src="./img/about7.png">
+                    <img src="./img/about8.png">
+                </div>
+
+                <div class="aboutus-img">
+                    <img src="./img/about9.png">
+                    <img src="./img/about10.png">
+                    <img src="./img/about11.png">
+                    <img src="./img/about12.png">
+                    
+                </div>
+
+
+<!--
                 <table>
                     <tr class="table-title">
                         <td><img src="./img/about1.png"></td>
@@ -56,7 +82,7 @@
                         <td><img src="./img/about11.png"></td>
                         <td><img src="./img/about12.png"></td>
                     </tr>
-                </table>
+                </table>-->
             </div>
         </div>
     </div>
