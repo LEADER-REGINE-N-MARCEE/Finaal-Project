@@ -1,4 +1,4 @@
-const baseUrl = "http://127.168.0.101:81/"; /*change to YOUR URL */
+const baseUrl = "http://127.0.0.103/"; /*change to YOUR URL */
 
 const API = {
     product: {
@@ -6,6 +6,7 @@ const API = {
         checkout: baseUrl + "api/object/checkoutAPI.php",
         read: baseUrl + "api/object/read.php",
         prodPage: baseUrl + "api/object/prodPage.php",
+        indexRead: baseUrl + "api/object/indexReadAPI.php",
     },
     userDB: {
         userInfo: baseUrl + "api/object/userInfoAPI.php",

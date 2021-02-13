@@ -17,7 +17,7 @@
     $product = new Product($db);
     
     $itemType = $_GET['itemType'];
-    $stmt = $product->read($itemType);
+    $stmt = $product->indexRead($itemType);
     $num = $stmt->rowCount();
 
     if ($num > 0) {
