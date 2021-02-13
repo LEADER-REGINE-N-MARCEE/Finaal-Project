@@ -1,4 +1,3 @@
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -16,10 +15,9 @@ html {
     height: 225px;
     background: rgba(0, 0, 0, 0.3);
     box-shadow: 0px 0px 16px;
-    
 }
 
-.nav-btn-container:nth-last-of-type(2){
+.nav-btn-container:nth-last-of-type(2) {
     margin-left: -20px;
     margin-right: 20px;
 }
@@ -34,7 +32,6 @@ nav ul {
     list-style: none;
 }
 
-
 .nav1 {
     padding-top: 45.5px;
     display: flex;
@@ -42,15 +39,13 @@ nav ul {
     justify-content: space-between;
 }
 
-.nav-item1{
-    
+.nav-item1 {
     width: 120px;
     display: flex;
     align-items: center;
-
 }
 
-.store-dropdown{
+.store-dropdown {
     margin-top: 3px;
     display: flex;
     flex-direction: column;
@@ -58,41 +53,39 @@ nav ul {
     line-height: 3rem;
     border-radius: 5px;
     opacity: 0;
-    visibility:hidden;
+    visibility: hidden;
     transform: translateY(-10px);
     transition: all 0.4s ease;
 }
 
-.store-dropdown li{
+.store-dropdown li {
     font-family: 'Source Code Pro', monospace !important;
     font-style: normal;
     font-weight: 300;
-    
     text-decoration: none;
     color: #ECEDF6;
     padding-left: 10px;
     cursor: pointer;
-    
     border-radius: 5px;
 }
 
-.store-dropdown li:hover{
-    background-color: #FF8125;;
+.store-dropdown li:hover {
+    background-color: #FF8125;
+    ;
 }
 
-
-#store1 button{
+#store1 button {
     border: none;
     background-color: transparent;
-
 }
 
-#store1 a{
+#store1 a {
     text-decoration: none;
 }
-#store1 button:focus + ul{
+
+#store1 button:focus+ul {
     opacity: 1;
-    visibility:visible;
+    visibility: visible;
     transform: translateY(0px);
 }
 
@@ -101,7 +94,6 @@ nav ul {
     align-items: center;
     justify-content: space-around;
     list-style: none;
-    
 }
 
 .nav2 {
@@ -111,15 +103,12 @@ nav ul {
     justify-content: center;
 }
 
-.nav22 a{
-
-}
-
 .nav22 a:hover,
-#store1 button:hover{
+#store1 button:hover {
     border-radius: 5px;
     color: #FF8125;
 }
+
 .aa,
 .nav-item2 li button,
 .buttonClick {
@@ -133,7 +122,7 @@ nav ul {
     color: #ECEDF6;
 }
 
-.buttonClick{
+.buttonClick {
     border: none;
     outline: none;
     background-color: transparent;
@@ -143,7 +132,6 @@ nav ul {
 .nav22:nth-last-of-type(1) {
     margin-right: -40px;
 }
-
 
 .section1 {
     background-color: #171717;
@@ -201,7 +189,7 @@ nav ul {
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
-    line-height: 28px;  
+    line-height: 28px;
     text-decoration-line: underline;
     text-align: center;
     color: #E4E4E4;

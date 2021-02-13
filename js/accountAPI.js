@@ -39,43 +39,18 @@ window.onload = function() {
                             console.log(status);
                             document.getElementById("orderTable").insertAdjacentHTML("beforeend", `
                             <tr>
-                            <td class="invoice"><p id="invoiceNum">${rows.invoiceNum}</p></td>
+                            <td class="invoice"><p id="${rows.invoiceNum}">${rows.invoiceNum}</p></td>
                             <td class="${status}">${rows.order_status}</td>
                             <td class="cancel-button">
                                 <img src="./img/cancel1.png" id="cancelImg">
-                                <a href="#" id="btnCancelOrder" class="cancel1">CANCEL ORDER</a>
+                                <button type="button" id="${rows.invoiceNum}" onclick="cancelOrder()">Cancel Order</button>
                             </td>
                              </tr>
                             
                             `);
-                            const cancelImg = document.getElementById("cancelImg");
-                            const btnCancelOrder = document.getElementById("btnCancelOrder");
-                            btnCancelOrder.addEventListener("click", cancelOrder, false);
 
-                            if (rows.order_status == "CANCELLED" || rows.order_status == "SHIPPING") {
-                                btnCancelOrder.style.display = "none";
-                                cancelImg.style.display = "none";
-                            }
 
-                            function cancelOrder() {
-                                var choice = "CANCELLED";
-                                var invoiceNum = document.getElementById("invoiceNum").textContent;
-                                var xhttp = new XMLHttpRequest();
-                                xhttp.open("POST", "api/object/cancelOrderAPI.php");
-                                xhttp.send(JSON.stringify({
-                                    choice: choice,
-                                    invoiceNum: invoiceNum
-                                }));
-                                xhttp.onreadystatechange = function() {
-                                    if (this.readyState == 4 && this.status == 200) {
-                                        console.log(this.status);
-                                        alert("Order Cancelled")
-                                        window.location.reload();
-                                    } else if (this.readyState == 4 && this.status == 401) {
-                                        console.log("error")
-                                    }
-                                };
-                            }
+
                         }
 
                     }
@@ -104,4 +79,36 @@ window.onload = function() {
         }
         return "";
     }
+}
+
+function cancelOrder() {
+    /*const cancelImg = document.getElementById("cancelImg");
+    const btnCancelOrder = event.srcElement.id;*/
+
+    const invoiceNum = event.srcElement.id;
+
+    console.log(invoiceNum);
+
+    /*if (order_status != "PENDING") {
+        btnCancelOrder.style.display = "none";
+        cancelImg.style.display = "none";
+    }*/
+
+
+    var choice = "CANCELLED";
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("POST", "api/object/cancelOrderAPI.php");
+    xhttp.send(JSON.stringify({
+        choice: choice,
+        invoiceNum: invoiceNum
+    }));
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log(this.status);
+            alert("Order Cancelled")
+            window.location.reload();
+        } else if (this.readyState == 4 && this.status == 401) {
+            console.log("error")
+        }
+    };
 }
