@@ -126,7 +126,7 @@ window.onload = function() {
                             }
                         };
                     } else if (this.readyState == 4 && this.status == 206) {
-                        document.getElementById("body").insertAdjacentHTML("beforeend", `
+                        document.getElementById("body1").insertAdjacentHTML("beforeend", `
                         <form method="POST">
                             <label>Full Name:</label>
                             <input class="input1" type="text" name="fullname" autofocus required>
@@ -149,26 +149,90 @@ window.onload = function() {
                         }));
                         xhttp.onreadystatechange = function() {
                             if (this.readyState == 4 && this.status == 200) {
-                                var totalprice = 0;
+                                var subtotal = 0;
                                 let results2 = JSON.parse(this.response);
                                 for (let rows of results2.records) {
                                     var price = rows.price;
                                     var tprice = price * rows.amount;
-                                    totalprice = tprice + totalprice;
+                                    subtotal = tprice + subtotal;
                                 }
+                                var totalprice = subtotal + 15;
                                 document.getElementById("body2").insertAdjacentHTML("beforeend", `
-                                    <form id="checkout-form>
-                                        <input type="text" value="$${totalprice}" disabled>
-                                        <input type="text" value="$15" disabled>
-                                        <button type="button" id="btnCheckout" name="checkout" disabled>Checkout</button>
-                                    </form>
-                                    `);
+
+                                    
+                                    <div class="hl"></div>
+                                        <div>
+                                            <table>
+                                                <tr>
+                                                    <td>Subtotal</td>
+                                                    <td>$${subtotal} </td>
+                                                    <td> </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Shipping Fee</td>
+                                                    <td>$15 </td>
+                                                    <td> </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <div class="hl"></div>
+                                        <div>
+                                            <table>
+                                                <tr>
+                                                    <td>Order Amount</td>
+                                                    <td>${totalprice} </td>
+                                                    <td> </td>
+                                                </tr>
+                                            </table>
+                     
+                                            <button class="checkout" type="button" id="btnCheckout" name="checkout" disabled>CHECK OUT</button>
+                                            <em>Update the User Information First</em>
+                                        </div>
+                                        
+                                
+                                </form>
+                                `);
+
+                                const btnCheckout = document.getElementById("btnCheckout"); /*kunin ung id ng btn para magkaron ng event listener*/
+                                btnCheckout.addEventListener("click", checkout);
+
+                                function checkout() {
+                                    var total = totalprice;
+                                    console.log(total);
+                                    var totalObj = new Object;
+                                    totalObj["totalprice"] = total;
+                                    const formdata2 = {};
+                                    let key;
+                                    for (key in totalObj) {
+                                        if (totalObj.hasOwnProperty(key)) {
+                                            formdata2[key] = totalObj[key];
+                                        }
+                                    }
+                                    for (key in results) {
+                                        if (results.hasOwnProperty(key)) {
+                                            formdata2[key] = results[key];
+                                        }
+                                    }
+                                    console.log(JSON.stringify(formdata2));
+                                    xhttp.open("POST", API.product.checkout);
+                                    xhttp.send(JSON.stringify(formdata2));
+                                    xhttp.onreadystatechange = function() {
+                                        if (this.readyState == 4 && this.status == 201) {
+                                            window.location.href = '../index';
+
+                                        } else if (this.readyState == 4 && this.status == 503) {
+                                            console.log(this.status);
+                                        }
+                                    };
+                                }
                             } else if (this.readyState == 4 && this.status == 404) {
                                 console.log(this.response);
                                 document.getElementById("carttable").insertAdjacentHTML("afterbegin", `
                                     <p>no products in cart</p>
                                 `);
                             }
+
+
                         };
                         const btnUpdate = document.getElementById("btnUpdate");
                         btnUpdate.addEventListener("click", update);
