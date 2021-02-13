@@ -1,4 +1,4 @@
-* {
+*{
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
@@ -10,20 +10,21 @@
     padding-top: 80px;
 }
 
-.line {
+
+.line{
     width: 30px;
     height: 5px;
     background: white;
-    margin: 5px;
+    margin: 5px; 
     border-radius: 100px;
 }
 
-.hamburger {
+.hamburger{
     margin: auto 15px;
     cursor: pointer;
 }
 
-nav {
+nav{
     background-color: #171717;
     display: flex;
     width: 100%;
@@ -32,7 +33,7 @@ nav {
     position: fixed;
 }
 
-nav img {
+nav img{
     width: 150px;
     height: 33px;
     position: absolute;
@@ -43,55 +44,59 @@ nav img {
     align-items: center;
 }
 
-nav h1 {
+nav h1{
     margin: auto 0px;
-    font-family: 'Source Code Pro', monospace !important;
+
+    font-family: Saira;
     font-style: normal;
     font-weight: bold;
+
     line-height: 72px;
+
     color: #ECEDF6;
 }
 
-table {
+table{
     width: 100%;
     border: 1px solid #000000;
     padding-bottom: 20px;
 }
 
-td,
-th {
+td, th{
     text-align: center;
     width: 33%;
     padding: 10px 0px;
 }
 
-th {
-    font-family: 'Source Code Pro', monospace !important;
+th{
+    font-family: Saira;
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
     line-height: 50px;
     text-align: center;
+
     color: #FF8125;
 }
 
-h2 {
-    font-family: 'Source Code Pro', monospace !important;
+
+
+h2{
+    font-family: Saira;
     font-style: normal;
     font-weight: 600;
     line-height: 70px;
     color: #FF8125;
 }
 
-.select {
+.select{
     width: 500px;
 }
 
-nav {
+nav{
     display: flex;
 }
-
-.nav-links {
+.nav-links{
     position: absolute;
     left: 0px;
     top: 10vh;
@@ -104,33 +109,33 @@ nav {
     align-items: center;
     list-style: none;
     opacity: 0;
+    pointer-events: none;
     transform: translateX(-10px);
     transition: all 0.4s ease;
 }
 
-.nav-links a {
+.nav-links a{
     text-decoration: none;
     color: white;
 }
-
-.nav-links li {
+.nav-links li{
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
-
-.nav-links li:hover {
+.nav-links li:hover{
     background-color: #555;
 }
 
-.hamburger button {
+.hamburger button{
     background-color: transparent;
     border: none;
 }
 
-.hamburger button:focus+ul {
+.hamburger button:focus + ul{
     opacity: 1;
     pointer-events: all;
 }

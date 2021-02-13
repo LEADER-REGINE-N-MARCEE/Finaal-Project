@@ -5,52 +5,51 @@
 }
 
 .search-filter {
+    
+}
+
+.form1{
     display: flex;
     justify-content: space-around;
 }
 
-.form1 {
-    margin-top: 90px;
+.form1 div{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
 }
 
-.label1 {
+.search-filter label {
     font-family: 'Source Code Pro', monospace !important;
     font-style: normal;
     font-weight: normal;
-    margin-left: 75px;
+   
     font-size: 26px;
     line-height: 41px;
     /* identical to box height */
     color: #171717;
 }
-
-.search1 {
-    margin-left: 25px;
-    font-size: 26px;
+input[type=text]{
+  
+  padding: 5px 15px;
+  height: 50px;
+  
+ 
+  box-sizing: border-box;
 }
 
-.filter1 {
-    margin-left: 410px;
-    font-size: 26px;
-}
 
 input {
     height: 30px;
     width: 450px;
     border: none;
     border-bottom: 2px solid #171717;
-    margin-top: 15px;
-    margin-bottom: 50px;
-    margin-left: 25px;
-    margin-right: 25px;
+    
     align-items: center;
     align-content: center;
 }
 
-.input {
-    display: flex;
-    margin-left: 75px;
-}
+
 
 .form1 {
     width: 100%;
@@ -120,4 +119,16 @@ input {
 
 .titles {
     margin-top: 50px;
+}
+
+@media screen and (max-width: 768px){
+    
+    .form1{
+        display: flex;
+        flex-direction: column;
+        margin: 0 30px;
+    }
+
+    
+    
 }

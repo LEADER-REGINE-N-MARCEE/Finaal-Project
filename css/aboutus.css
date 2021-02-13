@@ -1,3 +1,4 @@
+
 .section2 {
     margin-bottom: 120px;
 }
@@ -16,7 +17,7 @@
 }
 
 .section2 h2 {
-    font-family: 'Source Code Pro', monospace !important;
+    font-family: Font Awesome 5 Brands;
     font-style: normal;
     font-weight: normal;
     font-size: 30px;
@@ -44,7 +45,7 @@
     margin-top: 50px;
     text-indent: 50px;
     text-align: justify;
-    font-family: 'Source Code Pro', monospace !important;
+    font-family: Font Awesome 5 Brands;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
@@ -58,4 +59,34 @@ table {
 td img {
     width: 273px;
     margin: 15px 15px 15px 0px;
+}
+
+.aboutus-img img{
+    width: 273px;
+}
+
+.aboutus-img{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 768px){
+    .line img{
+        display: none;
+    }
+
+    p{
+        margin: 0 30px;
+    }
+
+    .aboutus-img{
+        margin: 0 auto;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .aboutus-img img{
+        margin-top: 10px;
+    }
 }
