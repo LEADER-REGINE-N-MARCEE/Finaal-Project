@@ -15,7 +15,7 @@ h1 {
 }
 
 .signin-btn {
-    width: 755px;
+    width: 100%;
     height: 50px;
     background: #618DB9;
     border-radius: 5px;
@@ -25,7 +25,7 @@ h1 {
 }
 
 .signup-btn {
-    width: 755px;
+    width: 100%;
     height: 50px;
     background: #FF8125;
     border-radius: 5px;
@@ -78,4 +78,25 @@ form label {
     line-height: 24px;
     text-align: center;
     color: #171717;
+}
+
+input[type=text],
+input[type=password]{
+  width: 100%;
+  padding: 5px 15px;
+  height: 50px;
+  
+ 
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px){
+    .wrapper{
+        max-width: 1140px;
+        margin: 0 auto;
+    }
+
+    .form1{
+        margin: 0 50px;
+    }
 }

@@ -11,13 +11,14 @@
 }
 
 .p1,
-.p2 {
+.p2{
     text-align: center;
     font-family: 'Roboto', sans-serif;
 }
 
-.p1 {
+.p1{
     margin-top: 100px;
+    
     font-style: normal;
     font-weight: 100;
     font-size: 45px;
@@ -27,17 +28,21 @@
     color: #FF8125;
 }
 
-.p2 {
-    font-family: 'Source Code Pro', monospace !important;
+.p2{
+    font-family: Font Awesome 5 Brands;
     font-style: normal;
     font-weight: normal;
     font-size: 25px;
     line-height: 90px;
     /* identical to box height */
+
     text-align: center;
     letter-spacing: 0.25em;
+
     color: #ECEDF6;
 }
+
+
 
 .text1 {
     font-family: 'Source Code Pro', monospace !important;
@@ -63,11 +68,9 @@
     margin-top: 30px;
 }
 
-.btn-container {
+.btn-container{
     text-align: center;
-    margin-top: 80px;
 }
-
 .shop-btn {
     border: 2px solid #FF8125;
     color: #FF8125;
@@ -75,6 +78,8 @@
     background-color: transparent;
     width: 229px;
     height: 52px;
+    
+    
 }
 
 .shop-btn p {
@@ -86,7 +91,13 @@
     color: #ECEDF6;
 }
 
-.intro {
+.shop-btn:hover{
+    border: 2px solid #FF8125;
+    color: #ECEDF6;
+    background-color: #FF8125;
+}
+
+.intro{
     background: black;
     position: fixed;
     top: 0;
@@ -94,11 +105,15 @@
     width: 100%;
     height: 100%;
     display: flex;
+
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
-.slider {
+
+
+.slider{
     background: #FF8125;
     position: fixed;
     top: 0;
@@ -108,26 +123,32 @@
     transform: translateY(100%);
 }
 
-.intro-text {
+.intro-text{
     color: #ECEDF6;
     font-family: "Heebo", sans-serif;
     font-size: 48px;
+
 }
 
-.hide {
+.hide{
     background-color: black;
     overflow: hidden;
 }
 
-.hide span {
+.hide span{
     transform: translateY(100%);
     display: inline-block;
 }
 
+.hide img{
+    width: 100vh;
+}
+
+
 .section2 {
     align-items: center;
     align-content: center;
-    margin-top: 90px;
+    margin-top: 80px;
     margin-bottom: 80px;
 }
 
@@ -172,7 +193,7 @@
 
 .section3 {
     background: #171717;
-    height: 760px;
+    padding-bottom: 80px;
 }
 
 .section3 h1 {
@@ -230,6 +251,7 @@
     line-height: 31px;
     background-color: transparent;
     color: #FF8125;
+    margin-bottom: 40px;
 }
 
 .section4 {
@@ -250,7 +272,7 @@
 }
 
 .section4 h2 {
-    font-family: 'Source Code Pro', monospace !important;
+    font-family: Font Awesome 5 Brands;
     font-style: normal;
     font-weight: normal;
     font-size: 30px;
@@ -286,7 +308,7 @@
     margin-top: 50px;
     text-indent: 50px;
     text-align: justify;
-    font-family: 'Source Code Pro', monospace !important;
+    font-family: Font Awesome 5 Brands;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
@@ -295,4 +317,33 @@
 
 .aboutus-item {
     margin: 45px auto;
+}
+
+
+@media screen and (max-width: 768px){
+    .item-container,
+    .section3-item,
+    .aboutus-item,
+    .aboutus-item img{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    .section4 .line img{
+        display: none;
+    }
+
+    .map1{
+        
+        display: block;
+        margin: 0 auto;
+        width: 90%;
+
+    }
+
+    .section4 p{
+        margin: 0 30px;
+    }
 }

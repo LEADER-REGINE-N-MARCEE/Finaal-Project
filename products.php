@@ -19,11 +19,12 @@ require('header.php')?>
                 <form class="form1">
                     <div class="label1">
                         <label class="search1">Search</label>
-                        <label class="filter1">Filter</label>
+                        <input class="search" type="text">
+                        
 
                     </div>
                     <div class="input">
-                        <input class="search" type="text">
+                        <label class="filter1">Filter</label>
                         <input class="filter" type="text">
                     </div>
                 </form>

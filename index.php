@@ -11,19 +11,19 @@
             <p class="p1">PRESS WITH CONFIDENCE</p>
             <p class="p2">We will make your keyboard experience better</p>
             <div class="btn-container">
-                <button class="shop-btn" id="btnShop">Shop Now</button>
+                <a href="products.php?itemType=GB"><button class="shop-btn" >Shop Now</button></a>
             </div>
         </div>
         <div class="intro">
             <div class="intro-text">
                 <h1 class="hide">
-                    <span class="text">Ano</span>
+                    <span class="text">Welcome</span>
                 </h1>
                 <h1 class="hide">
-                    <span class="text">Maganda</span>
+                    <span class="text">To</span>
                 </h1>
                 <h1 class="hide">
-                    <span class="text">Ilagay</span>
+                    <span class="text"><img src="img/logo.png"></span>
                 </h1>
             </div>
         </div>
@@ -120,7 +120,7 @@
                 </div>
 
                 <div>
-                    <img src="./img/map.png">
+                    <img src="./img/map.png" class="map1">
                 </div>
             </div>
         </div>
