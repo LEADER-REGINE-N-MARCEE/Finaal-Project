@@ -31,8 +31,6 @@ window.onload = function() {
                             } else {
                                 ("hello");
                             }
-
-                            (status);
                             document.getElementById("vieworderTable").insertAdjacentHTML("beforeend", `
                 <tr>
                 <td class="invoice">${rows.invoiceNum}</td>
@@ -41,12 +39,9 @@ window.onload = function() {
                 ${rows.totalprice}
                 </td>
                  </tr>
-                
                 `);
                         }
-
                     } else if (this.readyState == 4 && this.status == 404) {
-                        (this.response);
                         document.getElementById("vieworderTable").insertAdjacentHTML("beforeend", `
                 <p>no Orders Made.</p>
             `);

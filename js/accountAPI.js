@@ -18,7 +18,6 @@ window.onload = function() {
                 xhttp.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
                         let results2 = JSON.parse(this.response);
-
                         for (let rows of results2.items) {
                             if (rows.order_status == "PENDING") {
                                 status = "pending";
@@ -35,8 +34,6 @@ window.onload = function() {
                             } else {
                                 ("hello");
                             }
-
-                            (status);
                             document.getElementById("orderTable").insertAdjacentHTML("beforeend", `
                             <tr>
                             <td class="invoice"><p id="${rows.invoiceNum}">${rows.invoiceNum}</p></td>
@@ -48,11 +45,7 @@ window.onload = function() {
                              </tr>
                             
                             `);
-
-
-
                         }
-
                     }
                 }
 
@@ -61,8 +54,6 @@ window.onload = function() {
             }
         }
     }
-
-
 
     function getCookie(cname) {
         var name = cname + "=";
@@ -82,13 +73,7 @@ window.onload = function() {
 }
 
 function cancelOrder() {
-
     const invoiceNum = event.srcElement.id;
-
-    (invoiceNum);
-
-
-
     var choice = "CANCELLED";
     var xhttp = new XMLHttpRequest();
     xhttp.open("POST", "api/object/cancelOrderAPI.php");
@@ -98,11 +83,10 @@ function cancelOrder() {
     }));
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            (this.status);
             alert("Order Cancelled")
             window.location.reload();
         } else if (this.readyState == 4 && this.status == 401) {
-            ("error")
+            alert("Error")
         }
     };
 }

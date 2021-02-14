@@ -1,14 +1,12 @@
 window.onload = function() {
     var jwt = getCookie('jwt');
     var xhttp = new XMLHttpRequest(); {
-
         xhttp.open("POST", API.userDB.tokenValid);
         xhttp.setRequestHeader("Content-Type", "application/json");
         xhttp.send(JSON.stringify({
             jwt: jwt
         }));
         xhttp.onreadystatechange = function() {
-
             if (this.readyState == 4 && this.status == 200) {
                 var itemType = "KB";
                 var xhttp = new XMLHttpRequest();
@@ -17,7 +15,6 @@ window.onload = function() {
                 xhttp.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
                         let results = JSON.parse(this.response);
-                        (results);
                         for (let row of results.records) {
 
                             document.getElementById("topkeyboards").insertAdjacentHTML("beforeend", `
@@ -33,7 +30,6 @@ window.onload = function() {
                         }
                     }
                 }
-
                 var itemType2 = "SW";
                 var xhttp = new XMLHttpRequest();
                 xhttp.open("GET", API.product.indexRead + "?itemType=" + itemType2 + "");
@@ -41,9 +37,7 @@ window.onload = function() {
                 xhttp.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
                         let results = JSON.parse(this.response);
-                        (results);
                         for (let row of results.records) {
-
                             document.getElementById("topswitches").insertAdjacentHTML("beforeend", `
                                   <div class='items'>
                                   <a href='productPage.php?itemCode=${row.itemCode}&itemType=${row.itemType}' class='item-link'>
@@ -57,7 +51,6 @@ window.onload = function() {
                         }
                     }
                 }
-
                 var itemType3 = "KC";
                 var xhttp = new XMLHttpRequest();
                 xhttp.open("GET", API.product.indexRead + "?itemType=" + itemType3 + "");
@@ -65,7 +58,6 @@ window.onload = function() {
                 xhttp.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
                         let results = JSON.parse(this.response);
-                        (results);
                         for (let row of results.records) {
 
                             document.getElementById("topkeycaps").insertAdjacentHTML("beforeend", `
@@ -81,8 +73,6 @@ window.onload = function() {
                         }
                     }
                 }
-
-
             } else if (this.readyState == 4 && this.status == 401) {
                 var itemType = "KB";
                 var xhttp = new XMLHttpRequest();
@@ -91,9 +81,7 @@ window.onload = function() {
                 xhttp.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
                         let results = JSON.parse(this.response);
-                        (results);
                         for (let row of results.records) {
-
                             document.getElementById("topkeyboards").insertAdjacentHTML("beforeend", `
                                   <div class='items'>
                                   <a href='productPage.php?itemCode=${row.itemCode}&itemType=${row.itemType}' class='item-link'>
@@ -107,7 +95,6 @@ window.onload = function() {
                         }
                     }
                 }
-
                 var itemType2 = "SW";
                 var xhttp = new XMLHttpRequest();
                 xhttp.open("GET", API.product.indexRead + "?itemType=" + itemType2 + "");
@@ -115,9 +102,7 @@ window.onload = function() {
                 xhttp.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
                         let results = JSON.parse(this.response);
-                        (results);
                         for (let row of results.records) {
-
                             document.getElementById("topswitches").insertAdjacentHTML("beforeend", `
                                   <div class='items'>
                                   <a href='productPage.php?itemCode=${row.itemCode}&itemType=${row.itemType}' class='item-link'>
@@ -139,7 +124,6 @@ window.onload = function() {
                 xhttp.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
                         let results = JSON.parse(this.response);
-                        (results);
                         for (let row of results.records) {
 
                             document.getElementById("topkeycaps").insertAdjacentHTML("beforeend", `
@@ -172,14 +156,11 @@ function getCookie(cname) {
         while (c.charAt(0) == ' ') {
             c = c.substring(1);
         }
-
         if (c.indexOf(name) == 0) {
             return c.substring(name.length, c.length);
         }
     }
-
     return "";
-
 }
 
 function openShop() {

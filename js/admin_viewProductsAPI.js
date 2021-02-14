@@ -27,13 +27,10 @@ window.onload = function() {
                                             `);
                         }
                     } else if (this.readyState == 4 && this.status == 404) {
-                        (this.response);
                         document.getElementById("viewProductsTable").insertAdjacentHTML("beforeend", `
                                             <p>No Product in the Database.</p>
                                         `);
                     }
-
-
                 };
             } else if (this.readyState == 4 && this.status == 401) {
                 window.location.href = '../signIn.php';

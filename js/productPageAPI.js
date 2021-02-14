@@ -5,20 +5,15 @@ window.onload = function() {
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 let results = JSON.parse(this.response);
-
                 for (let row of results.records) {
-
                     if (row.quantity == 0) {
                         document.getElementById("item-container").insertAdjacentHTML("beforeend", `
-
                     <div class="thumb-image">
                         <img class="thumbnail active" src="${row.img_path}">
                         <img class="thumbnail" src="${row.img_path2}">
                         <img class="thumbnail" src="${row.img_path3}">
                     </div>
-
                     <img id=featured src="${row.img_path}">
-
                     <div class="text-details">
                         <br>
                         <h1>${row.itemName}</h1>
@@ -34,15 +29,12 @@ window.onload = function() {
                     </div>`);
                     } else {
                         document.getElementById("item-container").insertAdjacentHTML("beforeend", `
-
                     <div class="thumb-image">
                         <img class="thumbnail active" src="${row.img_path}">
                         <img class="thumbnail" src="${row.img_path2}">
                         <img class="thumbnail" src="${row.img_path3}">
                     </div>
-
                     <img id=featured src="${row.img_path}">
-
                     <div class="text-details">
                         <br>
                         <h1>${row.itemName}</h1>
@@ -57,8 +49,6 @@ window.onload = function() {
                         </form>
                     </div>`);
                     }
-
-
                     const btnAddToCart = document.getElementById("btnAddToCart");
                     btnAddToCart.addEventListener("click", addtocart)
 
@@ -77,7 +67,6 @@ window.onload = function() {
                     function getCookie(cname) {
                         var name = cname + "=";
                         var decodedCookie = decodeURIComponent(document.cookie);
-
                         var ca = decodedCookie.split(';');
                         for (var i = 0; i < ca.length; i++) {
                             var c = ca[i];
@@ -101,32 +90,26 @@ window.onload = function() {
                             xhttp.onreadystatechange = function() {
                                 if (this.readyState == 4 && this.status == 200) {
                                     let results1 = JSON.parse(this.response);
-                                    (results1);
                                     const forms = document.querySelectorAll("form");
                                     const form = forms[0];
-
                                     var data2 = toObject(form);
                                     const formdata = {};
                                     let key;
-
                                     for (key in results) {
                                         if (results.hasOwnProperty(key)) {
                                             formdata[key] = results[key];
                                         }
                                     }
-
                                     for (key in data2) {
                                         if (data2.hasOwnProperty(key)) {
                                             formdata[key] = data2[key];
                                         }
                                     }
-
                                     for (key in results1) {
                                         if (results1.hasOwnProperty(key)) {
                                             formdata[key] = results1[key];
                                         }
                                     }
-
                                     (JSON.stringify(formdata));
                                     var xhttp = new XMLHttpRequest(); {
 
@@ -142,7 +125,7 @@ window.onload = function() {
                                             } else if (this.readyState == 4 && this.status == 400) {
                                                 let result = JSON.parse(this.response);
                                                 alert(result.message);
-                                                (result);
+
                                             }
                                         };
                                     }
@@ -156,21 +139,14 @@ window.onload = function() {
             }
         }
     }
-
     let thumbnails = document.getElementsByClassName('thumbnail')
-
     let activeImages = document.getElementsByClassName('active')
-
     for (var i = 0; i < thumbnails.length; i++) {
 
         thumbnails[i].addEventListener('mouseover', function() {
-            (activeImages)
-
             if (activeImages.length > 0) {
                 activeImages[0].classList.remove('active')
             }
-
-
             this.classList.add('active')
             document.getElementById('featured').src = this.src
         })

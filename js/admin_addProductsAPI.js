@@ -8,22 +8,18 @@ window.onload = function() {
         }));
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-
                 const forms = document.querySelectorAll("form");
                 const form = forms[0];
-
                 var data = formToObject(form);
-
                 var xhttp = new XMLHttpRequest();
                 xhttp.open("POST", API.admin.create);
                 xhttp.send();
                 xhttp.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
-                        (xhttp);
+
                     }
                 }
             } else if (this.readyState == 4 && this.status == 401) {
-                ("Unauthorized Access! Authentication required.");
                 window.location.href = '../signIn.php';
             }
         };

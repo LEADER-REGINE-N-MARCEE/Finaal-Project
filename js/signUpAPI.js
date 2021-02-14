@@ -7,10 +7,8 @@ window.onload = function() {
             if (ValidatePassword(document.getElementById("password"))) {
                 const forms = document.querySelectorAll("form");
                 const form = forms[0];
-
                 var data = toObject(form);
                 var xhttp = new XMLHttpRequest(); {
-
                     xhttp.open("POST", API.userDB.signUp);
                     xhttp.send(JSON.stringify(data));
                     xhttp.onreadystatechange = function() {
@@ -18,11 +16,9 @@ window.onload = function() {
                             let result = JSON.parse(this.response);
                             alert(result.message);
                             window.location.href = '../signIn.php';
-
                         } else if (this.readyState == 4 && this.status == 400) {
                             let result = JSON.parse(this.response);
                             alert(result.message);
-                            (result);
                         }
                     };
                 }

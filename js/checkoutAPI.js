@@ -17,7 +17,6 @@ window.onload = function() {
                 xhttp.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
                         let results2 = JSON.parse(this.response);
-                        (results2);
                         for (let row of results2.info) {
                             document.getElementById("body1").insertAdjacentHTML("beforeend", `
                         <form method="POST">
@@ -118,7 +117,6 @@ window.onload = function() {
                                     };
                                 }
                             } else if (this.readyState == 4 && this.status == 404) {
-                                (this.response);
                                 document.getElementById("carttable").insertAdjacentHTML("afterbegin", `
                                 <p>no products in cart</p>
                             `);
@@ -197,7 +195,6 @@ window.onload = function() {
 
                                 function checkout() {
                                     var total = totalprice;
-
                                     var totalObj = new Object;
                                     totalObj["totalprice"] = total;
                                     const formdata2 = {};
@@ -225,7 +222,6 @@ window.onload = function() {
                                     };
                                 }
                             } else if (this.readyState == 4 && this.status == 404) {
-                                (this.response);
                                 document.getElementById("carttable").insertAdjacentHTML("afterbegin", `
                                     <p>no products in cart</p>
                                 `);
@@ -255,7 +251,6 @@ window.onload = function() {
                             /*initialize ung variable data. then icacall ung toObject na function the parameter ung form */
                             var xhttp = new XMLHttpRequest(); {
                                 /*para sa API */
-                                (formdata2);
                                 xhttp.open("POST", API.userDB.updateInfo); /*POST ung request, then icall ung registerAPI.php */
                                 xhttp.send(JSON.stringify(formdata2)); /*isesend ung data na nakuha dun sa form */
                                 xhttp.onreadystatechange = function() {

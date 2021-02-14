@@ -9,11 +9,9 @@ window.onload = function() {
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 var results = JSON.stringify(this.response);
-
                 var userRole = results.role;
                 if (userRole == "user") {
                     window.location.href = "./account.php";
-
                 }
                 var xhttp = new XMLHttpRequest();
                 xhttp.open("POST", "api/object/admin_newOrdersAPI.php");
@@ -23,7 +21,6 @@ window.onload = function() {
 
                         var results2 = JSON.parse(this.response);
                         for (let rows of results2.neworders) {
-
                             document.getElementById("neworderTable").insertAdjacentHTML("beforeend", `
                             <tr>
                             <td class=item-img><input type="text" value="${rows.invoiceNum}" id="${rows.totalprice}" disabled></td>
@@ -35,20 +32,14 @@ window.onload = function() {
                                 <button type="button" id="${rows.invoiceNum}" onclick="acceptOrder()">Decline</button>
                             </TD>
                             <td class=item-quantity>${rows.totalprice}</td>
-
                             <tr>
                             `);
-
-
                         }
-
                     } else if (this.readyState == 4 && this.status == 404) {
-                        (this.response);
                         document.getElementById("neworderTable").insertAdjacentHTML("beforeend", `
                             <p>no New Orders Made.</p>
                         `);
                     }
-
                 };
                 var xhttp = new XMLHttpRequest();
                 xhttp.open("POST", "api/object/admin_productOverviewAPI.php");
@@ -66,15 +57,11 @@ window.onload = function() {
                                             `);
                         }
                     } else if (this.readyState == 4 && this.status == 404) {
-                        (this.response);
                         document.getElementById("productoverviewTable").insertAdjacentHTML("beforeend", `
                                             <p>No Product in the Database.</p>
                                         `);
                     }
-
-
                 };
-
                 var xhttp = new XMLHttpRequest();
                 xhttp.open("POST", "api/object/admin_activeDiscountsAPI.php");
                 xhttp.send();
@@ -93,7 +80,6 @@ window.onload = function() {
                                             `);
                         }
                     } else if (this.readyState == 4 && this.status == 404) {
-                        (this.response);
                         document.getElementById("activeDiscountsTable").insertAdjacentHTML("beforeend", `
                                             <p>No Users Registered in the Database.</p>
                                         `);
@@ -132,14 +118,13 @@ function acceptOrder() {
         choice: choice,
         invoiceNum: invoiceNum
     }));
-
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             (this.status);
             alert("Order Accepted")
             window.location.reload();
         } else if (this.readyState == 4 && this.status == 401) {
-            ("error")
+            alert("Error")
         }
     };
 }
@@ -155,11 +140,10 @@ function declineOrder() {
     }));
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            (this.status);
             alert("Order Declined")
             window.location.reload();
         } else if (this.readyState == 4 && this.status == 401) {
-            ("error")
+            alert("Error")
         }
     };
 }
