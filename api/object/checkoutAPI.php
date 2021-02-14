@@ -4,11 +4,13 @@ header("Content-Type: application/json; charset=utf-8");
 
 include_once '../config/database.php';
 include_once '../models/userDB.php';
+include_once '../models/product.php';
 
 $database = new Database();
 $db = $database->getConnection();
 
 $user = new User($db);
+$product = new Product($db);
 
 $data = json_decode(file_get_contents("php://input"));
 $data->invoiceNum = invoice(10);

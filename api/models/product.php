@@ -27,6 +27,15 @@ class Product {
         return $stmt;
     }
 
+    function searchItem($itemCode){
+        $query = "SELECT * FROM `items` WHERE `itemCode` = '" . $itemCode . "'";
+        $stmt = $this
+            ->conn
+            ->prepare($query);
+            $stmt->execute();
+            return $stmt;
+    }
+
     function read($itemType) {
         $query = "SELECT itemID, itemCode, itemType, itemName, subtitle, quantity , descriptions, price, img_path FROM " . $this->table_name . " WHERE itemType = '" . $itemType . "'";
         $stmt = $this
