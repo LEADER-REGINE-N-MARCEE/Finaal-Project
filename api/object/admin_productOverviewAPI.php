@@ -25,7 +25,10 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
     $product_item = array(
         "itemCode" => $itemCode,
         "itemName" => $itemName,
-        "quantity" => $quantity
+        "quantity" => $quantity,
+        "itemType" => $itemType,
+        "subtitle" => $subtitle,
+        "price" => $price
     );
 
     array_push($items_overview_arr["items"], $product_item);

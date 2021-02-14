@@ -82,12 +82,11 @@ class Product {
     }
 
     function create() {
-        $query = "INSERT INTO " . $this->table_name . " SET itemID=:itemID, itemCode=:itemCode, itemType=:itemType, itemName=:itemName, subtitle=:subtitle, quantity=:quantity, descriptions=:descriptions, price=:price, img_path=:img_path";
+        $query = "INSERT INTO " . $this->table_name . " SET itemCode=:itemCode, itemType=:itemType, itemName=:itemName, subtitle=:subtitle, quantity=:quantity, descriptions=:descriptions, price=:price, img_path=:img_path";
         $stmt = $this
             ->conn
             ->prepare($query);
 
-        $this->itemID = htmlspecialchars(strip_tags($this->itemID));
         $this->itemCode = htmlspecialchars(strip_tags($this->itemCode));
         $this->itemType = htmlspecialchars(strip_tags($this->itemType));
         $this->itemName = htmlspecialchars(strip_tags($this->itemName));
@@ -97,7 +96,6 @@ class Product {
         $this->price = htmlspecialchars(strip_tags($this->price));
         $this->img_path = htmlspecialchars(strip_tags($this->img_path));
 
-        $stmt->bindParam(":itemID", $this->itemID);
         $stmt->bindParam(":itemCode", $this->itemCode);
         $stmt->bindParam(":itemType", $this->itemType);
         $stmt->bindParam(":itemName", $this->itemName);

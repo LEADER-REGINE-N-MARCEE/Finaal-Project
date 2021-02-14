@@ -14,7 +14,7 @@
 
     $data = json_decode(file_get_contents("php://input"));
 
-    if (empty($data->itemID) || empty($data->itemCode) || empty($data->itemType) || empty($data->itemName) || empty($data->subtitle) || empty($data->quantity) || empty($data->descriptions) || empty($data->price))
+    if (empty($data->itemCode) || empty($data->itemType) || empty($data->itemName) || empty($data->subtitle) || empty($data->quantity) || empty($data->descriptions) || empty($data->price))
     {
 
         http_response_code(400);
@@ -23,7 +23,6 @@
         ));
         return;
     }
-    $product->itemID = $data->itemID;
     $product->itemCode = $data->itemCode;
     $product->itemType = $data->itemType;
     $product->itemName = $data->itemName;

@@ -57,3 +57,7 @@ window.onload = function() {
         return "";
     }
 }
+
+function addProduct() {
+    window.location.href = "./create.php";
+}
