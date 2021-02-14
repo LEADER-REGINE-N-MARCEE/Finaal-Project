@@ -126,22 +126,21 @@ window.onload = function() {
                                         }
                                     }
 
-                                    (JSON.stringify(formdata));
-                                    var xhttp = new XMLHttpRequest(); { /*para sa API */
 
+                                    var xhttp = new XMLHttpRequest(); { /*para sa API */
+                                        console.log((JSON.stringify(formdata)));
                                         xhttp.open("POST", "../api/object/addtocartAPI.php"); /*POST ung request, then icall ung registerAPI.php */
                                         xhttp.send(JSON.stringify(formdata)); /*isesend ung data na nakuha dun sa form */
 
                                         xhttp.onreadystatechange = function() {
-                                            if (this.readyState == 4 && this.status == 201) {
+                                            if (this.readyState == 4 && this.status == 200) {
                                                 let result = JSON.parse(this.response);
-                                                alert(result.message);
-                                                window.location.href = "./cart.php";
+                                                alert("Added to cart");
+                                                window.location.reload();
 
-                                            } else if (this.readyState == 4 && this.status == 400) {
+                                            } else if (this.readyState == 4 && this.status == 404) {
                                                 let result = JSON.parse(this.response);
                                                 alert(result.message);
-                                                (result);
                                             }
                                         };
                                     }

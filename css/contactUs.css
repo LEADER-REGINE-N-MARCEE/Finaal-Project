@@ -1,0 +1,91 @@
+.section2 .wrapper{
+	display: flex;
+	justify-content: space-between;
+	margin-top: 120px;
+}
+
+.left img{
+	box-shadow: 0px 0px 10px #888888;
+	height: 500px;
+}
+
+
+.right{
+	display: flex;
+	flex-direction: column;
+	width: 40%;
+	height: 500px;
+
+}
+
+
+
+
+
+.right h1{
+	font-family: 'Source Code Pro', monospace !important;
+    font-style: normal;
+    font-weight: normal;
+    text-align: center;
+    line-height: 100px;
+    /* identical to box height */
+    
+    letter-spacing: 0.2em;
+    
+    color: #FF8125;
+}
+
+.info{
+	display: flex;
+	justify-content: space-between;
+}
+
+.info1 div,
+.info0{
+	display: flex;
+
+}
+
+.info1 p,
+.info p{
+	margin-left: 20px;
+	font-family: 'Source Code Pro', monospace !important;
+    font-style: normal;
+    font-weight: normal;
+}
+
+form{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+input{
+	width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: none;
+}
+
+
+.message{
+
+	height: 170px;
+	padding: 20px;
+
+}
+
+.send{
+	background-color: #FF8125;
+	color: white;
+}
+
+input:focus {
+	border: 1px solid #FF8125;
+  
+}
+

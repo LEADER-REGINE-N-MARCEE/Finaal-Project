@@ -38,7 +38,7 @@ if ($num > 0)
             "price" => $price,
             "img_path" => $img_path,
             "orderID" => $orderID,
-            "amount" => $amount,
+            "amount" => $amount
         );
 
         array_push($products_arr["records"], $product_item);

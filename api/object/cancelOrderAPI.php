@@ -27,7 +27,7 @@ if (!empty($data->invoiceNum) && !empty($data->choice))
         http_response_code(200);
 
         echo json_encode(array(
-            "message" => "Order Successfully Completed."
+            "message" => "Order Successfully Cancelled."
         ));
     }
 
