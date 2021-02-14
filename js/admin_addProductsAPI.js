@@ -12,19 +12,19 @@ window.onload = function() {
 
                 const forms = document.querySelectorAll("form");
                 const form = forms[0];
-                
+
                 var data = formToObject(form);
 
                 var xhttp = new XMLHttpRequest();
-                    xhttp.open("POST", API.admin.create);
-                    xhttp.send();
-                    xhttp.onreadystatechange = function() {
-                        if (this.readyState == 4 && this.status == 200) {
-                            console.log(xhttp);
-                        }
+                xhttp.open("POST", API.admin.create);
+                xhttp.send();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        (xhttp);
                     }
+                }
             } else if (this.readyState == 4 && this.status == 401) {
-                console.log("Unauthorized Access! Authentication required.");
+                ("Unauthorized Access! Authentication required.");
                 window.location.href = '../signIn.php';
             }
         };
@@ -33,7 +33,7 @@ window.onload = function() {
     function formToObject(formArray) {
         //Serialize data function
         var returnArray = {};
-        for(var i=0; i<formArray.length; i++){
+        for (var i = 0; i < formArray.length; i++) {
             returnArray[formArray[i]["name"]] = formArray[i]["value"];
         }
         return returnArray;

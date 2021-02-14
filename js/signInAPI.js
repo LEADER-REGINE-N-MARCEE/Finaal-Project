@@ -18,7 +18,7 @@ window.onload = function() {
                 } else if (this.readyState == 4 && this.status == 401) {
                     let result = JSON.parse(this.response);
                     alert(result.message);
-                    console.log(result);
+                    (result);
                 }
             };
         }
@@ -50,12 +50,12 @@ window.onload = function() {
                 if (this.readyState == 4 && this.status == 200) {
                     let results4 = JSON.parse(this.response);
                     var rdr = results4.redirect;
-                    console.log(rdr);
+                    (rdr);
                     window.location.href = rdr;
                 } else if (this.readyState == 4 && this.status == 401) {
-                    console.log(this.status);
+                    (this.status);
                     let results4 = JSON.stringify(this.response);
-                    console.log(results4);
+                    (results4);
                 }
             }
         }

@@ -18,7 +18,7 @@ window.onload = function() {
                 xhttp.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
                         let results2 = JSON.parse(this.response);
-                        console.log(results2);
+                        (results2);
                         for (let row of results2.info) {
                             document.getElementById("body1").insertAdjacentHTML("beforeend", `
                         <form method="POST">
@@ -91,7 +91,7 @@ window.onload = function() {
 
                                 function checkout() {
                                     var total = totalprice;
-                                    console.log(total);
+                                    (total);
                                     var totalObj = new Object;
                                     totalObj["totalprice"] = total;
                                     const formdata2 = {};
@@ -106,7 +106,7 @@ window.onload = function() {
                                             formdata2[key] = results[key];
                                         }
                                     }
-                                    console.log(JSON.stringify(formdata2));
+                                    (JSON.stringify(formdata2));
                                     xhttp.open("POST", API.product.checkout);
                                     xhttp.send(JSON.stringify(formdata2));
                                     xhttp.onreadystatechange = function() {
@@ -114,12 +114,12 @@ window.onload = function() {
                                             window.location.href = '../index';
 
                                         } else if (this.readyState == 4 && this.status == 503) {
-                                            console.log(this.status);
+                                            (this.status);
                                         }
                                     };
                                 }
                             } else if (this.readyState == 4 && this.status == 404) {
-                                console.log(this.response);
+                                (this.response);
                                 document.getElementById("carttable").insertAdjacentHTML("afterbegin", `
                                 <p>no products in cart</p>
                             `);
@@ -198,7 +198,7 @@ window.onload = function() {
 
                                 function checkout() {
                                     var total = totalprice;
-                                    console.log(total);
+
                                     var totalObj = new Object;
                                     totalObj["totalprice"] = total;
                                     const formdata2 = {};
@@ -213,7 +213,7 @@ window.onload = function() {
                                             formdata2[key] = results[key];
                                         }
                                     }
-                                    console.log(JSON.stringify(formdata2));
+                                    (JSON.stringify(formdata2));
                                     xhttp.open("POST", API.product.checkout);
                                     xhttp.send(JSON.stringify(formdata2));
                                     xhttp.onreadystatechange = function() {
@@ -221,12 +221,12 @@ window.onload = function() {
                                             window.location.href = '../index';
 
                                         } else if (this.readyState == 4 && this.status == 503) {
-                                            console.log(this.status);
+                                            (this.status);
                                         }
                                     };
                                 }
                             } else if (this.readyState == 4 && this.status == 404) {
-                                console.log(this.response);
+                                (this.response);
                                 document.getElementById("carttable").insertAdjacentHTML("afterbegin", `
                                     <p>no products in cart</p>
                                 `);
@@ -256,7 +256,7 @@ window.onload = function() {
                             /*initialize ung variable data. then icacall ung toObject na function the parameter ung form */
                             var xhttp = new XMLHttpRequest(); {
                                 /*para sa API */
-                                console.log(formdata2);
+                                (formdata2);
                                 xhttp.open("POST", API.userDB.updateInfo); /*POST ung request, then icall ung registerAPI.php */
                                 xhttp.send(JSON.stringify(formdata2)); /*isesend ung data na nakuha dun sa form */
                                 xhttp.onreadystatechange = function() {
@@ -265,7 +265,7 @@ window.onload = function() {
                                     } else if (this.readyState == 4 && this.status == 400) {
                                         let result = JSON.parse(this.response);
                                         alert(result.message);
-                                        console.log(result);
+                                        (result);
                                     }
                                 };
                             }

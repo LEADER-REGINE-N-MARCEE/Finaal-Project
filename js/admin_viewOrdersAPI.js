@@ -15,7 +15,7 @@ window.onload = function() {
                 xhttp.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
                         let results2 = JSON.parse(this.response);
-                        console.log(results2);
+                        (results2);
                         for (let rows of results2.neworders) {
                             if (rows.order_status == "PENDING") {
                                 status = "pending";
@@ -30,10 +30,10 @@ window.onload = function() {
                             } else if (rows.order_status == "DECLINED") {
                                 status = "declined";
                             } else {
-                                console.log("hello");
+                                ("hello");
                             }
 
-                            console.log(status);
+                            (status);
                             document.getElementById("vieworderTable").insertAdjacentHTML("beforeend", `
                 <tr>
                 <td class="invoice">${rows.invoiceNum}</td>
@@ -47,7 +47,7 @@ window.onload = function() {
                         }
 
                     } else if (this.readyState == 4 && this.status == 404) {
-                        console.log(this.response);
+                        (this.response);
                         document.getElementById("vieworderTable").insertAdjacentHTML("beforeend", `
                 <p>no Orders Made.</p>
             `);

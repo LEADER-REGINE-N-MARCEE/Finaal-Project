@@ -1,7 +1,7 @@
 window.onload = function() {
     /*para maload agad ung script pag naload ung web page*/
     var jwt = getCookie('jwt');
-    console.log(jwt);
+    (jwt);
     var xhttp = new XMLHttpRequest(); {
         xhttp.open("POST", API.userDB.tokenValid);
         xhttp.setRequestHeader("Content-Type", "application/json");
@@ -43,7 +43,7 @@ window.onload = function() {
                             window.location.href = "./checkout.php";
                         }
                     } else if (this.readyState == 4 && this.status == 404) {
-                        console.log(this.response);
+                        (this.response);
                         document.getElementById("carttable").insertAdjacentHTML("beforeend", `
                             <p>no products in cart</p>
                         `);

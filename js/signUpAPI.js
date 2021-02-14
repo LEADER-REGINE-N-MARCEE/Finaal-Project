@@ -1,31 +1,35 @@
 window.onload = function() { /*para maload agad ung script pag naload ung web page*/
     const btnSubmit = document.getElementById("btnSubmit"); /*kunin ung id ng btn para magkaron ng event listener*/
     btnSubmit.addEventListener("click", register) /*para pag "click" nung button, icacall nya ung register function*/
-
-
-    /*register function*/
+        /*register function*/
     function register() {
-        const forms = document.querySelectorAll("form"); /*kukuhanin nya lahat ng values sa form, iisa lang naman kaya queryselectorall gamit. ibigsabihin lagat ng forms sa html mo ipaparse nya */
-        const form = forms[0]; /*initialize ung form constant with the start nung array formst */
+        if (ValidateEmail(document.getElementById("email"))) {
+            if (ValidatePassword(document.getElementById("password"))) {
+                const forms = document.querySelectorAll("form"); /*kukuhanin nya lahat ng values sa form, iisa lang naman kaya queryselectorall gamit. ibigsabihin lagat ng forms sa html mo ipaparse nya */
+                const form = forms[0]; /*initialize ung form constant with the start nung array formst */
 
-        var data = toObject(form); /*initialize ung variable data. then icacall ung toObject na function the parameter ung form */
-        var xhttp = new XMLHttpRequest(); { /*para sa API */
+                var data = toObject(form); /*initialize ung variable data. then icacall ung toObject na function the parameter ung form */
+                var xhttp = new XMLHttpRequest(); { /*para sa API */
 
-            xhttp.open("POST", API.userDB.signUp); /*POST ung request, then icall ung registerAPI.php */
-            xhttp.send(JSON.stringify(data)); /*isesend ung data na nakuha dun sa form */
-            xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 201) {
-                    let result = JSON.parse(this.response);
-                    alert(result.message);
-                    window.location.href = '../signIn.php';
+                    xhttp.open("POST", API.userDB.signUp); /*POST ung request, then icall ung registerAPI.php */
+                    xhttp.send(JSON.stringify(data)); /*isesend ung data na nakuha dun sa form */
+                    xhttp.onreadystatechange = function() {
+                        if (this.readyState == 4 && this.status == 201) {
+                            let result = JSON.parse(this.response);
+                            alert(result.message);
+                            window.location.href = '../signIn.php';
 
-                } else if (this.readyState == 4 && this.status == 400) {
-                    let result = JSON.parse(this.response);
-                    alert(result.message);
-                    console.log(result);
+                        } else if (this.readyState == 4 && this.status == 400) {
+                            let result = JSON.parse(this.response);
+                            alert(result.message);
+                            (result);
+                        }
+                    };
                 }
-            };
+            }
+
         }
+
     }
 
     function toObject(formArray) { /*to object function*/
@@ -34,5 +38,25 @@ window.onload = function() { /*para maload agad ung script pag naload ung web pa
             returnArray[formArray[i]["name"]] = formArray[i]["value"]; /*ipapasa na ung mga nasa form to array, */
         }
         return returnArray; /*then irereturn ung result */
+    }
+
+    function ValidateEmail(inputText) {
+        var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        if (inputText.value.match(mailformat)) {
+            return true;
+        } else {
+            alert("You have entered an invalid email address!");
+            return false;
+        }
+    }
+
+    function ValidatePassword(passwordText) {
+        var passwordLength = passwordText.length;
+        if (passwordLength > 5) {
+            return true;
+        } else {
+            alert("Password is not 6 characters or more!");
+            return false;
+        }
     }
 }
