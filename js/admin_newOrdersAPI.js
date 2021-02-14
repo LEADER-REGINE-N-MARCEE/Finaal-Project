@@ -49,11 +49,6 @@ window.onload = function() {
                             <p>no New Orders Made.</p>
                         `);
                     }
-                    /*const btnAcceptOrder = document.getElementById("btnAcceptOrder");
-                    btnAcceptOrder.addEventListener("click", acceptOrder);
-                    const btnDeclineOrder = document.getElementById("btnDeclineOrder");
-                    btnDeclineOrder.addEventListener("click", declineOrder);*/
-
                 };
                 var xhttp = new XMLHttpRequest();
                 xhttp.open("POST", "api/object/admin_productOverviewAPI.php");
@@ -76,8 +71,6 @@ window.onload = function() {
                                             <p>No Product in the Database.</p>
                                         `);
                     }
-
-
                 };
 
                 var xhttp = new XMLHttpRequest();
