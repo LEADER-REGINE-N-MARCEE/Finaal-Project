@@ -39,7 +39,6 @@ window.onload = function() { /*para maload agad ung script pag naload ung web pa
                 xhttp.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
                         let results = JSON.parse(this.response);
-                        (results);
                         for (let row of results.records) {
 
                             document.getElementById("topswitches").insertAdjacentHTML("beforeend", `
@@ -63,7 +62,6 @@ window.onload = function() { /*para maload agad ung script pag naload ung web pa
                 xhttp.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
                         let results = JSON.parse(this.response);
-                        (results);
                         for (let row of results.records) {
 
                             document.getElementById("topkeycaps").insertAdjacentHTML("beforeend", `
@@ -89,7 +87,6 @@ window.onload = function() { /*para maload agad ung script pag naload ung web pa
                 xhttp.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
                         let results = JSON.parse(this.response);
-                        (results);
                         for (let row of results.records) {
 
                             document.getElementById("topkeyboards").insertAdjacentHTML("beforeend", `
@@ -113,7 +110,6 @@ window.onload = function() { /*para maload agad ung script pag naload ung web pa
                 xhttp.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
                         let results = JSON.parse(this.response);
-                        (results);
                         for (let row of results.records) {
 
                             document.getElementById("topswitches").insertAdjacentHTML("beforeend", `
@@ -137,7 +133,6 @@ window.onload = function() { /*para maload agad ung script pag naload ung web pa
                 xhttp.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
                         let results = JSON.parse(this.response);
-                        (results);
                         for (let row of results.records) {
 
                             document.getElementById("topkeycaps").insertAdjacentHTML("beforeend", `

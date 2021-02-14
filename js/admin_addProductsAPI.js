@@ -16,15 +16,16 @@ window.onload = function() {
                 var data = formToObject(form);
 
                 var xhttp = new XMLHttpRequest();
-                    xhttp.open("POST", API.admin.create);
-                    xhttp.send();
-                    xhttp.onreadystatechange = function() {
-                        if (this.readyState == 4 && this.status == 200) {
-                            console.log(xhttp);
-                        }
+                xhttp.open("POST", API.admin.create);
+                xhttp.send();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        console.log(xhttp);
+                    }
                 }
             } else if (this.readyState == 4 && this.status == 401) {
-                ("Unauthorized Access! Authentication required.");
+                alert("Unauthorized Access! Authentication required.");
+                window.location.href = '../signIn.php';
             }
         };
     }

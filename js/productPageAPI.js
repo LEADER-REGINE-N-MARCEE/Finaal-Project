@@ -5,9 +5,7 @@ window.onload = function() {
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 let results = JSON.parse(this.response);
-
                 for (let row of results.records) {
-
                     if (row.quantity == 0) {
                         document.getElementById("item-container").insertAdjacentHTML("beforeend", `
 
@@ -128,7 +126,7 @@ window.onload = function() {
 
 
                                     var xhttp = new XMLHttpRequest(); { /*para sa API */
-                                        console.log((JSON.stringify(formdata)));
+
                                         xhttp.open("POST", "../api/object/addtocartAPI.php"); /*POST ung request, then icall ung registerAPI.php */
                                         xhttp.send(JSON.stringify(formdata)); /*isesend ung data na nakuha dun sa form */
 

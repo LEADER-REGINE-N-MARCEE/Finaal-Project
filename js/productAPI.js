@@ -1,13 +1,10 @@
 window.onload = function() {
     var xhttp = new XMLHttpRequest(); {
-
-        (itemType);
         xhttp.open("GET", API.product.read + "?itemType=" + itemType + "");
         xhttp.send();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 let results = JSON.parse(this.response);
-                (results);
                 for (let row of results.records) {
 
                     document.getElementById("itemcontainer").insertAdjacentHTML("beforeend", `

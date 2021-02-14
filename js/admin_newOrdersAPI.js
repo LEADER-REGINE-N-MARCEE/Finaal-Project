@@ -44,7 +44,7 @@ window.onload = function() {
                         }
 
                     } else if (this.readyState == 4 && this.status == 404) {
-                        (this.response);
+                        console.log(this.response);
                         document.getElementById("neworderTable").insertAdjacentHTML("beforeend", `
                             <p>no New Orders Made.</p>
                         `);
@@ -71,7 +71,7 @@ window.onload = function() {
                                             `);
                         }
                     } else if (this.readyState == 4 && this.status == 404) {
-                        (this.response);
+                        console.log(this.response);
                         document.getElementById("productoverviewTable").insertAdjacentHTML("beforeend", `
                                             <p>No Product in the Database.</p>
                                         `);
@@ -98,7 +98,6 @@ window.onload = function() {
                                             `);
                         }
                     } else if (this.readyState == 4 && this.status == 404) {
-                        (this.response);
                         document.getElementById("activeDiscountsTable").insertAdjacentHTML("beforeend", `
                                             <p>No Users Registered in the Database.</p>
                                         `);
@@ -140,11 +139,10 @@ function acceptOrder() {
 
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            (this.status);
             alert("Order Accepted")
             window.location.reload();
         } else if (this.readyState == 4 && this.status == 401) {
-            ("error")
+            alert("error");
         }
     };
 }
@@ -164,7 +162,7 @@ function declineOrder() {
             alert("Order Declined")
             window.location.reload();
         } else if (this.readyState == 4 && this.status == 401) {
-            ("error")
+            alert("error");
         }
     };
 }

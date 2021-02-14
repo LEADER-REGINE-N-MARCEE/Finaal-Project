@@ -29,7 +29,7 @@ window.onload = function() {
                                             `);
                         }
                     } else if (this.readyState == 4 && this.status == 404) {
-                        (this.response);
+                        console.log(this.response);
                         document.getElementById("viewUsersTable").insertAdjacentHTML("beforeend", `
                                             <p>No Users Registered in the Database.</p>
                                         `);

@@ -43,7 +43,7 @@ window.onload = function() {
                             window.location.href = "./checkout.php";
                         }
                     } else if (this.readyState == 4 && this.status == 404) {
-                        (this.response);
+                        console.log(this.response);
                         document.getElementById("carttable").insertAdjacentHTML("beforeend", `
                             <p>no products in cart</p>
                         `);

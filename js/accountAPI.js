@@ -33,10 +33,8 @@ window.onload = function() {
                             } else if (rows.order_status == "DECLINED") {
                                 status = "declined";
                             } else {
-                                ("hello");
+                                alert("error");
                             }
-
-                            (status);
                             document.getElementById("orderTable").insertAdjacentHTML("beforeend", `
                             <tr>
                             <td class="invoice"><p id="${rows.invoiceNum}">${rows.invoiceNum}</p></td>
@@ -87,7 +85,7 @@ function cancelOrder() {
 
     const invoiceNum = event.srcElement.id;
 
-    (invoiceNum);
+    console.log(invoiceNum);
 
     /*if (order_status != "PENDING") {
         btnCancelOrder.style.display = "none";
@@ -105,10 +103,10 @@ function cancelOrder() {
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             (this.status);
-            alert("Order Cancelled")
+            alert("Order Cancelled");
             window.location.reload();
         } else if (this.readyState == 4 && this.status == 401) {
-            ("error")
+            alert("error");
         }
     };
 }

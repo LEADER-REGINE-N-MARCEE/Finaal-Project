@@ -11,15 +11,16 @@ window.onload = function() {
             if (this.readyState == 4 && this.status == 200) {
 
                 var xhttp = new XMLHttpRequest();
-                    xhttp.open("PUT", API.admin.update);
-                    xhttp.send();
-                    xhttp.onreadystatechange = function() {
-                        if (this.readyState == 4 && this.status == 200) {
-                            (xhttp);
-                        }
+                xhttp.open("PUT", API.admin.update);
+                xhttp.send();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        console.log(xhttp);
+                    }
                 }
             } else if (this.readyState == 4 && this.status == 401) {
-                ("Unauthorized Access! Authentication required.");
+                alert("Unauthorized Access! Authentication required.");
+                window.location.href = '../signIn.php';
             }
         };
     }
