@@ -10,32 +10,18 @@ window.onload = function() {
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
 
-                const forms = document.querySelectorAll("form");
-                const form = forms[0];
-
-                var data = formToObject(form);
-
                 var xhttp = new XMLHttpRequest();
-                    xhttp.open("POST", API.admin.create);
+                    xhttp.open("PUT", API.admin.update);
                     xhttp.send();
                     xhttp.onreadystatechange = function() {
                         if (this.readyState == 4 && this.status == 200) {
-                            console.log(xhttp);
+                            (xhttp);
                         }
                 }
             } else if (this.readyState == 4 && this.status == 401) {
                 ("Unauthorized Access! Authentication required.");
             }
         };
-    }
-
-    function formToObject(formArray) {
-        //Serialize data function
-        var returnArray = {};
-        for (var i = 0; i < formArray.length; i++) {
-            returnArray[formArray[i]["name"]] = formArray[i]["value"];
-        }
-        return returnArray;
     }
 
     function getCookie(cname) {
