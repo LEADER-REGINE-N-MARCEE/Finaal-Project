@@ -32,8 +32,17 @@ class Product {
         $stmt = $this
             ->conn
             ->prepare($query);
-            $stmt->execute();
-            return $stmt;
+        $stmt->execute();
+        return $stmt;
+    }
+
+    function decreaseStock($itemCode, $new_stock){
+        $query = "UPDATE `items` SET `quantity` =  '" . $new_stock . "' WHERE `itemCode` = '" . $itemCode . "'";
+        $stmt = $this
+            ->conn
+            ->prepare($query);
+        $stmt->execute();
+        return true;
     }
 
     function read($itemType) {

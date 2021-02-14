@@ -29,9 +29,12 @@
 
     <div class="wrapper">
       <h1>Create</h1>
-      <form action="/action_page.php">
+      <form method="POST">
         <label >Item Name:</label><br>
         <input type="text" id="" name="" placeholder="Enter Name"><br>
+
+        <label >Item Subtitle:</label><br>
+        <input type="text" id="" name="" placeholder="Enter Subtitle"><br>
 
         <label >Item Description:</label><br>
         <input type="text" id="" name="" placeholder="Enter Description"><br>
@@ -39,18 +42,27 @@
         <label >Item Code:</label><br>
         <input type="text" id="" name="" placeholder="Enter Code"><br>
 
-        <label >Stocks:</label><br>
+        <label >Choose a Type:</label><br>
+        <select class="select">
+            <option value="KB">Keyboard</option>
+            <option value=KC">Keycap</option>
+            <option value="SW">Switch</option>
+            <option value="DM">Deskmat</option>
+	    <option value="GB">Group Buy</option>
+        </select>
+
+        <br><label >Stocks:</label><br>
         <input type="text" id="" name="" placeholder="Enter Stocks"><br>
         <div class="file-container">
           <label >Item Image: </label><br>
-          <input type="file" class="photo-choose" name=""><br>
+          <input type="file" class="photo-choose" name="" multiple="multiple"><br>
         </div>
         <!--<input type="file" id="" name="" value="" >
         <label for="file" class="photo-label">
           <i class="fas fa-images"></i>&nbsp;
           Choose Photo
         </label><br>-->
-        <input type="submit" value="Create">
+        <input type="button" value="Create" onclick="window.location.href='items.php'">>
       </form> 
     </div>
 </div>

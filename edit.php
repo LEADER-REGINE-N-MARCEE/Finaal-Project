@@ -29,28 +29,40 @@
 
     <div class="wrapper">
       <h1>Edit</h1>
-      <form action="/action_page.php">
+      <form method="POST">
         <label >Item Name:</label><br>
-        <input type="text" id="" name="" value="Enter Name"><br>
+        <input type="text" id="" name="" value="name1"><br>
+
+        <label >Item Subtitle:</label><br>
+        <input type="text" id="" name="" value="Subtitle1"><br>
 
         <label >Item Description:</label><br>
-        <input type="text" id="" name="" value="Enter Description"><br>
+        <input type="text" id="" name="" value="Description1"><br>
 
         <label >Item Code:</label><br>
-        <input type="text" id="" name="" value="Enter Code"><br>
+        <input type="text" id="" name="" value="Code1"><br>
 
-        <label >Stocks:</label><br>
-        <input type="text" id="" name="" value="Enter Stocks"><br>
+        <label >Choose a Type:</label><br>
+        <select class="select">
+            <option value="Keyboard">Keyboard</option>
+            <option value="Keyboard">Keyboard</option>
+            <option value="Keycap">Keycap</option>
+            <option value="Switch">Switch</option>
+            <option value="Deskmat">Deskmat</option>
+        </select>
+
+        <br><label >Stocks:</label><br>
+        <input type="text" id="" name="" value="Stocks1"><br>
         <div class="file-container">
           <label >Item Image: </label><br>
-          <input type="file" class="photo-choose" name=""><br>
+          <input type="file" class="photo-choose" name="" multiple="multiple"><br>
         </div>
         <!--<input type="file" id="" name="" value="" >
         <label for="file" class="photo-label">
           <i class="fas fa-images"></i>&nbsp;
           Choose Photo
         </label><br>-->
-        <input type="submit" value="Edit">
+        <input type="button" value="Edit" onclick="window.location.href='items.php'">
       </form> 
     </div>
 </div>
