@@ -28,7 +28,6 @@ window.onload = function() {
                                             `);
                         }
                     } else if (this.readyState == 4 && this.status == 404) {
-                        (this.response);
                         document.getElementById("viewProductsTable").insertAdjacentHTML("beforeend", `
                                             <p>No Product in the Database.</p>
                                         `);
