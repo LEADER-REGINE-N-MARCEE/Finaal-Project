@@ -1,5 +1,4 @@
 window.onload = function() {
-    /*para maload agad ung script pag naload ung web page*/
     var jwt = getCookie('jwt');
     var xhttp = new XMLHttpRequest(); {
         xhttp.open("POST", API.userDB.tokenValid);
@@ -86,7 +85,7 @@ window.onload = function() {
                                 </form>
                                 `);
 
-                                const btnCheckout = document.getElementById("btnCheckout"); /*kunin ung id ng btn para magkaron ng event listener*/
+                                const btnCheckout = document.getElementById("btnCheckout");
                                 btnCheckout.addEventListener("click", checkout);
 
                                 function checkout() {

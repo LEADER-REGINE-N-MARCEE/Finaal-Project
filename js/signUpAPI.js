@@ -1,18 +1,18 @@
-window.onload = function() { /*para maload agad ung script pag naload ung web page*/
-    const btnSubmit = document.getElementById("btnSubmit"); /*kunin ung id ng btn para magkaron ng event listener*/
-    btnSubmit.addEventListener("click", register) /*para pag "click" nung button, icacall nya ung register function*/
-        /*register function*/
+window.onload = function() {
+    const btnSubmit = document.getElementById("btnSubmit");
+    btnSubmit.addEventListener("click", register)
+
     function register() {
         if (ValidateEmail(document.getElementById("email"))) {
             if (ValidatePassword(document.getElementById("password"))) {
-                const forms = document.querySelectorAll("form"); /*kukuhanin nya lahat ng values sa form, iisa lang naman kaya queryselectorall gamit. ibigsabihin lagat ng forms sa html mo ipaparse nya */
-                const form = forms[0]; /*initialize ung form constant with the start nung array formst */
+                const forms = document.querySelectorAll("form");
+                const form = forms[0];
 
-                var data = toObject(form); /*initialize ung variable data. then icacall ung toObject na function the parameter ung form */
-                var xhttp = new XMLHttpRequest(); { /*para sa API */
+                var data = toObject(form);
+                var xhttp = new XMLHttpRequest(); {
 
-                    xhttp.open("POST", API.userDB.signUp); /*POST ung request, then icall ung registerAPI.php */
-                    xhttp.send(JSON.stringify(data)); /*isesend ung data na nakuha dun sa form */
+                    xhttp.open("POST", API.userDB.signUp);
+                    xhttp.send(JSON.stringify(data));
                     xhttp.onreadystatechange = function() {
                         if (this.readyState == 4 && this.status == 201) {
                             let result = JSON.parse(this.response);
@@ -32,12 +32,12 @@ window.onload = function() { /*para maload agad ung script pag naload ung web pa
 
     }
 
-    function toObject(formArray) { /*to object function*/
-        var returnArray = {}; /*initialize ung array */
+    function toObject(formArray) {
+        var returnArray = {};
         for (var i = 0; i < formArray.length; i++) {
-            returnArray[formArray[i]["name"]] = formArray[i]["value"]; /*ipapasa na ung mga nasa form to array, */
+            returnArray[formArray[i]["name"]] = formArray[i]["value"];
         }
-        return returnArray; /*then irereturn ung result */
+        return returnArray;
     }
 
     function ValidateEmail(inputText) {

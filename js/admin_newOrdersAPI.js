@@ -1,5 +1,4 @@
 window.onload = function() {
-    /*para maload agad ung script pag naload ung web page*/
     var jwt = getCookie('jwt');
     var xhttp = new XMLHttpRequest(); {
         xhttp.open("POST", API.userDB.tokenValid);
@@ -49,10 +48,6 @@ window.onload = function() {
                             <p>no New Orders Made.</p>
                         `);
                     }
-                    /*const btnAcceptOrder = document.getElementById("btnAcceptOrder");
-                    btnAcceptOrder.addEventListener("click", acceptOrder);
-                    const btnDeclineOrder = document.getElementById("btnDeclineOrder");
-                    btnDeclineOrder.addEventListener("click", declineOrder);*/
 
                 };
                 var xhttp = new XMLHttpRequest();

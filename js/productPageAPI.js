@@ -59,19 +59,19 @@ window.onload = function() {
                     }
 
 
-                    const btnAddToCart = document.getElementById("btnAddToCart"); /*kunin ung id ng btn para magkaron ng event listener*/
+                    const btnAddToCart = document.getElementById("btnAddToCart");
                     btnAddToCart.addEventListener("click", addtocart)
 
                     function addtocart() {
                         validate();
                     }
 
-                    function toObject(formArray) { /*to object function*/
-                        var returnArray = {}; /*initialize ung array */
+                    function toObject(formArray) {
+                        var returnArray = {};
                         for (var i = 0; i < formArray.length; i++) {
-                            returnArray[formArray[i]["name"]] = formArray[i]["value"]; /*ipapasa na ung mga nasa form to array, */
+                            returnArray[formArray[i]["name"]] = formArray[i]["value"];
                         }
-                        return returnArray; /*then irereturn ung result */
+                        return returnArray;
                     }
 
                     function getCookie(cname) {
@@ -95,15 +95,16 @@ window.onload = function() {
                         let jwt = getCookie('jwt');
                         var xhttp = new XMLHttpRequest(); {
                             xhttp.open("POST", "../api/object/validateTokenAPI.php");
-                            xhttp.send(JSON.stringify({ jwt: jwt }));
+                            xhttp.send(JSON.stringify({
+                                jwt: jwt
+                            }));
                             xhttp.onreadystatechange = function() {
                                 if (this.readyState == 4 && this.status == 200) {
                                     let results1 = JSON.parse(this.response);
                                     (results1);
-                                    const forms = document.querySelectorAll("form"); /*kukuhanin nya lahat ng values sa form, iisa lang naman kaya queryselectorall gamit. ibigsabihin lagat ng forms sa html mo ipaparse nya */
+                                    const forms = document.querySelectorAll("form");
                                     const form = forms[0];
 
-                                    /*initialize ung variable data. then icacall ung toObject na function the parameter ung form */
                                     var data2 = toObject(form);
                                     const formdata = {};
                                     let key;
@@ -127,10 +128,10 @@ window.onload = function() {
                                     }
 
                                     (JSON.stringify(formdata));
-                                    var xhttp = new XMLHttpRequest(); { /*para sa API */
+                                    var xhttp = new XMLHttpRequest(); {
 
-                                        xhttp.open("POST", "../api/object/addtocartAPI.php"); /*POST ung request, then icall ung registerAPI.php */
-                                        xhttp.send(JSON.stringify(formdata)); /*isesend ung data na nakuha dun sa form */
+                                        xhttp.open("POST", "../api/object/addtocartAPI.php");
+                                        xhttp.send(JSON.stringify(formdata));
 
                                         xhttp.onreadystatechange = function() {
                                             if (this.readyState == 4 && this.status == 201) {

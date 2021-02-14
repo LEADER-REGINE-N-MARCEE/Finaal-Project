@@ -82,17 +82,11 @@ window.onload = function() {
 }
 
 function cancelOrder() {
-    /*const cancelImg = document.getElementById("cancelImg");
-    const btnCancelOrder = event.srcElement.id;*/
 
     const invoiceNum = event.srcElement.id;
 
     (invoiceNum);
 
-    /*if (order_status != "PENDING") {
-        btnCancelOrder.style.display = "none";
-        cancelImg.style.display = "none";
-    }*/
 
 
     var choice = "CANCELLED";

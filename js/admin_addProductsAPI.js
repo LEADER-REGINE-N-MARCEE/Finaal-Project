@@ -1,5 +1,4 @@
 window.onload = function() {
-    /*para maload agad ung script pag naload ung web page*/
     var jwt = getCookie('jwt');
     var xhttp = new XMLHttpRequest(); {
         xhttp.open("POST", API.userDB.tokenValid);
@@ -31,7 +30,6 @@ window.onload = function() {
     }
 
     function formToObject(formArray) {
-        //Serialize data function
         var returnArray = {};
         for (var i = 0; i < formArray.length; i++) {
             returnArray[formArray[i]["name"]] = formArray[i]["value"];

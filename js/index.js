@@ -1,10 +1,12 @@
-window.onload = function() { /*para maload agad ung script pag naload ung web page*/
+window.onload = function() {
     var jwt = getCookie('jwt');
     var xhttp = new XMLHttpRequest(); {
 
         xhttp.open("POST", API.userDB.tokenValid);
         xhttp.setRequestHeader("Content-Type", "application/json");
-        xhttp.send(JSON.stringify({ jwt: jwt }));
+        xhttp.send(JSON.stringify({
+            jwt: jwt
+        }));
         xhttp.onreadystatechange = function() {
 
             if (this.readyState == 4 && this.status == 200) {

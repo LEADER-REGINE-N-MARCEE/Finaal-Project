@@ -60,7 +60,7 @@ window.onload = function() {
             }
         }
     }
-    // get or read cookie
+
     function getCookie(cname) {
         var name = cname + "=";
         var decodedCookie = decodeURIComponent(document.cookie);
