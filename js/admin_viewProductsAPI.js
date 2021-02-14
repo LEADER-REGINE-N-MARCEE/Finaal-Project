@@ -17,14 +17,17 @@ window.onload = function() {
                         var results3 = JSON.parse(this.response);
                         for (let rows of results3.items) {
                             document.getElementById("viewProductsTable").insertAdjacentHTML("beforeend", `
+
                                             <tr>
-                                            <td class=item-img>${rows.itemCode}</td>
-                                            <td class=item-img>${rows.itemType}</td>
-                                            <td class=item-name>${rows.itemName}</td>
-                                            <td class=item-name>${rows.subtitle}</td>
-                                            <td class=item-name>${rows.price}</td>
-                                            <td class=item-quantity>${rows.quantity}</td>
-                                            <tr>
+                                            <td>${rows.itemName}</td>
+                                            <td>${rows.itemCode}</td>
+                                            <td>${rows.quantity}</td>
+                                            <td>
+                                                <a href="view.php"><button class="view">View</button></a>
+                                                <a href="edit.php"><button class="edit">Edit</button></a>
+                                                <a href=""><button class="delete">Delete</button></a>
+                                            </td>
+                                        </tr>
                                             `);
                         }
                     } else if (this.readyState == 4 && this.status == 404) {

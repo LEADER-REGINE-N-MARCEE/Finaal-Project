@@ -203,7 +203,8 @@ table button{
 }
 
 .delete{
-	background-color: #FF8125;
-	color: white;
-	border: none;
+	background-color: transparent;
+    color: red;
+    overflow: hidden;
+    border: 1px solid red;
 }

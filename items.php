@@ -3,33 +3,33 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 
-
+<script src="./js/api.js"></script>
 <div class="section2">
-     
-    <nav>
-        <div class="hamburger"> 
-            <button>
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-            </button>
-            <ul class="nav-links">
-                <li><a href="index.php">ADMIN<br>ADMIN</a></li>
-                <li><a href="">PRODUCTS</a></li>
-                <li><a href="">USERS</a></li>
-                <li><a href="">ORDERS</a></li>
-                <li><a href="">DISCOUNTS</a></li>
-                <li><a href="">LOGOUT</a></li>
-            </ul>
 
-            
-        </div>
-        <h1>ADMIN DASHBOARD</h1>
-        <img src="./img/logo.png">
-    </nav>
-    <div class="wrapper">
-        <div class="list-table">
-        	<div>
+	<nav>
+		<div class="hamburger">
+			<button>
+				<div class="line"></div>
+				<div class="line"></div>
+				<div class="line"></div>
+			</button>
+			<ul class="nav-links">
+				<li><a href="./admindashboard.html">ADMIN<br>ADMIN</a></li>
+				<li><a href="./items.php">PRODUCTS</a></li>
+				<li><a href="./admin_viewUsers.php">USERS</a></li>
+				<li><a href="./admin_viewOrders.html">ORDERS</a></li>
+				<li><a href="">DISCOUNTS</a></li>
+				<li><a href="javascript:signout();">LOGOUT</a></li>
+			</ul>
+
+
+		</div>
+		<h1>ADMIN DASHBOARD</h1>
+		<img src="./img/logo.png">
+	</nav>
+	<div class="wrapper">
+		<div class="list-table">
+			<div>
 				<h1>List of Item</h1>
 				<a href="create.php">
 					<button>
@@ -38,66 +38,20 @@
 					</button>
 				</a>
 			</div>
-			<table>
+			<table id="viewProductsTable">
 				<tr>
 					<th>Item name</th>
 					<th>Item Code</th>
 					<th>Stocks</th>
 					<th>Action</th>
+				</tr>
 
-				</tr>
-				<tr>
-					<td>item1</td>
-					<td>I-101</td>
-					<td>150</td>
-					<td>
-						<a href="view.php"><button class="view">View</button></a>
-						<a href="edit.php"><button class="edit">Edit</button></a>
-						<a href=""><button class="delete">Delete</button></a>
-					</td>
-				</tr>
-				<tr>
-					<td>item1</td>
-					<td>I-101</td>
-					<td>150</td>
-					<td>
-						<a href="view.php"><button class="view">View</button></a>
-						<a href="edit.php"><button class="edit">Edit</button></a>
-						<a href=""><button class="delete">Delete</button></a>
-					</td>
-				</tr>
-				<tr>
-					<td>item1</td>
-					<td>I-101</td>
-					<td>150</td>
-					<td>
-						<a href="view.php"><button class="view">View</button></a>
-						<a href="edit.php"><button class="edit">Edit</button></a>
-						<a href=""><button class="delete">Delete</button></a>
-					</td>
-				</tr>
-				<tr>
-					<td>item1</td>
-					<td>I-101</td>
-					<td>150</td>
-					<td>
-						<a href="view.php"><button class="view">View</button></a>
-						<a href="edit.php"><button class="edit">Edit</button></a>
-						<a href=""><button class="delete">Delete</button></a>
-					</td>
-				</tr>
-				<tr>
-					<td>item1</td>
-					<td>I-101</td>
-					<td>150</td>
-					<td>
-						<a href="view.php"><button class="view">View</button></a>
-						<a href="edit.php"><button class="edit">Edit</button></a>
-						<a href=""><button class="delete">Delete</button></a>
-					</td>
-				</tr>
+
 			</table>
 		</div>
 
-    </div>            
+	</div>
 </div>
+
+<script src="./js/signoutAPI.js"></script>
+<script src="./js/admin_viewProductsAPI.js"></script>

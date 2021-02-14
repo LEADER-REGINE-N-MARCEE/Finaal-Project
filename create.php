@@ -2,7 +2,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 <script src="https://kit.fontawesome.com/ef77410712.js" crossorigin="anonymous"></script>
-
+<script src="./js/api.js"></script>
 <div class="section2">
 
   <nav>
