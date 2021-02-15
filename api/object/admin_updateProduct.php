@@ -18,12 +18,18 @@
   $data = json_decode(file_get_contents("php://input"));
 
   // Set ID to update
-  $product->id = $data->id;
+  $product->itemID = $data->itemID;
 
-  $product->title = $data->title;
-  $product->body = $data->body;
-  $product->author = $data->author;
-  $product->category_id = $data->category_id;
+  $product->itemCode = $data->itemCode;
+  $product->itemType = $data->itemType;
+  $product->itemName = $data->itemName;
+  $product->subtitle = $data->subtitle;
+  $product->quantity = $data->quantity;
+  $product->descriptions = $data->descriptions;
+  $product->price = $data->price;
+  /*$product->img_path = $data->img_path;
+  $product->img_path2 = $data->img_path2;
+  $product->img_path3 = $data->img_path3;*/
 
   // Update product
   if($product->update()) {

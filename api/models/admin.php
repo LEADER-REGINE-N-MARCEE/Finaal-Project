@@ -169,5 +169,47 @@ class User {
             ->connection
             ->real_escape_string($value); #ewan ko kung bakit may ganito baka di need pero nilagay ko parin
     }
+
+    function update() {
+        $query = 'UPDATE ' . $this->table . '
+                                SET itemCode = :itemCode, itemType = :itemType, itemName = :itemName, subtitle = :subtitle, quantity = :quantity, descriptions = :descriptions, price = :price, img_path = :img_path
+                                WHERE itemID = :itemID';
+        $stmt = $this
+            ->conn
+            ->prepare($query);
+
+        // Clean data
+        $this->itemID = htmlspecialchars(strip_tags($this->itemID));
+        $this->itemCode = htmlspecialchars(strip_tags($this->itemCode));
+        $this->itemType = htmlspecialchars(strip_tags($this->itemType));
+        $this->itemName = htmlspecialchars(strip_tags($this->itemName));
+        $this->subtitle = htmlspecialchars(strip_tags($this->subtitle));
+        $this->quantity = htmlspecialchars(strip_tags($this->quantity));
+        $this->descriptions = htmlspecialchars(strip_tags($this->descriptions));
+        $this->price = htmlspecialchars(strip_tags($this->price));
+        //$this->img_path = htmlspecialchars(strip_tags($this->img_path));
+        //$this->img_path2 = htmlspecialchars(strip_tags($this->img_path2));
+        //$this->img_path3 = htmlspecialchars(strip_tags($this->img_path3));
+
+        $stmt->bindParam(":itemID", $this->itemID);
+        $stmt->bindParam(":itemCode", $this->itemCode);
+        $stmt->bindParam(":itemType", $this->itemType);
+        $stmt->bindParam(":itemName", $this->itemName);
+        $stmt->bindParam(":subtitle", $this->subtitle);
+        $stmt->bindParam(":quantity", $this->quantity);
+        $stmt->bindParam(":descriptions", $this->descriptions);
+        $stmt->bindParam(":price", $this->price);
+       // $stmt->bindParam(":img_path", $this->img_path);
+        //$stmt->bindParam(":img_path", $this->img_path2);
+        //$stmt->bindParam(":img_path", $this->img_path3);
+
+        if ($stmt->execute()) {
+            return true;
+        }
+
+        // Print error if something goes wrong
+        printf("Error: %s.\n", $stmt->error);
+        return false;
+    }
+
 }
-?>

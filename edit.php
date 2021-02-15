@@ -66,3 +66,4 @@
 </div>
 
 <script src="./js/admin_addProductsAPI.js"></script>
+<script src="./js/admin_updateProductsAPI.js"></script>
