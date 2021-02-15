@@ -33,20 +33,27 @@
 
     <div class="section2">
         <div class="wrapper">
-            <h1>TOP SELLING</h1>
+            <h1>TOP KEYBOARDS</h1>
             <div class="item-container" id="topkeyboards">
 
             </div>
-
+            <a href="products.php?itemType=KB" class="section2_seemore">See more...</a>
             <h1>TOP SWITCHES</h1>
             <div class="item-container" id="topswitches">
 
             </div>
-
+            <a href="products.php?itemType=SW" class="section2_seemore">See more...</a>
             <h1>TOP KEYCAPS</h1>
             <div class="item-container" id="topkeycaps">
 
             </div>
+            <a href="products.php?itemType=KC" class="section2_seemore">See more...</a>
+
+            <h1>TOP DESKMATS</h1>
+            <div class="item-container" id="topkeydeskmats">
+
+            </div>
+            <a href="products.php?itemType=DM" class="section2_seemore">See more...</a>
         </div>
     </div>
 

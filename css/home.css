@@ -11,14 +11,13 @@
 }
 
 .p1,
-.p2{
+.p2 {
     text-align: center;
     font-family: 'Roboto', sans-serif;
 }
 
-.p1{
+.p1 {
     margin-top: 100px;
-
     font-style: normal;
     font-weight: 100;
     font-size: 45px;
@@ -28,21 +27,17 @@
     color: #FF8125;
 }
 
-.p2{
+.p2 {
     font-family: Font Awesome 5 Brands;
     font-style: normal;
     font-weight: normal;
     font-size: 25px;
     line-height: 90px;
     /* identical to box height */
-
     text-align: center;
     letter-spacing: 0.25em;
-
     color: #ECEDF6;
 }
-
-
 
 .text1 {
     font-family: 'Source Code Pro', monospace !important;
@@ -68,9 +63,10 @@
     margin-top: 30px;
 }
 
-.btn-container{
+.btn-container {
     text-align: center;
 }
+
 .shop-btn {
     border: 2px solid #FF8125;
     color: #FF8125;
@@ -78,8 +74,6 @@
     background-color: transparent;
     width: 229px;
     height: 52px;
-
-
 }
 
 .shop-btn p {
@@ -91,13 +85,13 @@
     color: #ECEDF6;
 }
 
-.shop-btn:hover{
+.shop-btn:hover {
     border: 2px solid #FF8125;
     color: #ECEDF6;
     background-color: #FF8125;
 }
 
-.intro{
+.intro {
     background: black;
     position: fixed;
     top: 0;
@@ -105,15 +99,12 @@
     width: 100%;
     height: 100%;
     display: flex;
-
     justify-content: center;
     align-items: center;
     text-align: center;
 }
 
-
-
-.slider{
+.slider {
     background: #FF8125;
     position: fixed;
     top: 0;
@@ -123,27 +114,25 @@
     transform: translateY(100%);
 }
 
-.intro-text{
+.intro-text {
     color: #ECEDF6;
     font-family: "Heebo", sans-serif;
     font-size: 48px;
-
 }
 
-.hide{
+.hide {
     background-color: black;
     overflow: hidden;
 }
 
-.hide span{
+.hide span {
     transform: translateY(100%);
     display: inline-block;
 }
 
-.hide img{
+.hide img {
     width: 100vh;
 }
-
 
 .section2 {
     align-items: center;
@@ -189,6 +178,18 @@
     line-height: 22px;
     text-align: center;
     color: #05060A;
+}
+
+.section2_seemore {
+    text-decoration: none;
+    color: black;
+    display: block;
+    width: 100%;
+    text-align: right;
+}
+
+.section2_seemore:hover {
+    text-decoration: underline;
 }
 
 .section3 {
@@ -254,7 +255,7 @@
     margin-bottom: 40px;
 }
 
-.contact-btn:hover{
+.contact-btn:hover {
     border: 2px solid #FF8125;
     color: #ECEDF6;
     background-color: #FF8125;
@@ -314,7 +315,7 @@
     margin-top: 50px;
     text-indent: 50px;
     text-align: justify;
-    font-family: Font Awesome 5 Brands;
+    font-family: 'Source Code Pro', monospace !important;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
@@ -330,34 +331,27 @@
     height: 220px
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
     .item-container,
     .section3-item,
     .aboutus-item,
-    .aboutus-item img{
+    .aboutus-item img {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-
-
-    .section4 .line img{
+    .section4 .line img {
         display: none;
     }
-
-    .map1{
-
+    .map1 {
         display: block;
         margin: 0 auto;
         width: 90%;
-
     }
-
-    .section4 p{
+    .section4 p {
         margin: 0 30px;
     }
-
-    .item-container{
+    .item-container {
         display: flex;
         flex-direction: column;
         text-align: center;
