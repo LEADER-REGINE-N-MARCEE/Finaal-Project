@@ -46,6 +46,11 @@
 
 }
 
+.info0{
+	
+	align-items: center;
+}
+
 .info1 p,
 .info p{
 	margin-left: 20px;
@@ -90,3 +95,21 @@ input:focus {
   
 }
 
+
+@media screen and (max-width: 768px){
+    .section2 .wrapper{
+    	max-width: 100%;
+    	flex-direction: column;
+    	margin:  10px 50px;
+    }
+
+    .left img{
+    	width: 100%;
+    	object-fit: cover;
+    }
+
+    .right{
+    	width: 100%;
+    }
+
+}

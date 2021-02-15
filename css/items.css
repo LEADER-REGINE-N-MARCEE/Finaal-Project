@@ -138,7 +138,8 @@ nav{
     margin-right: 5px;
 }
 
-.list-table h1{
+.list-table h1,
+.wrapper #body1 h1{
 	font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: 600;

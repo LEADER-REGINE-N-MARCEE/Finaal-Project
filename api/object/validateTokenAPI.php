@@ -37,7 +37,7 @@ if ($jwt)
 
         if ($role == "admin")
         {
-            $redirect = "admindashboard.html";
+            $redirect = "admindashboard.php";
         }
         else
         {

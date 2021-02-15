@@ -129,6 +129,20 @@ input {
         margin: 0 30px;
     }
 
-    
+    .keycaps,
+    .switches,
+    .deskmat,
+    .keyboard{
+        font-size: 18px;
+        margin: 0 10px;
+    }
+
+    .item-container{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-content: center;
+        
+    }
     
 }

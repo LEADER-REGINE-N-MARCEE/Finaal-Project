@@ -114,6 +114,16 @@ class User {
         return $query2;
     }
 
+    public function adminInfo() {
+        $qr = "SELECT * FROM users WHERE roles = 'admin'";
+        $query2 = $this
+            ->conn
+            ->prepare($qr);
+        $query2->execute();
+
+        return $query2;
+    }
+
     public function updateOrder() {
         $query = "UPDATE invoice SET order_status=:order_status WHERE invoiceNum=:invoiceNum";
         $stmt = $this

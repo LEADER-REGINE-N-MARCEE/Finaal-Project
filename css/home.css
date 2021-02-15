@@ -254,6 +254,12 @@
     margin-bottom: 40px;
 }
 
+.contact-btn:hover{
+    border: 2px solid #FF8125;
+    color: #ECEDF6;
+    background-color: #FF8125;
+}
+
 .section4 {
     margin-bottom: 120px;
 }
@@ -349,5 +355,12 @@
 
     .section4 p{
         margin: 0 30px;
+    }
+
+    .item-container{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-content: center;
     }
 }

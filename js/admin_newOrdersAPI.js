@@ -1,4 +1,5 @@
 window.onload = function() {
+
     /*para maload agad ung script pag naload ung web page*/
     var jwt = getCookie('jwt');
     var xhttp = new XMLHttpRequest(); {
@@ -74,28 +75,27 @@ window.onload = function() {
                 };
 
                 var xhttp = new XMLHttpRequest();
-                xhttp.open("POST", "api/object/admin_activeDiscountsAPI.php");
+                xhttp.open("POST", "api/object/admin_adminInfoAPI.php");
                 xhttp.send();
                 xhttp.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
-                        var results5 = JSON.parse(this.response);
-                        for (let rows of results5.active) {
-                            document.getElementById("activeDiscountsTable").insertAdjacentHTML("beforeend", `
-                                            <tr>
-                                            <td class=item-img>${rows.discountID}</td>
-                                            <td class=item-name>${rows.discountCode}</td>
-                                            <td class=item-quantity>${rows.discount}</td>
-                                            <td class=item-name>${rows.discount_status}</td>
-                                            <td class=item-quantity>${rows.discountDate}</td>
-                                            <tr>
-                                            `);
+                        var results4 = JSON.parse(this.response);
+                        for (let rows of results4.users) {
+                            document.getElementById("nav-links").insertAdjacentHTML("beforeend", `
+                                <li><a href="./admindashboard.php">${rows.firstname}<br>${rows.lastname}</a></li>
+                                <li><a href="./items.php">PRODUCTS</a></li>
+                                <li><a href="./admin_viewUsers.php">USERS</a></li>
+                                <li><a href="./admin_viewOrders.html">ORDERS</a></li>
+                                <li><a href="">DISCOUNTS</a></li>
+                                <li><a href="javascript:signout();">LOGOUT</a></li>
+                                `);
                         }
                     } else if (this.readyState == 4 && this.status == 404) {
-                        document.getElementById("activeDiscountsTable").insertAdjacentHTML("beforeend", `
-                                            <p>No Users Registered in the Database.</p>
-                                        `);
+                        document.getElementById("nav-links").insertAdjacentHTML("beforeend", `
+                                <p>No Users Registered in the Database.</p>
+                            `);
                     }
-                };
+                }
             } else if (this.readyState == 4 && this.status == 401) {
                 window.location.href = '../signIn.php';
             }

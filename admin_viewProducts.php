@@ -9,20 +9,15 @@
 
 <body>
     <div class="section2">
-        <nav>
+    <nav>
             <div class="hamburger">
                 <button>
                     <div class="line"></div>
                     <div class="line"></div>
                     <div class="line"></div>
                 </button>
-                <ul class="nav-links">
-                    <li><a href="./admindashboard.html">ADMIN<br>ADMIN</a></li>
-                    <li><a href="./items.php">PRODUCTS</a></li>
-                    <li><a href="./admin_viewUsers.php">USERS</a></li>
-                    <li><a href="./admin_viewOrders.html">ORDERS</a></li>
-                    <li><a href="">DISCOUNTS</a></li>
-                    <li><a href="javascript:signout();">LOGOUT</a></li>
+                <ul class="nav-links" id="nav-links">
+
                 </ul>
 
 

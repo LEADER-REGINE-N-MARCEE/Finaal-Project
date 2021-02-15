@@ -8,7 +8,9 @@
 </head>
 
 <body>
+
     <div class="section2">
+
         <nav>
             <div class="hamburger">
                 <button>
@@ -16,13 +18,8 @@
                     <div class="line"></div>
                     <div class="line"></div>
                 </button>
-                <ul class="nav-links">
-                    <li><a href="./admindashboard.html">ADMIN<br>ADMIN</a></li>
-                    <li><a href="./items.php">PRODUCTS</a></li>
-                    <li><a href="./admin_viewUsers.php">USERS</a></li>
-                    <li><a href="./admin_viewOrders.html">ORDERS</a></li>
-                    <li><a href="">DISCOUNTS</a></li>
-                    <li><a href="javascript:signout();">LOGOUT</a></li>
+                <ul class="nav-links" id="nav-links">
+
                 </ul>
 
 
@@ -30,8 +27,6 @@
             <h1>ADMIN DASHBOARD</h1>
             <img src="./img/logo.png">
         </nav>
-
-
         <div class="wrapper">
             <div id="body1">
                 <h2>NEW ORDERS</h2>
@@ -60,6 +55,7 @@
         </div>
     </div>
 </body>
+
 <script src="./js/signoutAPI.js"></script>
 <script src="./js/admin_newOrdersAPI.js"></script>
 
