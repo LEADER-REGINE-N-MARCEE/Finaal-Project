@@ -33,12 +33,12 @@ window.onload = function() {
 
     }
 
-    function toObject(formArray) { /*to object function*/
-        var returnArray = {}; /*initialize ung array */
+    function toObject(formArray) {
+        var returnArray = {};
         for (var i = 0; i < formArray.length; i++) {
-            returnArray[formArray[i]["name"]] = formArray[i]["value"]; /*ipapasa na ung mga nasa form to array, */
+            returnArray[formArray[i]["name"]] = formArray[i]["value"];
         }
-        return returnArray; /*then irereturn ung result */
+        return returnArray;
     }
 
     function ValidateEmail(inputText) {

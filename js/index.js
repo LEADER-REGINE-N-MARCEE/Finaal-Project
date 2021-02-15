@@ -1,4 +1,4 @@
-window.onload = function() { /*para maload agad ung script pag naload ung web page*/
+window.onload = function() {
     var jwt = getCookie('jwt');
     var xhttp = new XMLHttpRequest(); {
 
