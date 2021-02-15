@@ -182,3 +182,7 @@ th {
     color: #E4E4E4;
     margin-top: -40px;
 }
+
+.btn-container {
+    text-align: center;
+}
