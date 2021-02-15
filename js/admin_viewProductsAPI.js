@@ -26,7 +26,7 @@ window.onload = function() {
                                             <td>
                                                 <a href="view.php"><button class="view">View</button></a>
                                                 <a href="edit.php"><button class="edit">Edit</button></a>
-                                                <a href=""><button class="delete">Delete</button></a>
+                                                <button type="button" id="${rows.itemCode}" class="delete" onclick="deleteProduct();">Delete</button>
                                             </td>
                                         </tr>
                                             `);
@@ -36,12 +36,10 @@ window.onload = function() {
                                             <p>No Product in the Database.</p>
                                         `);
                     }
-
-
                 }
 
                 var xhttp = new XMLHttpRequest();
-                xhttp.open("POST", "api/object/admin_adminInfoAPI.php");
+                xhttp.open("POST", API.admin.admin_adminInfoAPI);
                 xhttp.send();
                 xhttp.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
@@ -52,7 +50,7 @@ window.onload = function() {
                                 <li><a href="./items.php">PRODUCTS</a></li>
                                 <li><a href="./admin_viewUsers.php">USERS</a></li>
                                 <li><a href="./admin_viewOrders.html">ORDERS</a></li>
-                                <li><a href="">DISCOUNTS</a></li>
+                                 
                                 <li><a href="javascript:signout();">LOGOUT</a></li>
                                 `);
                         }
@@ -87,4 +85,25 @@ window.onload = function() {
 
 function addProduct() {
     window.location.href = "./create.php";
+}
+
+function deleteProduct() {
+    var itemCode = event.srcElement.id;
+    console.log(JSON.stringify({
+        itemCode: itemCode
+    }));
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("POST", "api/object/admin_deleteProductAPI.php");
+    xhttp.send(JSON.stringify({
+        itemCode: itemCode
+    }));
+
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            alert("Order Deleted");
+            window.location.reload();
+        } else if (this.readyState == 4 && this.status == 401) {
+            alert("Error. Cannot Delete Product");
+        }
+    };
 }

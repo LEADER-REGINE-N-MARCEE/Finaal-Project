@@ -27,6 +27,19 @@ class Product {
         return $stmt;
     }
 
+    function deleteProduct($itemCode) {
+        $query = "DELETE FROM `items` WHERE `itemCode` = '$itemCode'";
+        $stmt = $this
+            ->conn
+            ->prepare($query);
+        if ($stmt->execute()){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
     function neworders() {
         $query = "SELECT * FROM `invoice` WHERE `order_status`='PENDING'";
         $stmt = $this

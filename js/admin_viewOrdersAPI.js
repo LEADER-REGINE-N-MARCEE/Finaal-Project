@@ -1,5 +1,4 @@
 window.onload = function() {
-    /*para maload agad ung script pag naload ung web page*/
     var jwt = getCookie('jwt');
     var xhttp = new XMLHttpRequest(); {
         xhttp.open("POST", API.userDB.tokenValid);
@@ -11,7 +10,7 @@ window.onload = function() {
             if (this.readyState == 4 && this.status == 200) {
 
                 var xhttp = new XMLHttpRequest();
-                xhttp.open("POST", "api/object/admin_viewOrdersAPI.php");
+                xhttp.open("POST", API.admin.admin_viewOrdersAPI);
                 xhttp.send();
                 xhttp.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
@@ -31,7 +30,7 @@ window.onload = function() {
                             } else if (rows.order_status == "DECLINED") {
                                 status = "declined";
                             } else {
-                                ("hello");
+                                console.log("hello");
                             }
 
                             console.log(status);
@@ -48,14 +47,13 @@ window.onload = function() {
                         }
 
                     } else if (this.readyState == 4 && this.status == 404) {
-                        console.log(this.response);
                         document.getElementById("vieworderTable").insertAdjacentHTML("beforeend", `
                 <p>no Orders Made.</p>
             `);
                     }
                 }
                 var xhttp = new XMLHttpRequest();
-                xhttp.open("POST", "api/object/admin_adminInfoAPI.php");
+                xhttp.open("POST", API.admin.admin_adminInfoAPI);
                 xhttp.send();
                 xhttp.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
@@ -66,7 +64,7 @@ window.onload = function() {
                                 <li><a href="./items.php">PRODUCTS</a></li>
                                 <li><a href="./admin_viewUsers.php">USERS</a></li>
                                 <li><a href="./admin_viewOrders.html">ORDERS</a></li>
-                                <li><a href="">DISCOUNTS</a></li>
+                                 
                                 <li><a href="javascript:signout();">LOGOUT</a></li>
                                 `);
                         }

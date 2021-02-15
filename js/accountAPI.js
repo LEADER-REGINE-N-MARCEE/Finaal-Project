@@ -46,11 +46,7 @@ window.onload = function() {
                              </tr>
                             
                             `);
-
-
-
                         }
-
                     }
                 }
 
@@ -59,8 +55,6 @@ window.onload = function() {
             }
         }
     }
-
-
 
     function getCookie(cname) {
         var name = cname + "=";
@@ -80,19 +74,7 @@ window.onload = function() {
 }
 
 function cancelOrder() {
-    /*const cancelImg = document.getElementById("cancelImg");
-    const btnCancelOrder = event.srcElement.id;*/
-
     const invoiceNum = event.srcElement.id;
-
-    console.log(invoiceNum);
-
-    /*if (order_status != "PENDING") {
-        btnCancelOrder.style.display = "none";
-        cancelImg.style.display = "none";
-    }*/
-
-
     var choice = "CANCELLED";
     var xhttp = new XMLHttpRequest();
     xhttp.open("POST", "api/object/cancelOrderAPI.php");
@@ -102,7 +84,6 @@ function cancelOrder() {
     }));
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            (this.status);
             alert("Order Cancelled");
             window.location.reload();
         } else if (this.readyState == 4 && this.status == 401) {

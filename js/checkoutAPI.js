@@ -90,7 +90,6 @@ window.onload = function() {
 
                                 function checkout() {
                                     var total = totalprice;
-                                    console.log(total);
                                     var totalObj = new Object;
                                     totalObj["totalprice"] = total;
                                     const formdata2 = {};
@@ -191,7 +190,7 @@ window.onload = function() {
                                 </form>
                                 `);
 
-                                const btnCheckout = document.getElementById("btnCheckout"); /*kunin ung id ng btn para magkaron ng event listener*/
+                                const btnCheckout = document.getElementById("btnCheckout");
                                 btnCheckout.addEventListener("click", checkout);
 
                                 function checkout() {
@@ -250,18 +249,15 @@ window.onload = function() {
                                     formdata2[key] = results[key];
                                 }
                             }
-                            /*initialize ung variable data. then icacall ung toObject na function the parameter ung form */
                             var xhttp = new XMLHttpRequest(); {
-                                /*para sa API */
-                                xhttp.open("POST", API.userDB.updateInfo); /*POST ung request, then icall ung registerAPI.php */
-                                xhttp.send(JSON.stringify(formdata2)); /*isesend ung data na nakuha dun sa form */
+                                xhttp.open("POST", API.userDB.updateInfo);
+                                xhttp.send(JSON.stringify(formdata2));
                                 xhttp.onreadystatechange = function() {
                                     if (this.readyState == 4 && this.status == 201) {
                                         window.location.reload();
                                     } else if (this.readyState == 4 && this.status == 400) {
                                         let result = JSON.parse(this.response);
                                         alert(result.message);
-                                        (result);
                                     }
                                 };
                             }
@@ -275,12 +271,11 @@ window.onload = function() {
     }
 
     function toObject(formArray) {
-        /*to object function*/
-        var returnArray = {}; /*initialize ung array */
+        var returnArray = {};
         for (var i = 0; i < formArray.length; i++) {
-            returnArray[formArray[i]["name"]] = formArray[i]["value"]; /*ipapasa na ung mga nasa form to array, */
+            returnArray[formArray[i]["name"]] = formArray[i]["value"];
         }
-        return returnArray; /*then irereturn ung result */
+        return returnArray;
     }
 
     function getCookie(cname) {

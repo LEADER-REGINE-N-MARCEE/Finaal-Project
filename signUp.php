@@ -23,7 +23,7 @@
     
 
                     <label>Password:</label>
-                    <input class="input1" type="Password" name="password" id="password" required>
+                    <input class="input1" type="password" name="password" id="password" required>
                     <em>*Password must be 6 characters or more</em>
                     <button type="button" class="signin-btn" id="btnSubmit" name="register">Register</button>
                 </form>

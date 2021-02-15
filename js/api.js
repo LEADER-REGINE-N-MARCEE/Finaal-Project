@@ -18,6 +18,9 @@ const API = {
     invoice: {},
 
     admin: {
+        admin_deleteProductAPI: baseUrl + "api/object/admin_deleteProductAPI.php",
+        admin_adminInfoAPI: baseUrl + "api/object/admin_adminInfoAPI.php",
+        admin_viewOrdersAPI: baseUrl + "api/object/admin_viewOrdersAPI.php",
         admin_newOrdersAPI: baseUrl + "api/object/admin_newOrdersAPI.php",
         admin_productOverviewAPI: baseUrl + "api/object/admin_productOverviewAPI.php",
         admin_viewUsersAPI: baseUrl + "api/object/admin_viewUsersAPI.php",

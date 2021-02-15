@@ -14,7 +14,7 @@
                 <li><a href="">PRODUCTS</a></li>
                 <li><a href="">USERS</a></li>
                 <li><a href="">ORDERS</a></li>
-                <li><a href="">DISCOUNTS</a></li>
+                 
                 <li><a href="javascript:signout()">LOGOUT</a></li>
             </ul>
 

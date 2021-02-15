@@ -1,18 +1,20 @@
-window.onload = function() { /*para maload agad ung script pag naload ung web page*/
-    const btnSubmit = document.getElementById("btnSubmit"); /*kunin ung id ng btn para magkaron ng event listener*/
-    btnSubmit.addEventListener("click", register) /*para pag "click" nung button, icacall nya ung register function*/
-        /*register function*/
+window.onload = function() {
+    const btnSubmit = document.getElementById("btnSubmit");
+    btnSubmit.addEventListener("click", register);
+
     function register() {
-        if (ValidateEmail(document.getElementById("email"))) {
-            if (ValidatePassword(document.getElementById("password"))) {
-                const forms = document.querySelectorAll("form"); /*kukuhanin nya lahat ng values sa form, iisa lang naman kaya queryselectorall gamit. ibigsabihin lagat ng forms sa html mo ipaparse nya */
-                const form = forms[0]; /*initialize ung form constant with the start nung array formst */
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+        if (ValidateEmail(email)) {
+            if (ValidatePassword(password)) {
+                const forms = document.querySelectorAll("form");
+                const form = forms[0];
 
-                var data = toObject(form); /*initialize ung variable data. then icacall ung toObject na function the parameter ung form */
-                var xhttp = new XMLHttpRequest(); { /*para sa API */
+                var data = toObject(form);
+                var xhttp = new XMLHttpRequest(); {
 
-                    xhttp.open("POST", API.userDB.signUp); /*POST ung request, then icall ung registerAPI.php */
-                    xhttp.send(JSON.stringify(data)); /*isesend ung data na nakuha dun sa form */
+                    xhttp.open("POST", API.userDB.signUp);
+                    xhttp.send(JSON.stringify(data));
                     xhttp.onreadystatechange = function() {
                         if (this.readyState == 4 && this.status == 201) {
                             let result = JSON.parse(this.response);
@@ -22,7 +24,6 @@ window.onload = function() { /*para maload agad ung script pag naload ung web pa
                         } else if (this.readyState == 4 && this.status == 400) {
                             let result = JSON.parse(this.response);
                             alert(result.message);
-                            (result);
                         }
                     };
                 }
@@ -42,7 +43,7 @@ window.onload = function() { /*para maload agad ung script pag naload ung web pa
 
     function ValidateEmail(inputText) {
         var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-        if (inputText.value.match(mailformat)) {
+        if (inputText.match(mailformat)) {
             return true;
         } else {
             alert("You have entered an invalid email address!");
